@@ -1,0 +1,111 @@
+#_______________________________________________________________________________
+#
+#-------------------------------+ INFORMATION +--------------------------------#
+#_______________________________________________________________________________
+
+# File: SkeletonKingV2-Skills.yml
+
+# Created By: SkyKiller63
+# Version: 1.0
+# Server Version: Paper - 1.21
+# Hard-Dependencies:
+# - MythicMobs (tested in v5.7.2)
+
+
+######## Skeleton King V2 ########
+
+
+SK_SmashAttack:
+  Cooldown: 8
+  Conditions:
+  - targetwithin 25
+  Skills:
+  - speak{cp=<gold>Skeleton King</gold><&co>;cooldown=30;m="<yellow>Hahahah! I will crush you, fool!"} @PlayersInRadius{r=40} 0.2
+  - teleport @target
+  - effect:sound{s=mob.endermen.portal;volume=1.0;pitch=0.5}
+  - delay 10
+  - damage{amount=5;ignorearmor=true} @PlayersInRadius{r=5}
+  - throw{velocity=10;velocityY=5} @PlayersInRadius{r=5}
+  - effect:explosion @Self
+SK_SummonSkeletons:
+  Cooldown: 15
+  Skills:
+  - speak{cp=<gold>Skeleton King</gold><&co>;m=" <yellow>Arise, my minions!"} @PlayersInRadius{r=40} 0.2
+  - delay 20
+  - summon{mob=SkeletalMinionV2;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=SkeletalMinionV2;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=SkeletalMinionV2;amount=1;noise=5} @Self
+SK_SummonStrongSkeletons:
+  Cooldown: 15
+  Skills:
+  - speak{cp=<gold>Skeleton King</gold><&co>;m=" <yellow>Arise, my minions!"} @PlayersInRadius{r=40} 0.2
+  - delay 20
+  - summon{mob=SkeletalMinionV2;amount=4;noise=5} @Self
+  - delay 20
+  - summon{mob=SkeletalWarriorV2;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=SkeletalKnightV2;amount=1;noise=5} @Self
+
+
+SK_Missile_Attack:
+  Skills:
+  - skill:SK_Missile @PIR{r=7;limit=1;sort=NEAREST}
+
+SK_Bide:
+  Cooldown: 8
+  Skills:
+  - delay 10
+  - gcd{ticks=120}
+  - cast{cb=false;duration=90;i=1;
+    onTick=[
+      - e:p{p=smoke;a=40;hs=0.5;vs=1}
+      ];
+    onCastSkill=[
+      - skill:SK_Projectile{repeat=2;repeatInterval=10} @RandomLocationsNearCaster{a=10;r=5;minr=5;s=2}
+      - skill:SK_Projectile{repeat=2;repeatInterval=10} @PIR{r=10}
+      - skill:SK_Missile{delay=60} @PIR{r=7;sort=RANDOM;limit=1}
+      - sound{s=entity.wither.shoot;v=0.6;p=0.7;repeat=2;repeatInterval=10;delay=20} @self
+      - throw{velocity=20;velocityY=7} @PlayersInRadius{r=5}
+      - effect:explosion @Self
+      ];
+    onStart=[
+      - stun{d=120} @self ?!isplayer
+      - stun{d=120;f=true} @self ?isplayer
+      - potion{type=RESISTANCE;l=1;d=90} @self
+      - sendactionmessage{message="<gold>Charging up!"} ?isPlayer
+      <#>- effect:glow{color=RED;d=110} @self ?!isPlayer
+      ]} @self
+
+SK_Missile:
+  Skills:
+  # - effect:glow{color=BLACK;d=20} @self ?!isPlayer
+  - delay 20
+  - missile{bullet=TRACKING;material=wither_skeleton_skull;velocity=10;hr=0.5;vr=0.5;hnp=true;Inertia=2.5;
+    onTick=[
+      - e:p{p=smoke;amount=20;hs=0.7;vs=0.7}
+      ];
+    onHit=[
+      - damage{a=5}
+      - potion{type=WITHER;l=0;d=50}
+      ];
+    onStart=[
+      - sound{s=entity.wither.shoot;v=0.7;p=0.7}
+      ]} 
+
+SK_Projectile:
+  Skills:
+  # - effect:glow{color=BLACK;d=30} @self ?!isPlayer
+  - delay 20
+  - projectile{bullet=TRACKING;material=wither_skeleton_skull;velocity=10;hr=0.5;vr=0.5;hnp=true;
+    onTick=[
+      - e:p{p=smoke;amount=20;hs=0.7;vs=0.7}
+      ];
+    onHit=[
+      - damage{a=5}
+      - potion{type=WITHER;l=0;d=50}
+      ];
+    onStart=[
+      - sound{s=entity.wither.shoot;v=0.2;p=0.7}
+      ]} 
