@@ -1,0 +1,77 @@
+#_______________________________________________________________________________
+#
+#-------------------------------+ INFORMATION +--------------------------------#
+#_______________________________________________________________________________
+
+# File: SkeletonKingV2-Items.yml
+
+# Created By: SkyKiller63
+# Version: 1.0
+# Server Version: Paper - 1.21
+# Hard-Dependencies:
+# - MythicMobs (tested in v5.7.2)
+# 
+# Soft-Dependencies: For the skill to work
+# - MythicCrucible (tested in 2.1.0)
+
+
+######## Skeleton King V2 ########
+
+SkeletonKingSword-V2:
+  Material: DIAMOND_SWORD
+  Group: 'Skeleton King'
+  Display: '<dark_aqua>Greatsword of the Skeleton King'
+  Lore:
+  - '<dark_gray>------------------------'
+  - '<gold>A powerful sword used by'
+  - '<gold>the Skeleton King.'
+  - '<dark_gray>------------------------'
+  - '<gray>When in Main Hand:'
+  - ' <blue>+10 Max Health'
+  - ' <blue>+10% Speed'
+  Enchantments:
+  - DAMAGE_ALL:5
+  - KNOCKBACK:2
+  - FIRE_ASPECT:2
+  Attributes:
+    MainHand:
+      MAX_HEALTH: 10 ADD
+      MOVEMENT_SPEED: 0.1 ADD
+      ATTACK_DAMAGE: 8 ADD
+      ATTACK_SPEED: -2.6 ADD
+  Hide:
+  - ATTRIBUTES
+  Skills: #Skills Require Crucible
+  - skill{cd=10;s=[
+    - sendactionmessage{m="<#D2365C>Healed 5<dark_red>❤"}
+    - heal{a=10;delay=2}
+    ]} @self ~onHold ?health{h=>19}
+  - skill:SK_Projectile @target ~onAttack 0.3
+
+KingsCrown-V2:
+  Id: GOLDEN_HELMET
+  ItemVersion: 1
+  Group: 'Skeleton King'
+  Display: '<light_purple>Crown of the King'
+  Lore:
+  - '<dark_gray>------------------------'
+  - '<gold>A kingly crown that grants'
+  - '<gold>the wearer unwavering power!'
+  - '<dark_gray>------------------------'
+  - '<gray>When on Head:'
+  - ' <blue>+10 Max Health'
+  - ' <blue>+2 Knockback Resistance'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:2
+  - PROTECTION_PROJECTILE:2
+  - PROTECTION_FIRE:2
+  - PROTECTION_EXPLOSIONS:2
+  - DURABILITY:5
+  Hide:
+  - ATTRIBUTES
+  Attributes:
+    Head:
+      MAX_HEALTH: 10 ADD
+      KNOCKBACK_RESISTANCE: 0.2 ADD
+  Skills: #Skills Require Crucible
+  - skill:SK_Bide{cd=20} @self ~onDamaged ?!moving 0.25 
