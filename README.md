@@ -2,7 +2,8 @@
 Check out my MythicMobs stuff!
 
 ## Table of Contents
-- **Mobs**
+- [**Mobs**](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Mobs)
+  - [Ghost Wither - A Bedrock Similar Wither](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Mobs/GhostWither_Mob.yml)
 - **Skills**
 - **Items**
 - **Packs**
