@@ -1,0 +1,104 @@
+WITHER:
+  Type: Wither
+  Display: '<dark_red>Ghost Wither</dark_red>'
+  Health: 1000
+  Options:
+    Despawn: false
+  LevelModifiers:
+    Health: 10
+    Damage: 0.2
+  Drops:
+    # -
+  Skills:
+ #Spawning Stances
+  - setstance{s=spawning} @self ~onSpawn
+  - setstance{s=spawned;delay=200} @self ~onSpawn
+ #Second Phase Start
+  - skill{s=[
+    - explosion{y=4;blockdamage=true;fire=true}
+    - summon{type=GhostWither_Backup;a=5;r=5;delay=10}
+    - attributemodifier{attribute=GENERIC_ARMOR;a=10;duration=100000}
+    ]} @self ~onDamaged =51%
+ #Ghost Dash
+  - aura{name=GhostDash;d=30;i=1;
+    onStart=[
+      - sound{s=entity.wither.break_block;sc=HOSTILE;v=1}
+      - teleportto{location=@target} @self
+      - e:p{p=gust;a=50;hs=1;vs=1;repeat=9;repeatInterval=3}
+    ];
+    onTick=[
+      - damage{a=3} @eir{r=2.5}
+      - breakblock{sync=true;usetool=false} @BlocksInRadius{r=2;shape=CUBE;blockignores=obsidian,bedrock,crying_obsidian}
+      - throw{v=6;yv=5} @eir{r=2.5}
+    ];
+    onEnd=[
+      - shootwitherskull @PIR{r=10}
+      - summon{type=GhostWither_Backup;a=3;r=5;delay=10} 0.1
+    ]} @self ~onTimer:120 <50% ?!stance{s=spawning} 
+ #In spawn despawn skill
+  - skill{s=[
+    - randomskill{skills=
+      [ - message{m="<dark_red>Ghost Wither</dark_red><&co> <dark_gray>Huh. How did I get here?"} @PIR{r=40} ],
+      [ - message{m="<dark_red>Ghost Wither</dark_red><&co> <dark_gray>Wait... I don't think I'm supposed to be here..."} @PIR{r=40} ],
+      [ - message{m="<dark_red>Ghost Wither</dark_red><&co> <dark_gray>How did I get here? I'm just gonna..."} @PIR{r=40} ]}
+    - delay 100
+    - e:p{p=gust;a=100;hs=2;vs=2} 
+    - remove
+    ]} @self ~onSpawn ?cuboid{location1=300,-64,300;location2=-300,320,-300}
+    #Change cuboid condition above to either a region condition, or change coords to match your spawn
+GhostWither:
+  Type: Wither
+  Display: '<dark_red>Ghost Wither</dark_red>'
+  Health: 1000
+  Options:
+    Despawn: false
+  LevelModifiers:
+    Health: 10
+    Damage: 0.2
+  Drops:
+  # - 
+  Skills:
+ #Spawning Stances
+  - setstance{s=spawning} @self ~onSpawn
+  - setstance{s=spawned;delay=200} @self ~onSpawn
+ #Second Phase Start
+  - skill{s=[
+    - explosion{y=4;blockdamage=true;fire=true}
+    - summon{type=GhostWither_Backup;a=5;r=5;delay=10}
+    - attributemodifier{attribute=GENERIC_ARMOR;a=10;duration=100000}
+    ]} @self ~onDamaged =51%
+ #Ghost Dash
+  - aura{name=GhostDash;d=30;i=1;
+    onStart=[
+      - sound{s=entity.wither.break_block;sc=HOSTILE;v=1}
+      - teleportto{location=@target} @self
+      - e:p{p=gust;a=50;hs=1;vs=1;repeat=9;repeatInterval=3}
+    ];
+    onTick=[
+      - damage{a=3} @eir{r=2.5}
+      - breakblock{sync=true;usetool=false} @BlocksInRadius{r=2;shape=CUBE;blockignores=obsidian,bedrock,crying_obsidian}
+      - throw{v=6;yv=5} @eir{r=2.5}
+    ];
+    onEnd=[
+      - shootwitherskull @PIR{r=10}
+      - summon{type=GhostWither_Backup;a=3;r=5;delay=10} 0.1
+    ]} @self ~onTimer:120 <50% ?!stance{s=spawning} #Makes sure the dash doesn't happen while the wither is charging up
+ #In spawn despawn skill
+  - skill{s=[
+    - randomskill{skills=
+      [ - message{m="<dark_red>Ghost Wither</dark_red><&co> <dark_gray>Huh. How did I get here?"} @PIR{r=40} ],
+      [ - message{m="<dark_red>Ghost Wither</dark_red><&co> <dark_gray>Wait... I don't think I'm supposed to be here..."} @PIR{r=40} ],
+      [ - message{m="<dark_red>Ghost Wither</dark_red><&co> <dark_gray>How did I get here? I'm just gonna..."} @PIR{r=40} ]}
+    - delay 100
+    - e:p{p=gust;a=100;hs=2;vs=2} 
+    - remove
+    ]} @self ~onSpawn ?cuboid{location1=300,-64,300;location2=-300,320,-300} 
+    #Change cuboid condition above to either a region condition, or change coords to match your spawn
+GhostWither_Backup:
+  Type: wither_skeleton
+  Health: 40
+  LevelModifiers:
+    Health: 2
+    Damage: 0
+    Armor: 0
+    MovementSpeed: 0
