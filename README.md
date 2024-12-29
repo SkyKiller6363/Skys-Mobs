@@ -6,5 +6,5 @@ Check out my MythicMobs stuff!
   - [Ghost Wither - A Bedrock Similar Wither](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Mobs/GhostWither_Mob.yml)
 - **Skills**
 - **Items**
-- **Packs**
+- [**Packs**](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs)
   - [Skeleton King - V2](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/SkeletonKingV2)
