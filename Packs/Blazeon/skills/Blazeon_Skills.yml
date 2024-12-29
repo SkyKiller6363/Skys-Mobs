@@ -1,0 +1,258 @@
+#_______________________________________________________________________________
+#
+#-------------------------------+ INFORMATION +--------------------------------#
+#_______________________________________________________________________________
+
+# File: Blazeon_Skills.yml
+
+# Created By: SkyKiller63
+# Version: 1.0
+# Server Version: Paper - 1.21
+# Hard-Dependencies:
+# - MythicMobs (tested in v5.7.2)
+
+### Base Projectiles
+BlazeonSmokeProjectile:
+  Skills:
+  - projectile{hp=true;v=15;hRadius=2;vRadius=2;StartYOffset=8;Interval=1;MaxRange=64;
+    onTick=[
+    - effect:particlesphere{p=blockcrack;material=BEDROCK;amount=200;radius=2}
+    - effect:particlesphere{particle=smoke_large;amount=200;radius=2} 
+    ];
+    onEnd=[
+    - effect:blockmask{m=OBSIDIAN;r=5;d=100} 
+    - effect:flames 
+    - potion{type=SLOW;duration=80;level=1} @EntitiesNearOrigin{r=5}
+    - potion{type=BLINDNESS;duration=80;level=20} @EntitiesNearOrigin{r=5}
+    - damage{amount=7;ignoreArmor=false} @EntitiesNearOrigin{r=5}
+    ]}
+BlazeonFireProjectile:
+  Skills:
+  - projectile{hp=true;v=15;hRadius=1.5;vRadius=1.5;StartYOffset=+8;Interval=1;MaxRange=96;
+    onTick=[
+    - effect:particlesphere{particle=flame;amount=200;radius=1.5}
+    - effect:particlesphere{p=blockcrack;material=NETHERRACK;amount=100;radius=1.5}
+    ];
+    OnEnd=[
+    - effect:explosion
+    - explosion{yield=5.0;fire=false;bd=false} 
+    - ignite{ticks=100} @EntitiesNearOrigin{r=5}
+    ]}
+
+
+#
+### Spawn Backups
+SpawnMurkspawn:
+  Skills:
+  - summon{t=Murkspawn;a=3;r=10;sio=false;sip=false;if=false;onSurface=true} @self ?playerwithin{d=40} ?mobsInRadius{types=Murkspawn;a=<12;radius=35}
+SpawnScreamer:
+  Skills:
+  - summon{t=Screamer;a=1;r=10;sio=false;sip=false;if=false;onSurface=false} @self ?playerwithin{d=40} ?mobsInRadius{types=Screamer;a=<2;radius=50}
+
+SummonVortex:
+  Cooldown: 10
+  Skills:
+  - skill:BlazeonSmokeProjectile 0.7 >50%
+  - skill:BlazeonFireProjectile 0.7 <50%
+  - summon{type=BlazeonVortex;a=1;onSurface=true;sio=false;sip=false;if=false} @RandomLocationsNearCaster{a=7;minr=8;radius=35;spacing=15}
+
+#
+### Other Skills
+SaveBlazeonLocation:
+  Skills:
+  - setvariable{var=SpawnLoc;type=STRING;value="&b<caster.l.x>&e, &b<caster.l.y>&e, &b<caster.l.z>";scope=CASTER} @self
+
+MurkspawnExplode:
+  Skills:
+  - e:p{particle=explosion} @self
+  - sound{sc=HOSTILE;sound=entity.generic.explode;v=1;p=0.8} @self
+  - damage{damagecause=ENTITY_EXPLOSION;a=5} @EIR{r=5;conditions=[ distance{d=3to5}] } 
+  - damage{damagecause=ENTITY_EXPLOSION;a=7} @EIR{r=3;conditions=[ distance{d=2to3}] } 
+  - damage{damagecause=ENTITY_EXPLOSION;a=10} @EIR{r=2;conditions=[ distance{d=1to2}] } 
+  - damage{damagecause=ENTITY_EXPLOSION;a=12} @EIR{r=1;conditions=[ distance{d=0to1}] } 
+
+
+
+BlazeonEruptionAttack:
+  Cooldown: 12
+  Skills:
+  - skill:BlazeonMeteor3 @RandomThreatTarget
+  - jump{v=3}
+  - potion{type=DAMAGE_RESISTANCE;l=5;duration=100} @self
+  - delay 40
+  - jump{v=-20}
+  - delay 15
+  - skill:BlazeonEruptionProjectile @RandomLocationsNearCaster{a=8;radius=25;spacing=10}
+  - summon{type=BlazeonLava;a=1;onSurface=true;sio=false;sip=false;if=false} @selflocation
+  - skill:BlazeonMeteor3 @RandomThreatTarget
+  - effect:explosion @selflocation
+  - explosion{yield=5.0;fire=false;bd=false} @selflocation
+  - clearpotion{type=DAMAGE_RESISTANCE} @self
+
+BlazeonEruptionProjectile:
+  Skills:
+  - randommessage{cd=30;m=
+    "<dark_red>Blazeon</dark_red><gray>>> <red>Take this!",
+    "<dark_red>Blazeon</dark_red><gray>>> <red>Take some <bold>ERUPTIONS</bold>!"
+    }
+  - projectile{v=18;g=1;tyo=22;i=1;syo=4;
+    onTick=[
+      - e:particle{particle=reddust;color=#C10F0F;hs=0.2;vs=0.2;a=10}
+      - e:particle{particle=reddust;color=#FCD05C;hs=0.2;vs=0.2;a=10}
+      - e:particle{particle=reddust;color=#3A3935;hs=0.2;vs=0.2;a=10}
+      - e:particle{particle=flame;hs=0.4;vs=0.4;a=10}
+    ];
+    onEnd=[ 
+      - summon{type=BlazeonLava;a=1;onSurface=true;sio=false;sip=false;if=false}
+    ]} @RandomLocationsNearCaster{a=6;radius=25;spacing=10}
+
+LavaEruption:
+  Skills:
+  - effect:blockmask{material=netherrack;r=4;ry=1;d=120} 
+  - delay 10
+  - effect:blockmask{material=magma_block;r=3;ry=1;d=110}
+  - delay 20
+  - explosion{yield=2.0;fire=false;bd=false} @RandomLocationsNearCaster{a=3;r=2}
+
+BlazeonBlazingRush:
+  Skills:
+  - randommessage{cd=30;m=
+    "<dark_red>Blazeon</dark_red><gray>>> <red>I am coming to get you!",
+    "<dark_red>Blazeon</dark_red><gray>>> <red>I am <bold>rushing</bold> over to you!"
+    }
+  - skill:BlazeonSmokeProjectile 0.5
+  - aura{name=BlazingRush;i=1;d=80;
+    onTick=[
+      - damage{a=10} @EIR{r=4}
+      - ignite{d=100} @EIR{r=4}
+      - throw{v=12;vy=3} @EIR{r=4}
+      - setblock{material=FIRE;sync=true} @SelfLocation
+      - effect:blockmask{m=magma_block;r=2;ry=1;d=100} @selfLocation{yo=-1}
+      ];
+    onStart=[
+      - potion{type=SPEED;l=12;duration=80} @self
+    ]} 
+
+
+#
+### Small Meteors
+BlazeonMeteorAttack:
+  Skills:
+  - skill:BlazeonSmokeProjectile 0.7 >50%
+  - skill:BlazeonFireProjectile 0.7 <50%
+  - skill:BlazeonMeteor1{repeat=30;repeatInterval=<random.8to12>} @RandomLocationsNearCaster{a=2;minr=8;radius=30;spacing=8;yo=20}
+  - skill:BlazeonMeteor1{repeat=10;repeatInterval=<random.4to8>} @RandomLocationsNearCaster{a=2;minr=8;radius=30;spacing=8;yo=20}
+  - skill:BlazeonMeteor2{repeat=2;repeatInterval=20} @PLIR{radius=30}
+
+BlazeonMeteor1:
+  Skills:
+  - randomskill{skills=BlazeonMeteor1a,BlazeonMeteor1b,BlazeonMeteor1c,BlazeonMeteor1d}
+BlazeonMeteor1a:
+  Skills:
+  - projectile{i=1;syo=0;sfo=0;pav=false;hnp=true;g=1;hitSelf=false;hr=0.3;vr=0.3;Type=METEOR;d=250;mr=60;
+    onTick=[
+      - e:particle{particle=reddust;color=#C10F0F;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#FCD05C;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#3A3935;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=flame;hs=0.4;vs=0.4;a=10}
+      ];
+    onEnd=[
+      - effect:blockmask{m=fire;r=1;oa=true;d=<random.70to100>}
+      - effect:blockmask{m=obsidian;r=2;d=150}
+      - ignite{d=100} @PlayersNearOrigin{r=2}
+      - explosion{yield=1.0;fire=false;bd=false} 
+      ];
+    onHit=[
+      - damage{a=5}
+      ]} 
+BlazeonMeteor1b:
+  Skills:
+  - projectile{i=1;syo=0;sfo=0;pav=false;hnp=true;g=1.5;hitSelf=false;hr=0.3;vr=0.3;Type=METEOR;d=250;mr=60;
+    onTick=[
+      - e:particle{particle=reddust;color=#C10F0F;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#FCD05C;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#3A3935;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=flame;hs=0.4;vs=0.4;a=10}
+      ];
+    onEnd=[
+      - effect:blockmask{m=fire;r=1;oa=true;d=<random.70to100>}
+      - effect:blockmask{m=obsidian;r=2;d=150}
+      - ignite{d=100} @PlayersNearOrigin{r=2}
+      - explosion{yield=1.0;fire=false;bd=false} 
+      ];
+    onHit=[
+      - damage{a=5}
+      ]} 
+BlazeonMeteor1c:
+  Skills:
+  - projectile{i=1;syo=0;sfo=0;pav=false;hnp=true;g=2;hitSelf=false;hr=0.3;vr=0.3;Type=METEOR;d=250;mr=60;
+    onTick=[
+      - e:particle{particle=reddust;color=#C10F0F;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#FCD05C;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#3A3935;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=flame;hs=0.4;vs=0.4;a=10}
+      ];
+    onEnd=[
+      - effect:blockmask{m=fire;r=1;oa=true;d=<random.70to100>}
+      - effect:blockmask{m=obsidian;r=2;d=150}
+      - ignite{d=100} @PlayersNearOrigin{r=2}
+      - explosion{yield=1.0;fire=false;bd=false} 
+      ];
+    onHit=[
+      - damage{a=5}
+      ]} 
+BlazeonMeteor1d:
+  Skills:
+  - projectile{i=1;syo=0;sfo=0;pav=false;hnp=true;g=0.5;hitSelf=false;hr=0.3;vr=0.3;Type=METEOR;d=250;mr=60;
+    onTick=[
+      - e:particle{particle=reddust;color=#C10F0F;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#FCD05C;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#3A3935;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=flame;hs=0.4;vs=0.4;a=10}
+      ];
+    onEnd=[
+      - effect:blockmask{m=fire;r=1;oa=true;d=<random.70to100>}
+      - effect:blockmask{m=obsidian;r=2;d=150}
+      - ignite{d=100} @PlayersNearOrigin{r=2}
+      - explosion{yield=1.0;fire=false;bd=false} 
+      ];
+    onHit=[
+      - damage{a=5}
+      ]} 
+BlazeonMeteor2:
+  Skills:
+  - projectile{i=1;syo=20;sfo=0;pav=false;hnp=true;v=12;hitSelf=false;hr=0.3;vr=0.3;d=200;
+    onTick=[
+      - e:particle{particle=reddust;color=#C10F0F;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#FCD05C;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#3A3935;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=flame;hs=0.4;vs=0.4;a=10}
+      ];
+    onEnd=[
+      - effect:blockmask{m=fire;r=1;oa=true;d=<random.70to100>}
+      - effect:blockmask{m=obsidian;r=2;d=150}
+      - ignite{d=100} @PlayersNearOrigin{r=2}
+      - explosion{yield=1.0;fire=false;bd=false} 
+      ];
+    onHit=[
+      - damage{a=5}
+      ]} 
+BlazeonMeteor3: #Tracking Missile
+  Skills:
+  - missile{bullettype=MOB;mob=Small_Meteor_Projectile;byo=0.3;bk=true;
+    i=1;syo=20;sfo=2;pav=false;hnp=true;v=6;in=20;hitSelf=false;hr=0.3;vr=0.3;duration=160;
+    onTick=[
+      - e:particle{particle=reddust;color=#C10F0F;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#FCD05C;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=reddust;color=#3A3935;hs=0.3;vs=0.3;a=10}
+      - e:particle{particle=flame;hs=0.4;vs=0.4;a=10}
+      ];
+    onEnd=[
+      - effect:blockmask{m=fire;r=1;oa=true;d=<random.70to100>}
+      - effect:blockmask{m=obsidian;r=3;d=150}
+      - ignite{d=100} @PlayersNearOrigin{r=2}
+      - explosion{yield=1.0;fire=false;bd=false} 
+      ];
+    onHit=[
+      - damage{a=5}
+      ]} 

@@ -1,0 +1,45 @@
+#_______________________________________________________________________________
+#
+#-------------------------------+ INFORMATION +--------------------------------#
+#_______________________________________________________________________________
+
+# File: Blazeon_Items.yml
+
+# Created By: SkyKiller63
+# Version: 1.0
+# Server Version: Paper - 1.21.1
+# Hard-Dependencies:
+# - MythicMobs (tested in v5.7.2)
+#Soft-Dependencies:
+# - MythicCrucible (Tested in 2.2.0) Required for the Blazeon Helmet Skill
+
+BlazeonsHelmet:
+  Id: LEATHER_HELMET
+  Data: 0
+  Amount: 1
+  Display: '<red><bold> Blazeon<&sq>s Helmet'
+  Options:
+    Color: 100,0,0
+    Unbreakable: true
+  Skills: #Skills require Mythic Crucible
+  - potion{t=FIRE_RESISTANCE;l=255;d=120;p=false} @Self ~onTimer:90 ?wearing{m=BlazeonsHelmet;slot=HEAD}
+  Attributes:
+    Head:
+      Armor: 4
+      Scale: 0.2 ADD
+BlazeonsTunic:
+  Id: LEATHER_CHESTPLATE
+  Data: 0
+  Amount: 1
+  Display: '<red><bold>Blazeon<&sq>s Tunic'
+  Options:
+    Color: 100,0,0
+    Unbreakable: true
+
+ExplosiveMurkspawnChest:
+  Id: LEATHER_CHESTPLATE
+  Options:
+    Color: 87,149,83
+  Display: '&bExplosive Murkspawn Chestplate'
+  Enchantments:
+  - PROTECTION:2

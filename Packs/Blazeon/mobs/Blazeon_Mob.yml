@@ -1,0 +1,318 @@
+#_______________________________________________________________________________
+#
+#-------------------------------+ INFORMATION +--------------------------------#
+#_______________________________________________________________________________
+
+# File: Blazeon_Mob.yml
+
+# Created By: SkyKiller63
+# Version: 1.0
+# Server Version: Paper - 1.21.1
+# Hard-Dependencies:
+# - MythicMobs (tested in v5.7.2)
+
+### Blazeon
+
+Blazeon:
+  Template: Blazeon-Template
+  Modules:
+    ImmunityTable: true
+    ThreatTable: true
+  Options:
+    NoDamageTicks: 2  
+    UseThreatTable: true
+  DropOptions:
+    DropMethod: FANCY
+    ShowDeathChatMessage: false
+    PerPlayerDrops: true
+    ClientSideDrops: true
+    Lootsplosion: true
+    ItemGlowByDefault: true
+    RequiredDamagePercent: 0
+    ShowDeathHologram: true
+    HologramTimeout: 1800
+    HologramMessage:
+    - '<#FF9B00>========================'
+    - '<mob.name> - <mob.hp>HP'
+    - ''
+    - '<#FFA300>1st Place | <1.name> | <1.damage>'
+    - '<#D1FFFF>2nd Place | <2.name> | <2.damage>'
+    - '<#D1FFFF>3rd Place | <3.name> | <3.damage>'
+    - '<#E57A00>4th Place | <4.name> | <4.damage>'
+    - '<#E57A00>5th Place | <5.name> | <5.damage>'
+    - ''
+    - 'Your rank: #<player.rank> | <player.damage>'
+    - '<#FF9B00>========================'
+  Drops:
+    - DIAMOND{glowcolor=BLUE} 8-16 
+    - DIAMOND{glowcolor=BLUE} 8-16 
+    - IRON_BLOCK 16-32 0.6
+    - GOLD_BLOCK 16-32 0.6
+    - BlazeonsHelmet{glowcolor=RED} 1 0.01
+    - BlazeonsHelmet{glowcolor=RED;top=1} 1 0.04
+    - BlazeonsHelmet{glowcolor=RED;top=2} 1 0.02
+  Skills:
+   # Backup
+    - randomskill{skills=SpawnMurkspawn 5,SpawnScreamer 1} @self ~onTimer:300
+    - rally{types=Murkspawn;radius=32;ot=false} @Trigger ~onDamaged 0.5
+
+   # Main Attacks
+    - randomskill{
+      skills=
+      BlazeonFireProjectile 8,
+      BlazeonSmokeProjectile 8,
+      BlazeonMeteorAttack 6,
+      SummonVortex 5,
+      BlazeonEruptionAttack 5,
+      BlazeonBlazingRush 5
+      } @target ~onTimer:100 ?inCombat
+
+   # Spawn Announcements
+    - message{m="&eA &6Blazeon &ehas spawned at <caster.var.SpawnLoc>";delay=160} ~onSpawn @PlayersInWorld
+    - message{m="&eThe &6Blazeon &espawned at <caster.var.SpawnLoc>&e has been slain."} ~onDeath @PlayersInWorld
+    - Skill{s=SaveBlazeonLocation;delay=150} @self ~onSpawn
+#
+
+#A Blazeon thata doesn't Have drops or the normal spawn and death messages. For if you just want to wail on Blazeon :D
+Blazeon-Basic:
+  Template: Blazeon-Template
+  Modules:
+    ImmunityTable: true
+    ThreatTable: true
+  Options:
+    NoDamageTicks: 2  
+    UseThreatTable: true
+  Skills:
+   # Backup
+    - randomskill{skills=SpawnMurkspawn 5,SpawnScreamer 1} @self ~onTimer:300
+    - rally{types=Murkspawn;radius=32;ot=false} @Trigger ~onDamaged 0.5
+
+   # Main Attacks
+    - randomskill{
+      skills=
+      BlazeonFireProjectile 8,
+      BlazeonSmokeProjectile 8,
+      BlazeonMeteorAttack 6,
+      SummonVortex 5,
+      BlazeonEruptionAttack 5,
+      BlazeonBlazingRush 5
+      } @target ~onTimer:100 ?inCombat
+
+   # Spawn Announcements
+    # - message{m="&eA &6Blazeon &ehas spawned at <caster.var.SpawnLoc>";delay=160} ~onSpawn @PlayersInWorld
+    # - message{m="&eThe &6Blazeon &espawned at <caster.var.SpawnLoc>&e has been slain."} ~onDeath @PlayersInWorld
+    # - Skill{s=SaveBlazeonLocation;delay=150} @self ~onSpawn
+Blazeon-Template:
+  Type: GIANT
+  Display: '<dark_red>Blazeon'
+  Health: 3000
+  Damage: 15
+  KnockbackResistance: 1
+  BossBar: 
+    Enabled: true
+    Title: '<dark_red><bold>Blazeon</bold> <red><caster.hp{round=0}> <white>/</white> <caster.mhp{round=0}>'
+    Range: 100
+    Style: SOLID
+    Color: RED
+  Modules:
+    ThreatTable: true
+  LevelModifiers:
+    Health: 10
+    Damage: 0.5
+    Armor: 0.5
+    MovementSpeed: 0
+  Options:
+    MovementSpeed: 0.19
+    FollowRange: 64
+    MaxCombatRange: 96
+    KnockbackResistance: 1.0
+    Despawn: persistent
+    UseThreatTable: true
+    DigOutOfGround: true
+    Scale: 0.8
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 movetowardstarget
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  Equipment:
+  - BlazeonsHelmet HEAD
+  - BlazeonsTunic CHEST
+  - STONE_SWORD HAND
+  Skills:
+   # Better DigOutOfGround feature, due to boss size
+    - teleportto{location=0,5,0;relative=true} @self ~onTimer:10 ?inblock{b=stone,dirt,grass_block,water,lava,gravel,deepslate}
+   
+   # Fire, invis, and mob effects
+    - skill{s=[
+      - potion{t=INVISIBILITY;d=72000;l=1}
+      - ignite{ticks=72000}
+      - potion{t=FIRE_RESISTANCE;d=72000;1=1}
+      ]} @self ~onSpawn
+    - ignite{ticks=72000} @self ~onTimer:200
+    - effect:flames{hS=30;vS=30} @self ~onTimer:10
+    - e:p{p=smoke;a=40;hS=20;vS=20} @self ~onDamaged
+   
+   # Death effects
+    - setblock{type=AIR} @BlocksNearOrigin{r=40;blocktypes=FIRE} ~onDeath
+    - e:p{p=cloud;a=200;vs=10;hs=10;repeat=2;repeatInterval=5} ~onDeath
+
+
+
+### Backup
+
+Murkspawn:
+  Type: DROWNED
+  Display: '<red>Murkspawn'
+  Health: 30
+  Damage: 6
+  LevelModifiers:
+    Health: 2
+    Damage: 0.5
+    Armor: 0.5
+    MovementSpeed: 0
+  AIGoalSelectors:
+    - clear
+    - meleeattack
+    - movetowardstarget
+    - randomstroll
+  AITargetSelectors:
+    - clear
+    - attacker
+    - players
+  Equipment:
+    - IRON_HELMET HEAD
+    - STONE_SWORD HAND
+  Options:
+    MovementSpeed: 0.24
+    MaxCombatDistance: 64
+    FollowRange: 32
+    PreventOtherDrops: true
+    AlwaysShowName: true
+  Skills:
+    - equip{i=ExplosiveMurkspawnChest CHEST} ~onSpawn 0.25
+    - skill:MurkspawnExplode @self ~onDeath ?wearing{item=ExplosiveMurkspawnChest;slot=CHEST}
+  
+Screamer:
+  Type: GHAST
+  Health: 25
+  LevelModifiers:
+    Health: 2
+    Damage: 0.5
+    Armor: 0.5
+    MovementSpeed: 0
+#    
+
+
+### Reward Backup (For if fancy drops still doesn't detect bow damage properly)
+BlazeonFailedLoot:
+  Type: drowned
+  Health: 2
+  Options:
+    NoAI: true
+    PreventSunburn: true
+  DropOptions:
+    DropMethod: FANCY
+    ShowDeathChatMessage: false
+    PerPlayerDrops: true
+    ClientSideDrops: true
+    Lootsplosion: true
+    ItemGlowByDefault: true
+    RequiredDamagePercent: 0
+  Drops:
+  - DIAMOND{glowcolor=BLUE} 8-16 
+  - DIAMOND{glowcolor=BLUE} 8-16 
+  - IRON_BLOCK 16-32 0.6
+  - GOLD_BLOCK 16-32 0.6
+  - BlazeonsHelmet{glowcolor=RED} 1 0.01
+  - BlazeonsHelmet{glowcolor=RED;top=1} 1 0.04
+  - BlazeonsHelmet{glowcolor=RED;top=2} 1 0.02
+
+#
+
+### Skills Mobs
+BlazeonLava:
+  Type: drowned
+  Health: 100
+  Damage: 0
+  Options:
+    MovementSpeed: 0
+    Invisible: true
+    Silent: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+  Skills:
+  - remove{delay=250} @self ~onSpawn
+  - skill:LavaEruption @selflocation ~onSpawn
+
+BlazeonVortex:
+  Type: drowned
+  Health: 20
+  Damage: 6
+  Options:
+    MovementSpeed: 0.17
+    Invisible: true
+    Silent: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  AITargetSelectors:
+  - clear
+  - players
+  Skills:
+  - ignite{d=250} @PIR{r=2} ~onTimer:10
+  - effect:particletornado{
+    amount=5;
+    particle=flame;
+    maxradius=1;
+    yoffset=0;
+    height=2.5;
+    interval=1;
+    duration=30;
+    hs=0.25;vs=1;
+    rotationspeed=1.5;
+    sliceheight=1;
+    cloudparticle=smoke_normal;
+    cloudsize=3;
+    cvs=0.2;ca=3;chs=0.5;cps=0;cyo=0.1} @selflocation ~onTimer:20
+  - remove{delay=400} @self ~onSpawn
+
+Small_Meteor_Projectile:
+  Type: baby_zombie
+  Health: 5
+  Options:
+    Invisible: true
+    MovementSpeed: 0
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventOtherDrops: true
+    Silent: true
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
