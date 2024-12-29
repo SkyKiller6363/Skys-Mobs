@@ -73,7 +73,7 @@ Blazeon:
     - Skill{s=SaveBlazeonLocation;delay=150} @self ~onSpawn
 #
 
-#A Blazeon thata doesn't Have drops or the normal spawn and death messages. For if you just want to wail on Blazeon :D
+#A Blazeon that doesn't have drops or the normal spawn and death messages. For if you just want to wail on Blazeon :D
 Blazeon-Basic:
   Template: Blazeon-Template
   Modules:
