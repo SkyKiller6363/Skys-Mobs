@@ -1,4 +1,4 @@
-# Skys-Mobs
+# Sky's Mobs
 Check out my MythicMobs stuff!
 
 ## Table of Contents
