@@ -9,3 +9,4 @@ Check out my MythicMobs stuff!
 - [**Packs**](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs)
   - [Skeleton King - V2](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/SkeletonKingV2)
   - [Blazeon](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/Blazeon)
+  - [Test Mobs](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/TestMobs)
