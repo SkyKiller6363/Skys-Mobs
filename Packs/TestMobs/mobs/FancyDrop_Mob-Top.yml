@@ -1,0 +1,22 @@
+BlazeonFailedLoot:
+  Type: drowned
+  Health: 2
+  Options:
+    NoAI: true
+    PreventSunburn: true
+  DropOptions:
+    DropMethod: FANCY
+    ShowDeathChatMessage: false
+    PerPlayerDrops: true
+    ClientSideDrops: true
+    Lootsplosion: true
+    ItemGlowByDefault: true
+    RequiredDamagePercent: 0
+  Drops:
+  - DIAMOND{glowcolor=BLUE} 8-16 
+  - DIAMOND{glowcolor=BLUE} 8-16 
+  - IRON_BLOCK 16-32 0.6
+  - GOLD_BLOCK 16-32 0.6
+  - NETHERITE_BLOCK{glowcolor=RED} 1 0.01
+  - NETHERITE_BLOCK{glowcolor=RED;top=1} 1 0.04
+  - NETHERITE_BLOCK{glowcolor=RED;top=2} 1 0.02
