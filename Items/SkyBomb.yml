@@ -1,0 +1,17 @@
+SkyBomb:
+  Id: LIME_DYE
+  Group: 'Fun Items'
+  Display: '<gray>The Sky Bomb'
+  Lore: 
+  - '<#FFFFFF>◆ <gradient:#FFFFFF:#C90000>ValhallaCraft OG Collection</gradient> <gray>[<white>1/10<gray>]'
+  - '<black>.'
+  - '<red>Right click while holding to blast'
+  - '<red>nearby enemies into the sky!'
+  Skills: # The aura is just for the bossbar timer/message. Also, the whole skill is inline so that it's just one file.
+  - skill{s=[
+    - aura{auraName=LevBomb;bartimerdisplay="<#ffffff><caster.name> used a <#54fb54>Sky Bomb<#ffffff>!";bt=true;i=2;d=60;bartimer=true;bartimercolor=GREEN;bartimerstyle=SOLID} @PIR{r=10;targetself=true}
+    - effect:explosion @EntitiesInRadius{r=10;targetcreative=true}
+    - velocity{m=set;x=0;y=1.5;z=0} @EntitiesInRadius{r=10;targetcreative=true}
+    - setmaterialcooldown{material=lime_dye;d=60} 
+    - takeitem{i=SkyBomb;a=1} 
+    ];cd=3} @self ~onUse
