@@ -1,5 +1,6 @@
 FancyDrop-HologramTest:
   Type: drowned
+  Display: 'FancyDrop Hologram Test'
   Health: 200
   Options:
     NoAI: true
