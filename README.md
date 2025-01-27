@@ -7,6 +7,7 @@ Check out my MythicMobs stuff!
 - **Skills**
 - [**Items**](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Items)
   - [SkyBomb](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Items/SkyBomb.yml)
+  - [InstaTNT](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Items/InstaTNT)
 - [**Packs**](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs)
   - [Skeleton King - V2](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/SkeletonKingV2)
   - [Blazeon](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/Blazeon)
