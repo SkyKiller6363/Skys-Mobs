@@ -1,0 +1,27 @@
+#
+# Requires Mythic Crucible to function
+#
+# Also please get the required mob file
+InstaTNT-NoBD:
+  Id: TNT
+  Group: 'Skys Items'
+  Display: 'Insta-TNT'
+  Lore: ['Does not cause block damage']
+  Type: FURNITURE
+  Furniture:
+    Model: 1
+  FurnitureSkills:
+  - summon{type=InstaTNT_Mob-NoBD;a=1;sio=false;sip=false;if=false} @selflocation{centered=true} ~onBlockPlace
+  - furnitureremove{delay=1;doDrops=false} @self ~onBlockPlace
+
+InstaTNT-BD:
+  Id: TNT
+  Group: 'Skys Items'
+  Display: 'Insta-TNT'
+  Lore: ['Causes block damage']
+  Type: FURNITURE
+  Furniture:
+    Model: 2
+  FurnitureSkills:
+  - summon{type=InstaTNT_Mob-BD;a=1;sio=false;sip=false;if=false} @selflocation{centered=true} ~onBlockPlace
+  - furnitureremove{delay=1;doDrops=false} @self ~onBlockPlace
