@@ -1,0 +1,22 @@
+#
+# Meant to be used in Conjunction with the InstaTNT Crucible Items
+#
+
+InstaTNT_Mob-BD:
+  Type: TNT
+  Options:
+    FuseTicks: 80
+    ExplosionYield: 4
+  Skills:
+  - sound{s=entity.tnt.primed} @selflocation ~onSpawn
+
+
+InstaTNT_Mob-NoBD:
+  Type: TNT
+  Options:
+    FuseTicks: 100
+    ExplosionYield: 0
+  Skills:
+  - remove{delay=81} @self ~onSpawn
+  - explode{y=4;bd=false;delay=80} @self ~onSpawn
+  - sound{s=entity.tnt.primed} @selflocation ~onSpawn
