@@ -16,6 +16,8 @@ BuildersWand:
     OffHand:
       BlockInteractionRange: 5 ADD
 
+
+#Ender Bow Requires Mythic Crucible
 EnderBow:
   Id: Bow
   Group: 'Skys Items'
@@ -30,7 +32,7 @@ EnderBow:
   Skills:
   - shoot{type=enderpearl;velocity=0.8;damage=1;duration=400;i=1;maxDistance=256} @targetlocation ~onShoot 
   - cancelevent{sync=true} @self ~onShoot
-
+#Random Potion requires Mythic Crucible
 Random_Potion_Drinkable:
   Id: potion
   Group: 'Skys Items'
