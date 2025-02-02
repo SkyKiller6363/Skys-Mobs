@@ -1,0 +1,87 @@
+WalkingStick:
+  Id: Stick
+  Group: 'Skys Items'
+  Display: 'Walking Stick'
+  Model: 6918
+  Attributes:
+    OffHand:
+      StepHeight: 0.5 ADD
+
+BuildersWand:
+  Id: stick
+  Group: 'Skys Items'
+  Display: 'Builders Wand'
+  Model: 6917
+  Attributes:
+    OffHand:
+      BlockInteractionRange: 5 ADD
+
+EnderBow:
+  Id: Bow
+  Group: 'Skys Items'
+  Display: '<gradient:#7E00DB:#5F5F5F>⨁-------⨁ Ender</gradient><gradient:#5F5F5F:#7E00DB> Bow ⨁-------⨁</gradient>'
+  Lore:
+  - '         &7Forged in the void'
+  - ' '
+  - '&6Shoot &fto unleash an <color:#258273>Ender Pearl&f,'
+  - '  &fbending space to your will and'
+  - '  &fteleporting you to your target.'
+  - '<gradient:#7E00DB:#5F5F5F>⨁-----------⨁-</gradient><gradient:#5F5F5F:#7E00DB>-⨁-----------⨁</gradient>'
+  Skills:
+  - shoot{type=enderpearl;velocity=0.8;damage=1;duration=400;i=1;maxDistance=256} @targetlocation ~onShoot 
+  - cancelevent{sync=true} @self ~onShoot
+
+Random_Potion_Drinkable:
+  Id: potion
+  Group: 'Skys Items'
+  Display: <gradient:#00BDC9:#00FF1A>◆ Random Potion ◆</gradient>
+  Options:
+    Color: 144,112,0
+  Lore: 
+    - 'Drink to get a random potion'
+    - 'effect for 3 minutes.'
+  Enchantments:
+    - UNBREAKING:1
+  Hide:
+    - ENCHANTS
+    - ADDITIONAL_TOOLTIP
+  Skills:
+  - randomskill{skills=
+    [ potion{type=ABSORPTION;l=0;d=3600} ],
+    [ potion{type=BAD_OMEN;l=0;d=3600} ],
+    [ potion{type=BLINDNESS;l=0;d=3600} ],
+    [ potion{type=CONDUIT_POWER;l=0;d=3600} ],
+    [ potion{type=DARKNESS;l=0;d=3600} ],
+    [ potion{type=DOLPHINS_GRACE;l=0;d=3600} ],
+    [ potion{type=FIRE_RESISTANCE;l=0;d=3600} ],
+    [ potion{type=GLOWING;l=0;d=3600} ],
+    [ potion{type=HASTE;l=0;d=3600} ],
+    [ potion{type=HEALTH_BOOST;l=0;d=3600} ],
+    [ potion{type=HERO_OF_THE_VILLAGE;l=0;d=3600} ],
+    [ potion{type=HUNGER;l=0;d=3600} ],
+    [ potion{type=INFESTED;l=0;d=3600} ],
+    [ potion{type=INVISIBILITY;l=0;d=3600} ],
+    [ potion{type=JUMP_BOOST;l=0;d=3600} ],
+    [ potion{type=LEVITATION;l=0;d=3600} ],
+    [ potion{type=LUCK;l=0;d=3600} ],
+    [ potion{type=MINING_FATIGUE;l=0;d=3600} ],
+    [ potion{type=NAUSEA;l=0;d=3600} ],
+    [ potion{type=NIGHT_VISION;l=0;d=3600} ],
+    [ potion{type=OOZING;l=0;d=3600} ],
+    [ potion{type=POISON;l=0;d=3600} ],
+    [ potion{type=RAID_OMEN;l=0;d=3600} ],
+    [ potion{type=REGENERATION;l=0;d=3600} ],
+    [ potion{type=RESISTANCE;l=0;d=3600} ],
+    [ potion{type=SATURATION;l=0;d=3600} ],
+    [ potion{type=SLOW_FALLING;l=0;d=3600} ],
+    [ potion{type=SLOWNESS;l=0;d=3600} ],
+    [ potion{type=SPEED;l=0;d=3600} ],
+    [ potion{type=STRENGTH;l=0;d=3600} ],
+    [ potion{type=TRIAL_OMEN;l=0;d=3600} ],
+    [ potion{type=UNLUCK;l=0;d=3600} ],
+    [ potion{type=WATER_BREATHING;l=0;d=3600} ],
+    [ potion{type=WEAKNESS;l=0;d=3600} ],
+    [ potion{type=WEAVING;l=0;d=3600} ],
+    [ potion{type=WIND_CHARGED;l=0;d=3600} ],
+    [ potion{type=WITHER;l=0;d=3600} ]
+    } @self ~onConsume
