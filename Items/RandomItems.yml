@@ -87,3 +87,38 @@ Random_Potion_Drinkable:
     [ potion{type=WIND_CHARGED;l=0;d=3600} ],
     [ potion{type=WITHER;l=0;d=3600} ]
     } @self ~onConsume
+
+#Exploding Pie Requires Mythic Crucible. Might not complete the skill if the player logs out. 
+ExplodingPie:
+  Id: pumpkin_pie
+  Group: 'Skys Items'
+  Display: '<red>Totally a Berry Pie'
+  Lore:
+  - '<&dq><white>Oh you mean THIS pie.<&dq>'
+  Skills:
+  # - skill:ExplodingPie @self ~onConsume
+  - skill{s=[
+    - setvar{var=global.eater;val=<target.name>;type=STRING;save=true;duration=5010} @self
+    - potion{type=ABSORPTION;l=2;d=1000} @self
+    - delay 400
+    - message{m="<green><global.var.eater></green> <white>is experiencing some stomach pains..."} @server{targetself=true}
+    - delay 600
+    - sound{s=entity.tnt.primed;sc=MASTER;v=3} @self
+    - delay 3400
+    - sound{s=entity.tnt.primed;sc=MASTER;v=3} @self
+    - message{m="<green><global.var.eater></green> <white>is experiencing a weird rumbling sensation from their tummy..."} @server{targetself=true}
+    - message{m="<i>I should probably get somewhere safe.... I feel like I'm about to <bold>EXPLODE"} @self
+    - delay 600
+    - explosion{y=5;bd=true;fire=false}
+    - message{m="<white>The Exploding Pie has reached the lower intestines of <green><global.var.eater></green>..."} @server{targetself=true}
+    ]} @self ~onConsume
+#Explosive Steak requires Mythic Crucible
+ExplosiveSteak:
+  Id: cooked_beef
+  Group: 'Skys Items'
+  Display: '<red>Explosive Steak'
+  Skills:
+  - explosion{y=2;bd=true;fire=true;delay=2} @self ~onConsume
+
+
+
