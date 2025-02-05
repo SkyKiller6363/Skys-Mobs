@@ -1,10 +1,11 @@
+#Mob File
 FancyDrop-TopTest:
   Type: drowned
   Health: 30
   Options:
     NoAI: true
     PreventSunburn: true
-  DropOptions:
+  DropOptions: #FancyDrop Options go on the mob.
     DropMethod: FANCY
     PerPlayerDrops: true
     ClientSideDrops: true #Fancy Drops works best with Client Side Drops set to true. Avoids non stacking issues and prevents player frustration. 
@@ -25,3 +26,21 @@ FancyDrop-TopTest:
   # - cmd{c="say <trigger.name> is top 1";top=1} 1 1
   # - cmd{c="say <trigger.name> is top 2";top=2} 1 1
   # - cmd{c="say <trigger.name> is top 3";top=3} 1 1
+
+  # However! You can use a droptable to bypass this limitation. 
+  - CMDDrop1{top=1} 1 1
+  - CMDDrop2{top=2} 1 1
+  - CMDDrop3{top=3} 1 1
+
+#DropTable
+# Put the below configuration in a Droptable File. 
+CMDDrop1:
+  Drops:
+  - cmd{c="say <trigger.name> is top 1"}
+CMDDrop2:
+  Drops:
+  - cmd{c="say <trigger.name> is top 2"}
+CMDDrop3:
+  Drops:
+  - cmd{c="say <trigger.name> is top 3"}
+  
