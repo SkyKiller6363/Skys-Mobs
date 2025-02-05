@@ -1,0 +1,32 @@
+FancyDrop-TopTest:
+  Type: drowned
+  Health: 30
+  Options:
+    NoAI: true
+    PreventSunburn: true
+  DropOptions: #FancyDrop Options go on the mob.
+    DropMethod: FANCY
+    PerPlayerDrops: true
+    ClientSideDrops: true #Fancy Drops works best with Client Side Drops set to true. Avoids non stacking issues and prevents player frustration. 
+    Lootsplosion: true
+    ItemGlowByDefault: true
+    RequiredDamagePercent: 0
+  Drops:
+  # Top Damager receives all 3 rewards (red blue and yellow). 
+  # 2nd place will receive top 2 and top 3 rewards (blue and yellow). 
+  # 3rd place will receive only top 3 rewards (yellow). 
+  - NETHERITE_BLOCK{glowcolor=DARK_RED;top=1} 1 1
+  - NETHERITE_INGOT{glowcolor=BLUE;top=2} 1 1
+  - NETHERITE_SCRAP{glowcolor=YELLOW;top=3} 1 1
+  
+  # top attribute does not work with command drop. 
+  # It should say 3 messages for every player who damaged the mob, despite their damage rank. 
+  # uncomment to test. 
+  # - cmd{c="say <trigger.name> is top 1";top=1} 1 1
+  # - cmd{c="say <trigger.name> is top 2";top=2} 1 1
+  # - cmd{c="say <trigger.name> is top 3";top=3} 1 1
+
+  # However! You can use a droptable to bypass this limitation. 
+  - CMDDrop1{top=1} 1 1
+  - CMDDrop2{top=2} 1 1
+  - CMDDrop3{top=3} 1 1
