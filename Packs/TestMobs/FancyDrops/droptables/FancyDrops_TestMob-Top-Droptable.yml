@@ -1,0 +1,9 @@
+CMDDrop1:
+  Drops:
+  - cmd{c="say <trigger.name> is top 1"}
+CMDDrop2:
+  Drops:
+  - cmd{c="say <trigger.name> is top 2"}
+CMDDrop3:
+  Drops:
+  - cmd{c="say <trigger.name> is top 3"}
