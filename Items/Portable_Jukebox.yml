@@ -1,0 +1,165 @@
+Portable_Jukebox:
+  Id: jukebox
+  Display: '<aqua>Portable Jukebox'
+  Lore:
+  - 'Left and Right Click to Cycle Songs'
+  - 'Press F to Play'
+  - 'Crouch + Press F to Stop'
+  Options:
+    Placeable: false
+    PreventStacking: true
+  Skills:
+  - cancelevent{sync=true} ~onPressF
+  - addvariable{var=caster.jukebox_cycle;a=1} ?varinrange{var=caster.jukebox_cycle;val=<18} @self ~onUse 
+  - variableSubtract{var=caster.jukebox_cycle;a=1} ?varinrange{var=caster.jukebox_cycle;val=>0} @self ~onSwing 
+  - setvar{var=caster.jukebox_cycle;v=0} @self ~onPickup
+  - am{m="Now Playing<&co> <caster.var.jukebox_nowplaying>"} @self ~onHold
+
+  - skill{s=[
+    - skill{s=[
+      - stopsound{s=music_disc.13;sc=RECORDS}
+      - stopsound{s=music_disc.cat;sc=RECORDS}
+      - stopsound{s=music_disc.blocks;sc=RECORDS}
+      - stopsound{s=music_disc.chirp;sc=RECORDS}
+      - stopsound{s=music_disc.far;sc=RECORDS}
+      - stopsound{s=music_disc.mall;sc=RECORDS}
+      - stopsound{s=music_disc.mellohi;sc=RECORDS}
+      - stopsound{s=music_disc.stal;sc=RECORDS}
+      - stopsound{s=music_disc.strad;sc=RECORDS}
+      - stopsound{s=music_disc.ward;sc=RECORDS}
+      - stopsound{s=music_disc.11;sc=RECORDS}
+      - stopsound{s=music_disc.creator_music_box;sc=RECORDS}
+      - stopsound{s=music_disc.wait;sc=RECORDS}
+      - stopsound{s=music_disc.creator;sc=RECORDS}
+      - stopsound{s=music_disc.precipice;sc=RECORDS}
+      - stopsound{s=music_disc.otherside;sc=RECORDS}
+      - stopsound{s=music_disc.relic;sc=RECORDS}
+      - stopsound{s=music_disc.5;sc=RECORDS}
+      - stopsound{s=music_disc.pigstep;sc=RECORDS}
+      ]}
+    - delay 1
+    - sound{s=music_disc.13;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=0}
+    - setvar{var=caster.jukebox_nowplaying;value=<gold>13;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=0}
+
+    - sound{s=music_disc.cat;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=1}
+    - setvar{var=caster.jukebox_nowplaying;value=<green>Cat;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=1}
+
+    - sound{s=music_disc.blocks;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=2}
+    - setvar{var=caster.jukebox_nowplaying;value=<red>Blocks;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=2}
+
+    - sound{s=music_disc.chirp;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=3}
+    - setvar{var=caster.jukebox_nowplaying;value=<dark_red>Chirp;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=3}
+
+    - sound{s=music_disc.far;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=4}
+    - setvar{var=caster.jukebox_nowplaying;value=<green>Far;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=4}
+
+    - sound{s=music_disc.mall;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=5}
+    - setvar{var=caster.jukebox_nowplaying;value=<dark_purple>Mall;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=5}
+
+    - sound{s=music_disc.mellohi;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=6}
+    - setvar{var=caster.jukebox_nowplaying;value=<light_purple>Mellohi;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=6}
+
+    - sound{s=music_disc.stal;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=7}
+    - setvar{var=caster.jukebox_nowplaying;value=<dark_gray>Stal;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=7}
+
+    - sound{s=music_disc.strad;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=8}
+    - setvar{var=caster.jukebox_nowplaying;value=<white>Strad;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=8}
+
+    - sound{s=music_disc.ward;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=9}
+    - setvar{var=caster.jukebox_nowplaying;value=<dark_green>Ward;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=9}
+
+    - sound{s=music_disc.11;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=10}
+    - setvar{var=caster.jukebox_nowplaying;value=<gray><i>11</i>;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=10}
+
+    - sound{s=music_disc.creator_music_box;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=11}
+    - setvar{var=caster.jukebox_nowplaying;value=<gold>Creator (Music Box);type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=11}
+
+    - sound{s=music_disc.wait;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=12}
+    - setvar{var=caster.jukebox_nowplaying;value=<blue>Wait;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=12}
+
+    - sound{s=music_disc.creator;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=13}
+    - setvar{var=caster.jukebox_nowplaying;value=<aqua>Creator;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=13}
+
+    - sound{s=music_disc.precipice;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=14}
+    - setvar{var=caster.jukebox_nowplaying;value=<gray>Precipice;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=14}
+
+    - sound{s=music_disc.otherside;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=15}
+    - setvar{var=caster.jukebox_nowplaying;value=<dark_green>Otherside;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=15}
+
+    - sound{s=music_disc.relic;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=16}
+    - setvar{var=caster.jukebox_nowplaying;value=<red>Relic;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=16}
+
+    - sound{s=music_disc.5;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=17}
+    - setvar{var=caster.jukebox_nowplaying;value=<dark_aqua>5;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=17}
+
+    - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=18}
+    - setvar{var=caster.jukebox_nowplaying;value=<dark_red>Pigstep;type=STRING} @self ?varequals{var=caster.jukebox_cycle;val=18}
+    ]} @self ~onPressF ?!crouching
+
+  
+  - skill{s=[
+    - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
+    - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
+    - am{m=[3/19] <red>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
+    - am{m=[4/19] <dark_red>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
+    - am{m=[5/19] <green>Far} ?varequals{var=caster.jukebox_cycle;val=4}
+    - am{m=[6/19] <dark_purple>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
+    - am{m=[7/19] <light_purple>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
+    - am{m=[8/19] <dark_gray>Stal} ?varequals{var=caster.jukebox_cycle;val=7} 
+    - am{m=[9/19] <white>Strad} ?varequals{var=caster.jukebox_cycle;val=8} 
+    - am{m=[10/19] <dark_green>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
+    - am{m=[11/19] <gray><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
+    - am{m="[12/19] <gold>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
+    - am{m=[13/19] <blue>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
+    - am{m=[14/19] <aqua>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
+    - am{m=[15/19] <gray>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
+    - am{m=[16/19] <dark_green>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
+    - am{m=[17/19] <red>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
+    - am{m=[18/19] <dark_aqua>5} ?varequals{var=caster.jukebox_cycle;val=17}
+    - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
+    ]} @self ~onUse
+  
+  - skill{s=[
+    - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
+    - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
+    - am{m=[3/19] <red>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
+    - am{m=[4/19] <dark_red>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
+    - am{m=[5/19] <green>Far} ?varequals{var=caster.jukebox_cycle;val=4}
+    - am{m=[6/19] <dark_purple>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
+    - am{m=[7/19] <light_purple>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
+    - am{m=[8/19] <dark_gray>Stal} ?varequals{var=caster.jukebox_cycle;val=7} 
+    - am{m=[9/19] <white>Strad} ?varequals{var=caster.jukebox_cycle;val=8} 
+    - am{m=[10/19] <dark_green>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
+    - am{m=[11/19] <gray><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
+    - am{m="[12/19] <gold>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
+    - am{m=[13/19] <blue>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
+    - am{m=[14/19] <aqua>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
+    - am{m=[15/19] <gray>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
+    - am{m=[16/19] <dark_green>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
+    - am{m=[17/19] <red>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
+    - am{m=[18/19] <dark_aqua>5} ?varequals{var=caster.jukebox_cycle;val=17}
+    - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
+    ]} @self ~onSwing
+  
+  - skill{s=[
+    - stopsound{s=music_disc.13;sc=RECORDS}
+    - stopsound{s=music_disc.cat;sc=RECORDS}
+    - stopsound{s=music_disc.blocks;sc=RECORDS}
+    - stopsound{s=music_disc.chirp;sc=RECORDS}
+    - stopsound{s=music_disc.far;sc=RECORDS}
+    - stopsound{s=music_disc.mall;sc=RECORDS}
+    - stopsound{s=music_disc.mellohi;sc=RECORDS}
+    - stopsound{s=music_disc.stal;sc=RECORDS}
+    - stopsound{s=music_disc.strad;sc=RECORDS}
+    - stopsound{s=music_disc.ward;sc=RECORDS}
+    - stopsound{s=music_disc.11;sc=RECORDS}
+    - stopsound{s=music_disc.creator_music_box;sc=RECORDS}
+    - stopsound{s=music_disc.wait;sc=RECORDS}
+    - stopsound{s=music_disc.creator;sc=RECORDS}
+    - stopsound{s=music_disc.precipice;sc=RECORDS}
+    - stopsound{s=music_disc.otherside;sc=RECORDS}
+    - stopsound{s=music_disc.relic;sc=RECORDS}
+    - stopsound{s=music_disc.5;sc=RECORDS}
+    - stopsound{s=music_disc.pigstep;sc=RECORDS}
+    ]} @self ~onPressF ?crouching
+
