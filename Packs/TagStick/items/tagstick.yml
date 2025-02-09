@@ -1,0 +1,38 @@
+TagStick:
+  Id: BLAZE_ROD
+  Display: '<gold>Tag<aqua>Stick'
+  Lore: 
+  - '<dark_purple>Youre it! Go tag someone!'
+  CustomModelData: 42069
+  Hide:
+    - ATTRIBUTES
+  Options:
+    PreventDropping: true
+    KeepOnDeath: true
+    PreventCrafting: true
+  Skills:
+ # Base Tag Skills
+  - skill:TagTransfer @self ~onAttack ?!damagecause{cause=THORNS}
+  - skill:TagTransfer @self ~onInteract 
+  - skill:TS_UseSkill @self ~onPressf
+  - cancelevent{sync=true} @self ~onPressf
+ 
+ # Skill Switching
+  - skill:TS_SkillUp @self ~onUse 
+  - skill:TS_SkillDown @self ~onSwing
+
+  - skill:TS_Swap_Effect @self ~onUse ?crouching
+  - skill:TS_Swap_Effect @self ~onSwing ?crouching
+  - skill:TS_ActionMessage @self ~onHold 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+TagTransfer:
+  Cooldown: 5
+  TriggerConditions:
+  - isPlayer{} true
+  Skills:
+  - takeitem{i=TagStick;a=1} @Self 
+  - skill:SetTagTarget @trigger
+  - message{m="<dark_aqua><global.var.ts_tagged> <green>has been tagged by <red><caster.name><green>!"} @PlayersInRadius{r=150;targetself=true}
+  - sound{s=entity.arrow.hit_player} @Self
+  - sound{s=block.bell.use} @trigger
+  - particlering{particle=trial_spawner_detection;a=1;r=2;points=250;hs=1;vs=0.1;d=true;s=0.2} @trigger
+  - delay 100
+  - giveitem{i=TagStick;a=1} @trigger
+  - delay 1
+  - sudoskill{cat=true;s=GotTagged} @Trigger
+SetTagTarget:
+  Skills:
+  - setvar{var=global.ts_tagged;value=<target.name>;save=true;type=STRING}
+GotTagged:
+  Skills:
+  - parseweapon @self
+  - setvar{var=caster.ts_skill;value=0} @self
+
+
+
+#Skill Swapping
+TS_SkillUp:
+  Conditions:
+  - varinrange{var=caster.ts_skill;v=<3} #Change this number to the number of skills you have -1, since 0 is the first skill. 
+  - crouching
+  Skills:
+  - variableadd{var=caster.ts_skill;a=1}
+
+TS_SkillDown:
+  Conditions:
+  - varinrange{var=caster.ts_skill;v=>0}
+  - crouching
+  Skills:
+  - variableSubtract{var=caster.ts_skill;a=1}
+
+
+TS_Swap_Effect:
+  Skills:
+  - skill:TS_SkillSound
+  - skill:TS_ActionMessage 
+TS_ActionMessage: #Add New Skill Equip Message here
+  Skills:
+  - am{m=<gray>[<green>1</green>/<dark_green>4</dark_green>] <dark_gray>Smoke Bomb <white>selected} ?varequals{var=caster.ts_skill;value=0}
+  - am{m=<gray>[<green>2</green>/<dark_green>4</dark_green>] <aqua>Speed <white>selected} ?varequals{var=caster.ts_skill;value=1}
+  - am{m=<gray>[<green>3</green>/<dark_green>4</dark_green>] <gray>Vanish <white>selected} ?varequals{var=caster.ts_skill;value=2}
+  - am{m=<gray>[<green>4</green>/<dark_green>4</dark_green>] <dark_gray>Blindness <white>selected} ?varequals{var=caster.ts_skill;value=3}
+
+TS_SkillSound: #Add and Adjust pitch for new skills here
+  Skills:
+  - sound{s=block.note_block.snare;p=0.6;audience=@self} ?varequals{var=caster.ts_skill;value=0}
+  - sound{s=block.note_block.snare;p=1.0;audience=@self} ?varequals{var=caster.ts_skill;value=1}
+  - sound{s=block.note_block.snare;p=1.4;audience=@self} ?varequals{var=caster.ts_skill;value=2}
+  - sound{s=block.note_block.snare;p=1.8;audience=@self} ?varequals{var=caster.ts_skill;value=3}
+
+
+
+#Tag Skills
+TS_UseSkill: #Add New Skill Here
+  Cooldown: 10
+  OnCooldownSkill: TS_SkillOnCooldown
+  Skills:
+  - skill:TS_SmokeBomb ?vareq{var=caster.ts_skill;value=0}
+  - skill:TS_Speed ?vareq{var=caster.ts_skill;value=1}
+  - skill:TS_Vanish ?vareq{var=caster.ts_skill;value=2}
+  - skill:TS_Blindness ?vareq{var=caster.ts_skill;value=3}
+  # - skill:TS_Blindness ?vareq{var=caster.ts_skill;value=4}
+  # - skill:TS_Blindness ?vareq{var=caster.ts_skill;value=5}
+  # - skill:TS_Blindness ?vareq{var=caster.ts_skill;value=6}
+
+TS_SkillOnCooldown:
+  Cooldown: 1
+  Skills:
+  - message{m="<gold>Tag Stick Skill <yellow>on Cooldown<white><&co> <caster.skill.TS_UseSkill.cooldown> seconds <yellow>remaining."} @Self
+  - sound{s=block.fire.extinguish;audience=@self} @Self 
+
+
+
+
+
+
+
+
+
+
+### Tag skills
+
+TS_SmokeBomb:
+  Skills:
+  - message{m="<green>You have just activated the <red>Smoke Bomb<green>!"} 
+  - e:p{particle=explosion_emitter;a=5;vs=0.1;hs=0.1;audience=@PIR{r=150};repeat=10;repeatI=5} @randomlocationsnearcaster{a=1;r=9}
+  - e:p{particle=explosion;a=1;vs=0.1;hs=0.1;audience=@PIR{r=150};repeat=10;repeatI=5} @selflocation
+  - sound{s=entity.generic.explode;v=0.7;repeat=5;repeatI=10} @self
+
+TS_Vanish:
+  Skills:
+  - m{m="<gray>You are invisible for 7 seconds!"}
+  - sound{s=block.beacon.activate;p=1.5;v=2} 
+  - hide{d=140} @server
+  - e:p{p=reddust;color=#ffffff;a=5;hs=0.2;vs=0;repeat=23;repeatI=6} @selflocation{}
+  - potion{type=SLOWNESS;l=0;d=60;delay=80}
+  - delay 140
+  - m{m="<gray>You are now <white>Visible"}
+
+TS_Speed:
+  Skills:
+  - potion{type=SPEED;l=2;d=100} 
+  - m{m="<aqua>You have just activated a <dark_aqua>Speed Boost"}
+  - sound{s=block.brewing_stand.brew;p=1.3;audience=@self}
+
+
+TS_Blindness:
+  Skills:
+  - m{m="<gray>Everyone around you is <dark_gray>Blind!"}
+  - potion{type=BLINDNESS;l=0;d=100} @PIR{r=25}
+  - sound{s=block.amethyst_block.resonate;p=0.1} @pir{r=25;targetself=true}
