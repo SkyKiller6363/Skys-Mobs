@@ -10,11 +10,4 @@ This directory contains various packs (folders) available in this repository. Be
 
 ---
 
-## How to Use
-
-1. Browse to the folder (pack) of your choice by clicking its name in the table.
-2. Review the contents or documentation inside each pack (if provided).
-3. Click the **Download Link** for a direct ZIP (or other format) if provided.
-
----
 
