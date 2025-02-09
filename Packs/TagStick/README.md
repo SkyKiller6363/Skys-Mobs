@@ -1,4 +1,4 @@
-# MythicMobs Pack
+# Tag Stick
 
 Thank you for downloading this MythicMobs Pack! Follow the steps below to install it on your server.
 
