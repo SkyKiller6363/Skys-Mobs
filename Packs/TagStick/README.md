@@ -1,6 +1,25 @@
 # Tag Stick
 
-Thank you for downloading this MythicMobs Pack! Follow the steps below to install it on your server.
+**Overview**  
+The Tag Stick Pack provides a fun, fast-paced multiplayer twist on the classic "Cheese Touch" concept. It’s easy to set up and perfect for lively gaming sessions with friends.
+
+This pack includes:
+- **1 Tag Stick** item  
+- **4 Tag Skills**
+
+**Key Features**  
+- Expandable skill set with clear comments in `tagstick-skills.yml` for easy customization  
+- Familiar "tag" mechanic that fosters dynamic, unpredictable gameplay  
+- Flexible setup that can be adapted to various game modes
+
+**How It Works**  
+Loosely inspired by the "Cheese Touch" game, the Tag Stick Pack ensures that once you’ve been tagged, you’re stuck holding the stick until you tag another player!
+
+**Getting Started**  
+1. Download and install the Tag Stick Pack files (See Installation Instructions Above).  
+2. Review the comments in the `tagstick-skills.yml` file to see how to add or modify skills.  
+3. Launch your game and enjoy a fun, fast-paced round of Tag!
+
 
 ## Installation Instructions
 
