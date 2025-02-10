@@ -9,12 +9,16 @@ Portable_Jukebox:
     Placeable: false
     PreventStacking: true
   Skills:
+ # Main Logic. 
   - cancelevent{sync=true} ~onPressF
-  - addvariable{var=caster.jukebox_cycle;a=1} ?varinrange{var=caster.jukebox_cycle;val=<18} @self ~onUse 
-  - variableSubtract{var=caster.jukebox_cycle;a=1} ?varinrange{var=caster.jukebox_cycle;val=>0} @self ~onSwing 
   - setvar{var=caster.jukebox_cycle;v=0} @self ~onPickup
   - am{m="Now Playing<&co> <caster.var.jukebox_nowplaying>"} @self ~onHold
+  # Selector
+  - addvariable{var=caster.jukebox_cycle;a=1} ?varinrange{var=caster.jukebox_cycle;val=<18} @self ~onUse 
+  - variableSubtract{var=caster.jukebox_cycle;a=1} ?varinrange{var=caster.jukebox_cycle;val=>0} @self ~onSwing 
 
+
+ # Skill sets the new song to play, sets the nowplaying variable, and stops any currently playing song before starting the new one. 
   - skill{s=[
     - skill{s=[
       - stopsound{s=music_disc.13;sc=RECORDS}
@@ -97,6 +101,7 @@ Portable_Jukebox:
     ]} @self ~onPressF ?!crouching
 
   
+ # Skill just shows what song is about to be selected
   - skill{s=[
     - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
     - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
@@ -119,7 +124,7 @@ Portable_Jukebox:
     - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
     - sound{s=block.note_block.snare;p=1.3}
     ]} @self ~onUse
-  
+ # Skill just shows what song is about to be selected 
   - skill{s=[
     - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
     - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
@@ -142,7 +147,7 @@ Portable_Jukebox:
     - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
     - sound{s=block.note_block.snare;p=0.8}
     ]} @self ~onSwing
-  
+ # Skill to stop the song early and not play a new song.  
   - skill{s=[
     - stopsound{s=music_disc.13;sc=RECORDS}
     - stopsound{s=music_disc.cat;sc=RECORDS}
