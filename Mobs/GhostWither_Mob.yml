@@ -3,10 +3,7 @@ WITHER:
   Display: '<dark_red>Ghost Wither</dark_red>'
   Health: 1000
   Options:
-    Despawn: false
-  LevelModifiers:
-    Health: 10
-    Damage: 0.2
+    Despawn: persistent
   Drops:
     # -
   Skills:
@@ -33,7 +30,7 @@ WITHER:
     ];
     onEnd=[
       - shootwitherskull @PIR{r=10}
-      - summon{type=GhostWither_Backup;a=3;r=5;delay=10} 0.1
+      - summon{type=GhostWither_Backup;a=3;r=5;delay=10} 0.05
     ]} @self ~onTimer:120 <50% ?!stance{s=spawning} 
  #In spawn despawn skill
   - skill{s=[
@@ -51,10 +48,7 @@ GhostWither:
   Display: '<dark_red>Ghost Wither</dark_red>'
   Health: 1000
   Options:
-    Despawn: false
-  LevelModifiers:
-    Health: 10
-    Damage: 0.2
+    Despawn: persistent
   Drops:
   # - 
   Skills:
@@ -81,7 +75,7 @@ GhostWither:
     ];
     onEnd=[
       - shootwitherskull @PIR{r=10}
-      - summon{type=GhostWither_Backup;a=3;r=5;delay=10} 0.1
+      - summon{type=GhostWither_Backup;a=3;r=5;delay=10} 0.05
     ]} @self ~onTimer:120 <50% ?!stance{s=spawning} #Makes sure the dash doesn't happen while the wither is charging up
  #In spawn despawn skill
   - skill{s=[
@@ -97,8 +91,3 @@ GhostWither:
 GhostWither_Backup:
   Type: wither_skeleton
   Health: 40
-  LevelModifiers:
-    Health: 2
-    Damage: 0
-    Armor: 0
-    MovementSpeed: 0
