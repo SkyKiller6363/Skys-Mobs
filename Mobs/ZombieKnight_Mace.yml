@@ -1,0 +1,48 @@
+# A Zombie with a Wind Burst 3 Mace that will jump at the player to ensure it activates the wind burst enchantment. 
+
+## Mob
+ZombieKnight_Mace: 
+  Type: zombie
+  Display: '<gray>Zombie Knight'
+  Options:
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+    AttackSpeed: 2
+    AlwaysShowName: true
+    PreventSunburn: true
+    PreventOtherDrops: true
+    PreventItemPickup: true
+  Damage: 8
+  Health: 30
+  Equipment:
+    - ZombieKnight_Boots FEET
+    - mace{enchants=wind_burst:3,breach:4} HAND
+    - chainmail_chestplate CHEST
+    - chainmail_leggings LEGS
+    - chainmail_helmet HEAD
+  Drops:
+    - WIND_CHARGE 0-4
+    - gold_ingot 0-4
+    - exp 50
+  LevelModifiers:
+    Health: 1.5
+    Damage: 0.3
+    Armor: 0.2
+    MovementSpeed: 0
+  Skills:
+  - attribute{attr=GENERIC_JUMP_STRENGTH;a=0.8;duration=100000000} @self ~onSpawn
+  - attribute{attr=GENERIC_FALL_DAMAGE_MULTIPLIER;a=-1;duration=100000000} @self ~onSpawn
+  - skill{delay=1to12;s=[
+    - jump{v=0.9} @self
+    - e:p{p=cloud;hs=1;a=20}
+    ]} @self ~onTimer:35 ?inCombat ?!playerwithin{d=2} ?onGround
+  
+## Item
+ZombieKnight_Boots:
+  Id: netherite_boots
+  Trim:
+    Material: GOLD
+    Pattern: FLOW
+  Enchantments:
+    - UNBREAKING:3
+    - FEATHER_FALLING:4
