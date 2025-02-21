@@ -98,6 +98,9 @@ Portable_Jukebox:
 
     - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=18}
     - setvar{var=caster.jukebox_nowplaying;value=<dark_red>Pigstep;type=STRING;duration=2960} @self ?varequals{var=caster.jukebox_cycle;val=18}
+
+    - delay 1
+    - am{m="Now Playing<&co> <caster.var.jukebox_nowplaying>"}
     ]} @self ~onPressF ?!crouching
 
   
