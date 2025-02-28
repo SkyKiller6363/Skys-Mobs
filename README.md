@@ -15,5 +15,5 @@ Check out my MythicMobs stuff!
   - [Skeleton King - V2](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/SkeletonKingV2)
   - [Blazeon](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/Blazeon)
   - [Test Mobs](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/TestMobs)
-- [**Mob Leaderboard System** (WIP)]()
+- [**Mob Leaderboard System**](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/KillTracker)
   
