@@ -171,8 +171,8 @@ Portable_Jukebox-Creative:
     - stopsound{s=music_disc.pigstep;sc=RECORDS}
     - unsetvar{var=caster.jukebox_nowplaying}
     ]} @self ~onPressF ?crouching
-#
 
+#
 # Tested on MC 1.21.4 - MM 5.8.1 - Crucible 2.2.0 dev
 Portable_Jukebox-Survival:
   Id: jukebox
@@ -411,6 +411,7 @@ Portable_Jukebox-Survival:
 
     - delay 1
     - am{m="Now Playing<&co> <caster.var.jukebox_nowplaying|<red>Song Not Available>"}
+    - sound{sound=entity.villager.no;sc=RECORDS;audience=@self} ?!varisset{var=caster.jukebox_nowplaying}
     ]} @self ~onPressF ?!crouching
  #
   
