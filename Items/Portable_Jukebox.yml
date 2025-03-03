@@ -172,13 +172,12 @@ Portable_Jukebox-Creative:
     - unsetvar{var=caster.jukebox_nowplaying}
     ]} @self ~onPressF ?crouching
 
-#
 # Tested on MC 1.21.4 - MM 5.8.1 - Crucible 2.2.0 dev
 Portable_Jukebox-Survival:
   Id: jukebox
   Display: '<aqua>Portable Jukebox'
   Lore: 
-  - 'Left and Right Click to Cycle Songs'
+  - 'Left and Right-Click to Cycle Songs'
   - 'Press F to Play'
   - 'Crouch + Press F to Stop'
   - 'Crouch + Right-Click to Insert Discs'
@@ -213,116 +212,134 @@ Portable_Jukebox-Survival:
  # Check for Discs 
   - skill{s=[
     - takeitem{i=music_disc_13;a=1}
-    - setItemNBT{key=Has13;value=int/1} @self
+    - setItemNBT{key=Has13;value=int/1} 
     - message{m="<gray>Music Disc <gold>13<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.Has13>} ?hasitem{i=music_disc_13;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_cat;a=1}
-    - setItemNBT{key=HasCat;value=int/1} @self
+    - setItemNBT{key=HasCat;value=int/1} 
     - message{m="<gray>Music Disc <green>Cat<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasCat>} ?hasitem{i=music_disc_cat;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_blocks;a=1}
-    - setItemNBT{key=HasBlocks;value=int/1} @self
+    - setItemNBT{key=HasBlocks;value=int/1} 
     - message{m="<gray>Music Disc <red>Blocks<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasBlocks>} ?hasitem{i=music_disc_blocks;a=>0}
-
   - skill{s=[
     - takeitem{i=music_disc_chirp;a=1}
-    - setItemNBT{key=HasChirp;value=int/1} @self
+    - setItemNBT{key=HasChirp;value=int/1} 
     - message{m="<gray>Music Disc <dark_red>Chirp<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasChirp>} ?hasitem{i=music_disc_chirp;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_far;a=1}
-    - setItemNBT{key=HasFar;value=int/1} @self
+    - setItemNBT{key=HasFar;value=int/1} 
     - message{m="<gray>Music Disc <green>Far<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasFar>} ?hasitem{i=music_disc_far;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_mall;a=1}
-    - setItemNBT{key=HasMall;value=int/1} @self
+    - setItemNBT{key=HasMall;value=int/1} 
     - message{m="<gray>Music Disc <dark_purple>Mall<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasMall>} ?hasitem{i=music_disc_mall;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_mellohi;a=1}
-    - setItemNBT{key=HasMellohi;value=int/1} @self
+    - setItemNBT{key=HasMellohi;value=int/1} 
     - message{m="<gray>Music Disc <light_purple>Mellohi<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasMellohi>} ?hasitem{i=music_disc_mellohi;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_stal;a=1}
-    - setItemNBT{key=HasStal;value=int/1} @self
+    - setItemNBT{key=HasStal;value=int/1} 
     - message{m="<gray>Music Disc <dark_gray>Stal<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasStal>} ?hasitem{i=music_disc_stal;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_strad;a=1}
-    - setItemNBT{key=HasStrad;value=int/1} @self
+    - setItemNBT{key=HasStrad;value=int/1} 
     - message{m="<gray>Music Disc <white>Strad<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasStrad>} ?hasitem{i=music_disc_strad;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_ward;a=1}
-    - setItemNBT{key=HasWard;value=int/1} @self
+    - setItemNBT{key=HasWard;value=int/1} 
     - message{m="<gray>Music Disc <dark_green>Ward<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasWard>} ?hasitem{i=music_disc_ward;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_11;a=1}
-    - setItemNBT{key=Has11;value=int/1} @self
+    - setItemNBT{key=Has11;value=int/1} 
     - message{m="<gray>Music Disc <gray><i>11<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?!stringequals{val2=1;val1=<caster.item.hand.nbt.Has11>} ?hasitem{i=music_disc_11;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_creator_music_box;a=1}
-    - setItemNBT{key=HasCreator_music_box;value=int/1} @self
+    - setItemNBT{key=HasCreator_music_box;value=int/1} 
     - message{m="<gray>Music Disc <gold>Creator (Music Box)<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator_music_box>} ?hasitem{i=music_disc_creator_music_box;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_wait;a=1}
-    - setItemNBT{key=HasWait;value=int/1} @self
+    - setItemNBT{key=HasWait;value=int/1} 
     - message{m="<gray>Music Disc <blue>Wait<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasWait>} ?hasitem{i=music_disc_wait;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_creator;a=1}
-    - setItemNBT{key=HasCreator;value=int/1} @self
+    - setItemNBT{key=HasCreator;value=int/1} 
     - message{m="<gray>Music Disc <aqua>Creator<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator>} ?hasitem{i=music_disc_creator;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_precipice;a=1}
-    - setItemNBT{key=HasPrecipice;value=int/1} @self
+    - setItemNBT{key=HasPrecipice;value=int/1} 
     - message{m="<gray>Music Disc <gray>Precipice<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasPrecipice>} ?hasitem{i=music_disc_precipice;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_otherside;a=1}
-    - setItemNBT{key=HasOtherside;value=int/1} @self
+    - setItemNBT{key=HasOtherside;value=int/1} 
     - message{m="<gray>Music Disc <dark_green>Otherside<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasOtherside>} ?hasitem{i=music_disc_otherside;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_relic;a=1}
-    - setItemNBT{key=HasRelic;value=int/1} @self
+    - setItemNBT{key=HasRelic;value=int/1} 
     - message{m="<gray>Music Disc <red>Relic<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasRelic>} ?hasitem{i=music_disc_relic;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_5;a=1}
-    - setItemNBT{key=Has5;value=int/1} @self
+    - setItemNBT{key=Has5;value=int/1} 
     - message{m="<gray>Music Disc <dark_aqua>5<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?!stringequals{val2=1;val1=<caster.item.hand.nbt.Has5>} ?hasitem{i=music_disc_5;a=>0}
 
   - skill{s=[
     - takeitem{i=music_disc_pigstep;a=1}
-    - setItemNBT{key=HasPigstep;value=int/1} @self
+    - setItemNBT{key=HasPigstep;value=int/1} 
     - message{m="<gray>Music Disc <dark_red>Pigstep<white><&co> <green>Now Available"}
+    - sound{s=entity.arrow.hit_player}
     ]} @self ~onUse ?crouching ?stringequals{val2=0;val1=<caster.item.hand.nbt.HasPigstep>} ?hasitem{i=music_disc_pigstep;a=>0}
 
  #
