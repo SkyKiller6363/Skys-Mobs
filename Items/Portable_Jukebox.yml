@@ -170,6 +170,7 @@ Portable_Jukebox-Creative:
     - stopsound{s=music_disc.5;sc=RECORDS}
     - stopsound{s=music_disc.pigstep;sc=RECORDS}
     - unsetvar{var=caster.jukebox_nowplaying}
+    - sound{s=block.candle.extinguish}
     ]} @self ~onPressF ?crouching
 
 # Tested on MC 1.21.4 - MM 5.8.1 - Crucible 2.2.0 dev
@@ -501,6 +502,7 @@ Portable_Jukebox-Survival:
     - stopsound{s=music_disc.5;sc=RECORDS}
     - stopsound{s=music_disc.pigstep;sc=RECORDS}
     - unsetvar{var=caster.jukebox_nowplaying}
+    - sound{s=block.candle.extinguish}
     ]} @self ~onPressF ?crouching
  #
 
