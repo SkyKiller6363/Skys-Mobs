@@ -7,6 +7,7 @@ Check out my MythicMobs stuff!
   - [Zombie Knight - Mace Wielding Zombie](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Mobs/ZombieKnight_Mace.yml)
 - **Skills**
 - [**Items**](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Items)
+  - [Random Items - Compilation of Random Items!](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Items/RandomItems.yml) 
   - [SkyBomb](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Items/SkyBomb.yml)
   - [InstaTNT](https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Items/InstaTNT)
   - [Portable Jukebox - Survival & Creative Versions](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Items/Portable_Jukebox.yml)
