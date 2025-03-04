@@ -178,4 +178,30 @@ WarpedMushroom:
     - message{m="<aqua>You feel your reality shifting..."}
     ]} @self ~onConsume
 
-
+# Requires Crucible, MM 5.8+ and MC 1.21.4+
+Creeper_Candy:
+  Material: SUGAR
+  Display: '<gradient:#00FF00:#008000>Creeper Candy'
+  Lore:
+    - "Not your average candy..."
+  Hide:
+  - enchants
+  Enchantments:
+  - Unbreaking:1
+  Consumable:
+    ConsumeSeconds: 1
+    HasParticles: true
+    Animation: EAT
+  Food:
+    Nutrition: 2
+    Saturation: 2
+    CanAlwaysEat: true
+  Skills:
+    - skill{cd=15;s=[
+        - setmaterialcooldown{material=sugar;d=300}
+        - hide{d=200} @PIR{r=100}
+        - explosion{y=2;bd=false;fire=false}
+        - message{m="Ssssst... Did you hear that?"}
+        - actionmessage{m="<red>You are hidden...";repeat=19;repeatI=10}
+        - actionmessage{m="<green>You are visible...";delay=200}
+      ]} @self ~onConsume
