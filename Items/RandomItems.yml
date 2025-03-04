@@ -121,4 +121,61 @@ ExplosiveSteak:
   - explosion{y=2;bd=true;fire=true;delay=2} @self ~onConsume
 
 
+# Requires Crucible, MM 5.8+ and MC 1.21.4+
+RocketPop:
+  Id: firework_star
+  Display: '<gradient:#FF0000:#FFFFFF:#0000FF>Rocket Pop'
+  Lore:
+  - 'Tastes like summer and bad decisions'
+  Consumable:
+    ConsumeSeconds: 1
+    HasParticles: true
+    Animation: EAT
+  Food:
+    Nutrition: 6
+    Saturation: 6
+    CanAlwaysEat: true
+  Skills:
+  - skill{s=[
+    - potion{type=JUMP;l=5;d=200} 
+    - potion{type=SPEED;l=3;d=200} 
+    - sound{s=entity.firework.launch;sc=MASTER;v=1} 
+    - delay 200
+    - message{m="<blue>You feel like you're about to take off..."} 
+    - delay 200
+    - jump{v=2}
+    - particle{p=fireworks_spark;a=1;repeat=10;repeatI=1}
+    - delay 10
+    - firework{type=BURST;d=1;f=true;tr=true;color=#FF0000;fcolors=#0000FF} @selflocation
+    - explosion{y=1;bd=false;fire=false} 
+    ]} @self ~onConsume
+
+# Requires Crucible, MM 5.8+ and MC 1.21.4+
+WarpedMushroom:
+  Id: warped_fungus
+  Display: '<dark_aqua>Warped Mushroom Snack'
+  Lore:
+  - '<gray>What could possibly go wrong?'
+  Consumable:
+    ConsumeSeconds: 1
+    HasParticles: true
+    Animation: EAT
+  Food:
+    Nutrition: 5
+    Saturation: 5
+    CanAlwaysEat: true
+  Skills:
+  - skill{s=[
+    - potion{type=LEVITATION;l=2;d=300}
+    - potion{type=SLOW_FALLING;l=1;d=500}
+    - delay 40
+    - sound{s=entity.enderman.teleport;sc=MASTER;v=1}
+    - delay 3
+    - randomskill{skills=
+      [ teleport{spreadh=10;spreadv=2}] 10 ,
+      [ teleport{spreadh=50;spreadv=10}] 30 ,
+      [ teleport{spreadh=100;spreadv=20}] 50 } 
+    - message{m="<aqua>You feel your reality shifting..."}
+    ]} @self ~onConsume
+
 
