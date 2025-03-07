@@ -127,6 +127,8 @@ RocketPop:
   Display: '<gradient:#FF0000:#FFFFFF:#0000FF>Rocket Pop'
   Lore:
   - 'Tastes like summer and bad decisions'
+  Hide:
+    - ADDITIONAL_TOOLTIP
   Consumable:
     ConsumeSeconds: 1
     HasParticles: true
@@ -137,18 +139,29 @@ RocketPop:
     CanAlwaysEat: true
   Skills:
   - skill{s=[
+    - jump{v=1}
     - potion{type=JUMP;l=5;d=200} 
     - potion{type=SPEED;l=3;d=200} 
     - sound{s=entity.firework_rocket.launch;sc=MASTER;v=1} 
     - delay 200
     - message{m="<blue>You feel like you're about to take off..."} 
-    - delay 200
+    - delay 170
+    - sound{s=entity.tnt.primed}
+    - delay 30
     - jump{v=2}
     - particle{p=fireworks_spark;a=4;vs=1;hs=0;repeat=12;repeatI=1}
     - delay 10
-    - firework{type=BURST;d=1;f=true;tr=true;color=#FF0000;fcolors=#0000FF} @selflocation
+    - randomskill{
+      skills=
+      [ firework{type=BALL;d=1;f=true;tr=false;color=#FF0000;fcolors=#0000FF} ],
+      [ firework{type=BALL_LARGE;d=1;f=false;tr=true;color=#FF0000;fcolors=#0000FF} ],
+      [ firework{type=BURST;d=1;f=true;tr=true;color=#FF0000;fcolors=#0000FF} ],
+      [ firework{type=CREEPER;d=1;f=false;tr=false;color=#FF0000;fcolors=#0000FF} ],
+      [ firework{type=STAR;d=1;f=true;tr=false;color=#FF0000;fcolors=#0000FF} ]
+      } @selflocation
     - explosion{y=1;bd=false;fire=false} 
     ]} @self ~onConsume
+
 
 # Requires Crucible, MM 5.8+ and MC 1.21.4+
 WarpedMushroom:
@@ -197,11 +210,16 @@ Creeper_Candy:
     Saturation: 2
     CanAlwaysEat: true
   Skills:
-  - skill{cd=15;s=[
-    - setmaterialcooldown{material=sugar;d=300}
-    - hide{d=200} @PIR{r=100}
-    - explosion{y=2;bd=false;fire=false}
-    - message{m="Ssssst... Did you hear that?"}
-    - actionmessage{m="<red>You are hidden...";repeat=19;repeatI=10}
-    - actionmessage{m="<green>You are visible...";delay=200}
-    ]} @self ~onConsume
+    - skill{cd=15;s=[
+        - setmaterialcooldown{material=sugar;d=300}
+        - hide{d=200} @PIR{r=100}
+        - explosion{y=2;bd=false;fire=false}
+        - e:p{p=cloud;a=100;hs=1;vs=0.5}
+        - e:p{p=large_smoke;a=20;hs=1;vs=0.5}
+        - message{m="Ssssst... Did you hear that?"}
+        - actionmessage{m="<red>You are hidden...";repeat=19;repeatI=10}
+        - sound{s=block.note_block.snare;v=1;p=1.4;audience=@self;repeat=9;repeatI=20}
+        - sound{s=block.note_block.snare;v=1;p=0.8;audience=@self;delay=200}
+        - actionmessage{m="<green>You are visible...";delay=200}
+      ]} @self ~onConsume
+
