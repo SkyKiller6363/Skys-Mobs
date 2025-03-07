@@ -160,6 +160,7 @@ RocketPop:
       [ firework{type=STAR;d=1;f=true;tr=false;color=#FF0000;fcolors=#0000FF} ]
       } @selflocation
     - explosion{y=1;bd=false;fire=false} 
+    - potion{type=SLOW_FALLING;l=0;d=80;delay=30}
     ]} @self ~onConsume
 
 
