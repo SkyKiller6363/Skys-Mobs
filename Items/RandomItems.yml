@@ -210,16 +210,16 @@ Creeper_Candy:
     Saturation: 2
     CanAlwaysEat: true
   Skills:
-    - skill{cd=15;s=[
-        - setmaterialcooldown{material=sugar;d=300}
-        - hide{d=200} @PIR{r=100}
-        - explosion{y=2;bd=false;fire=false}
-        - e:p{p=cloud;a=100;hs=1;vs=0.5}
-        - e:p{p=large_smoke;a=20;hs=1;vs=0.5}
-        - message{m="Ssssst... Did you hear that?"}
-        - actionmessage{m="<red>You are hidden...";repeat=19;repeatI=10}
-        - sound{s=block.note_block.snare;v=1;p=1.4;audience=@self;repeat=9;repeatI=20}
-        - sound{s=block.note_block.snare;v=1;p=0.8;audience=@self;delay=200}
-        - actionmessage{m="<green>You are visible...";delay=200}
-      ]} @self ~onConsume
+  - skill{cd=15;s=[
+    - setmaterialcooldown{material=sugar;d=300}
+    - hide{d=200} @PIR{r=100}
+    - explosion{y=2;bd=false;fire=false}
+    - e:p{p=cloud;a=100;hs=1;vs=0.5}
+    - e:p{p=large_smoke;a=20;hs=1;vs=0.5}
+    - message{m="Ssssst... Did you hear that?"}
+    - actionmessage{m="<green>You are hidden...";repeat=19;repeatI=10}
+    - sound{s=block.note_block.snare;v=1;p=1.4;audience=@self;repeat=9;repeatI=20}
+    - sound{s=block.note_block.snare;v=1;p=0.8;audience=@self;delay=200}
+    - actionmessage{m="<red>You are visible...";delay=200}
+    ]} @self ~onConsume
 
