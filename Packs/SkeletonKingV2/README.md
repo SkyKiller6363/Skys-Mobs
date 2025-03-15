@@ -37,7 +37,7 @@ Built entirely around the default Skeleton King from MythicMobs, Skeleton King V
 ## Installation Instructions
 
 1. **Download the Pack Folder**  
-   Click [here](https://downgit.github.io/#/home?url=https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/SkeletonKingV2) to download the entire pack folder (not just individual files).
+   <a href="https://downgit.github.io/#/home?url=https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/SkeletonKingV2" target="_blank">Click here</a> to download the entire pack folder (not just individual files).
 2. **Upload to Your Server**  
    Navigate to your server's `plugins/MythicMobs/Packs` directory.
 3. **Place the Downloaded Folder**  
