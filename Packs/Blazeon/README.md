@@ -1,44 +1,36 @@
 # Blazeon — The Meteoric Giant
 
-**Inspired by an Early Classic**  
-Meet Blazeon, a **fiery Giant Zombie** who brings chaos and destruction to any MythicMobs server. Inspired by one of the first packs ever downloaded, Blazeon has evolved into a formidable boss with punishing fire-based abilities and relentless aggression.
+**Requirements**  
+- **MythicMobs** 5.7.2+ (Free compatible)  
+- **Minecraft** 1.20.4+  
+- **PaperMC** as the server core  
+- **(Soft)** Mythic Crucible 2.1.0+ (only required for item-based player skills)
+
+---
+
+## Overview
+
+Inspired by one of the earliest packs ever downloaded, **Blazeon** is a fiery Giant Zombie that unleashes chaos and destruction. Packing a high health pool and punishing fire-based abilities, Blazeon provides a **challenging** fight that demands coordination, time, and teamwork.
 
 ---
 
 ## Key Highlights
 
-- **3 Custom-Designed Mobs**  
-  - **Screamers (Ghasts):** Classic fireballs with lowered health making them One Shot.  
-  - **Murkspawn (Drowned):** Occasionally strapped with explosive green chestplates for a nasty surprise.  
-  - **Blazeon (Giant Zombie):** A massive, fire-imbued powerhouse that anchors this chaotic fight.
-- **1 Unique Loot Items**  
-  - **Blazeons Helmet:** Provides the wearer with unlimited Fire Resistance.
+- **3 Custom Mobs**  
+  - **Screamers (Ghasts):** Lowered health for one-shot takedowns.  
+  - **Murkspawn (Drowned):** Occasionally equipped with explosive green chestplates.  
+  - **Blazeon (Giant Zombie):** A massive, fire-imbued beast commanding meteor strikes and fiery dashes.
+- **1 Unique Loot Item**  
+  - **Blazeon’s Helmet:** Grants the wearer unlimited Fire Resistance.
 - **10+ Skills & Abilities**  
-  - **Meteoric Rainfire:** Rains molten meteors upon the battlefield.  
-  - **Blazing Dash:** Blazeon sprints forward, knocking back anything in its path.  
-  - **Magma Explosions:** Trigger volatile blasts that sear both players and the terrain.
-  - And More...
+  - **Meteoric Rainfire**: Showers the battlefield with searing meteors.  
+  - **Blazing Dash**: Sends Blazeon hurtling forward, knocking foes away.  
+  - **Magma Explosions**: Eruptions that scorch players and terrain.
+  - **And more**...
 
 ---
 
-## Difficulty Level
-
-A **challenging** encounter designed to **push players to the limit**. Blazeon’s high health pool and fiery abilities demand coordination, time, and resourcefulness. It’s highly recommended to face Blazeon with a team of skilled players.
-
----
-
-## Encounter Breakdown
-
-1. **Constant Pressure**  
-   Blazeon’s aggression keeps players on the move. Watch out for unrelenting AoE attacks and the Blazing Dash.
-2. **Add Management**  
-   Screamers and Murkspawn force strategic positioning. Keep them under control or risk being overwhelmed by explosions.
-3. **Meteoric Chaos**  
-   The key to surviving lies in dodging the constant flame-based barrages and neutralizing explosive threats.
-
----
-
-## Getting Started
+## Installation Instructions
 
 1. **Download the Pack Folder**  
    Click [here](https://downgit.github.io/#/home?url=https://github.com/SkyKiller6363/Skys-Mobs/new/main/Packs/Blazeon) to download the entire pack folder (not just individual files).
@@ -48,9 +40,8 @@ A **challenging** encounter designed to **push players to the limit**. Blazeon�
    Drag and drop or upload the unzipped `Blazeon` folder into the `Packs` directory.
 4. **Reload Mythic Mobs**  
    Use the `/mm reload` command to reload MythicMobs so the pack is recognized.
+
 ---
 
-**Are you up to the challenge?**  
-Take on Blazeon’s scorching wrath and reap the fiery spoils. If you enjoy this pack, check out my other releases for more free and premium MythicMobs assets! 
-
-
+**Ready to test your mettle?**  
+Challenge Blazeon’s scorching might and claim the spoils of victory. If you enjoy this boss, explore more free and premium MythicMobs assets in my repository!
