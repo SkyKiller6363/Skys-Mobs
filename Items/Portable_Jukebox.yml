@@ -43,61 +43,61 @@ Portable_Jukebox-Creative:
       ]}
     - delay 1
     - sound{s=music_disc.13;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=0}
-    - setvar{var=caster.jukebox_nowplaying;value=<gold>13;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=0}
+    - setvar{var=caster.jukebox_nowplaying;value=<#ffcb3d>13;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=0}
 
     - sound{s=music_disc.cat;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=1}
-    - setvar{var=caster.jukebox_nowplaying;value=<green>Cat;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=1}
+    - setvar{var=caster.jukebox_nowplaying;value=<#5cec6f>Cat;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=1}
 
     - sound{s=music_disc.blocks;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=2}
-    - setvar{var=caster.jukebox_nowplaying;value=<red>Blocks;type=STRING;duration=6900} @self ?varequals{var=caster.jukebox_cycle;val=2}
+    - setvar{var=caster.jukebox_nowplaying;value=<#f74452>Blocks;type=STRING;duration=6900} @self ?varequals{var=caster.jukebox_cycle;val=2}
 
     - sound{s=music_disc.chirp;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=3}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_red>Chirp;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=3}
+    - setvar{var=caster.jukebox_nowplaying;value=<#9c0000>Chirp;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=3}
 
     - sound{s=music_disc.far;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=4}
-    - setvar{var=caster.jukebox_nowplaying;value=<green>Far;type=STRING;duration=3480} @self ?varequals{var=caster.jukebox_cycle;val=4}
+    - setvar{var=caster.jukebox_nowplaying;value=<#39e070>Far;type=STRING;duration=3480} @self ?varequals{var=caster.jukebox_cycle;val=4}
 
     - sound{s=music_disc.mall;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=5}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_purple>Mall;type=STRING;duration=3940} @self ?varequals{var=caster.jukebox_cycle;val=5}
+    - setvar{var=caster.jukebox_nowplaying;value=<#940094>Mall;type=STRING;duration=3940} @self ?varequals{var=caster.jukebox_cycle;val=5}
 
     - sound{s=music_disc.mellohi;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=6}
-    - setvar{var=caster.jukebox_nowplaying;value=<light_purple>Mellohi;type=STRING;duration=1380} @self ?varequals{var=caster.jukebox_cycle;val=6}
+    - setvar{var=caster.jukebox_nowplaying;value=<#eb52eb>Mellohi;type=STRING;duration=1380} @self ?varequals{var=caster.jukebox_cycle;val=6}
 
     - sound{s=music_disc.stal;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=7}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_gray>Stal;type=STRING;duration=3000} @self ?varequals{var=caster.jukebox_cycle;val=7}
+    - setvar{var=caster.jukebox_nowplaying;value=<#494949>Stal;type=STRING;duration=3000} @self ?varequals{var=caster.jukebox_cycle;val=7}
 
     - sound{s=music_disc.strad;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=8}
-    - setvar{var=caster.jukebox_nowplaying;value=<white>Strad;type=STRING;duration=3760} @self ?varequals{var=caster.jukebox_cycle;val=8}
+    - setvar{var=caster.jukebox_nowplaying;value=<#FFFFFF>Strad;type=STRING;duration=3760} @self ?varequals{var=caster.jukebox_cycle;val=8}
 
     - sound{s=music_disc.ward;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=9}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_green>Ward;type=STRING;duration=5020} @self ?varequals{var=caster.jukebox_cycle;val=9}
+    - setvar{var=caster.jukebox_nowplaying;value=<#089e08>Ward;type=STRING;duration=5020} @self ?varequals{var=caster.jukebox_cycle;val=9}
 
     - sound{s=music_disc.11;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=10}
-    - setvar{var=caster.jukebox_nowplaying;value=<gray><i>11</i>;type=STRING;duration=1420} @self ?varequals{var=caster.jukebox_cycle;val=10}
+    - setvar{var=caster.jukebox_nowplaying;value=<#494949><i>11</i>;type=STRING;duration=1420} @self ?varequals{var=caster.jukebox_cycle;val=10}
 
     - sound{s=music_disc.creator_music_box;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=11}
-    - setvar{var=caster.jukebox_nowplaying;value=<gold>Creator (Music Box);type=STRING;duration=1460} @self ?varequals{var=caster.jukebox_cycle;val=11}
+    - setvar{var=caster.jukebox_nowplaying;value=<#ffba30>Creator (Music Box);type=STRING;duration=1460} @self ?varequals{var=caster.jukebox_cycle;val=11}
 
     - sound{s=music_disc.wait;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=12}
-    - setvar{var=caster.jukebox_nowplaying;value=<blue>Wait;type=STRING;duration=4740} @self ?varequals{var=caster.jukebox_cycle;val=12}
+    - setvar{var=caster.jukebox_nowplaying;value=<#3041d6>Wait;type=STRING;duration=4740} @self ?varequals{var=caster.jukebox_cycle;val=12}
 
     - sound{s=music_disc.creator;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=13}
-    - setvar{var=caster.jukebox_nowplaying;value=<aqua>Creator;type=STRING;duration=3520} @self ?varequals{var=caster.jukebox_cycle;val=13}
+    - setvar{var=caster.jukebox_nowplaying;value=<#2bf8f8>Creator;type=STRING;duration=3520} @self ?varequals{var=caster.jukebox_cycle;val=13}
 
     - sound{s=music_disc.precipice;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=14}
-    - setvar{var=caster.jukebox_nowplaying;value=<gray>Precipice;type=STRING;duration=5980} @self ?varequals{var=caster.jukebox_cycle;val=14}
+    - setvar{var=caster.jukebox_nowplaying;value=<#918c8c>Precipice;type=STRING;duration=5980} @self ?varequals{var=caster.jukebox_cycle;val=14}
 
     - sound{s=music_disc.otherside;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=15}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_green>Otherside;type=STRING;duration=3900} @self ?varequals{var=caster.jukebox_cycle;val=15}
+    - setvar{var=caster.jukebox_nowplaying;value=<#0da10d>Otherside;type=STRING;duration=3900} @self ?varequals{var=caster.jukebox_cycle;val=15}
 
     - sound{s=music_disc.relic;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=16}
-    - setvar{var=caster.jukebox_nowplaying;value=<red>Relic;type=STRING;duration=4380} @self ?varequals{var=caster.jukebox_cycle;val=16}
+    - setvar{var=caster.jukebox_nowplaying;value=<#ee5a5a>Relic;type=STRING;duration=4380} @self ?varequals{var=caster.jukebox_cycle;val=16}
 
     - sound{s=music_disc.5;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=17}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_aqua>5;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=17}
+    - setvar{var=caster.jukebox_nowplaying;value=<#27a5a5>5;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=17}
 
     - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=18}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_red>Pigstep;type=STRING;duration=2960} @self ?varequals{var=caster.jukebox_cycle;val=18}
+    - setvar{var=caster.jukebox_nowplaying;value=<#8a1515>Pigstep;type=STRING;duration=2960} @self ?varequals{var=caster.jukebox_cycle;val=18}
 
     - delay 1
     - am{m="Now Playing<&co> <caster.var.jukebox_nowplaying>"}
@@ -106,51 +106,54 @@ Portable_Jukebox-Creative:
   
  # Skills just shows what song is about to be selected
   - skill{s=[
-    - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
-    - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
-    - am{m=[3/19] <red>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
-    - am{m=[4/19] <dark_red>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
-    - am{m=[5/19] <green>Far} ?varequals{var=caster.jukebox_cycle;val=4}
-    - am{m=[6/19] <dark_purple>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
-    - am{m=[7/19] <light_purple>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
-    - am{m=[8/19] <dark_gray>Stal} ?varequals{var=caster.jukebox_cycle;val=7} 
-    - am{m=[9/19] <white>Strad} ?varequals{var=caster.jukebox_cycle;val=8} 
-    - am{m=[10/19] <dark_green>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
-    - am{m=[11/19] <gray><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
-    - am{m="[12/19] <gold>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
-    - am{m=[13/19] <blue>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
-    - am{m=[14/19] <aqua>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
-    - am{m=[15/19] <gray>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
-    - am{m=[16/19] <dark_green>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
-    - am{m=[17/19] <red>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
-    - am{m=[18/19] <dark_aqua>5} ?varequals{var=caster.jukebox_cycle;val=17}
-    - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
+    - am{m=<b><black>🔼 <white>[1/19] <reset><#ffcb3d>13} ?varequals{var=caster.jukebox_cycle;val=0}
+    - am{m=<b><black>🔼 <white>[2/19] <reset><#5cec6f>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
+    - am{m=<b><black>🔼 <white>[3/19] <reset><#f74452>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
+    - am{m=<b><black>🔼 <white>[4/19] <reset><#9c0000>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
+    - am{m=<b><black>🔼 <white>[5/19] <reset><#39e070>Far} ?varequals{var=caster.jukebox_cycle;val=4}
+    - am{m=<b><black>🔼 <white>[6/19] <reset><#940094>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
+    - am{m=<b><black>🔼 <white>[7/19] <reset><#eb52eb>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
+    - am{m=<b><black>🔼 <white>[8/19] <reset><#494949>Stal} ?varequals{var=caster.jukebox_cycle;val=7}
+    - am{m=<b><black>🔼 <white>[9/19] <reset><#FFFFFF>Strad} ?varequals{var=caster.jukebox_cycle;val=8}
+    - am{m=<b><black>🔼 <white>[10/19] <reset><#089e08>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
+    - am{m=<b><black>🔼 <white>[11/19] <reset><#494949><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
+    - am{m="<b><black>🔼 <white>[12/19] <reset><#ffba30>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
+    - am{m=<b><black>🔼 <white>[13/19] <reset><#3041d6>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
+    - am{m=<b><black>🔼 <white>[14/19] <reset><#2bf8f8>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
+    - am{m=<b><black>🔼 <white>[15/19] <reset><#918c8c>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
+    - am{m=<b><black>🔼 <white>[16/19] <reset><#0da10d>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
+    - am{m=<b><black>🔼 <white>[17/19] <reset><#ee5a5a>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
+    - am{m=<b><black>🔼 <white>[18/19] <reset><#27a5a5>5} ?varequals{var=caster.jukebox_cycle;val=17}
+    - am{m=<b><black>🔼 <white>[19/19] <reset><#8a1515>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
     - sound{s=block.note_block.snare;p=1.3}
     ]} @self ~onUse
+
   - skill{s=[
-    - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
-    - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
-    - am{m=[3/19] <red>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
-    - am{m=[4/19] <dark_red>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
-    - am{m=[5/19] <green>Far} ?varequals{var=caster.jukebox_cycle;val=4}
-    - am{m=[6/19] <dark_purple>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
-    - am{m=[7/19] <light_purple>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
-    - am{m=[8/19] <dark_gray>Stal} ?varequals{var=caster.jukebox_cycle;val=7} 
-    - am{m=[9/19] <white>Strad} ?varequals{var=caster.jukebox_cycle;val=8} 
-    - am{m=[10/19] <dark_green>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
-    - am{m=[11/19] <gray><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
-    - am{m="[12/19] <gold>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
-    - am{m=[13/19] <blue>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
-    - am{m=[14/19] <aqua>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
-    - am{m=[15/19] <gray>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
-    - am{m=[16/19] <dark_green>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
-    - am{m=[17/19] <red>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
-    - am{m=[18/19] <dark_aqua>5} ?varequals{var=caster.jukebox_cycle;val=17}
-    - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
+    - am{m=<b><black>🔽 <white>[1/19] <reset><#ffcb3d>13} ?varequals{var=caster.jukebox_cycle;val=0}
+    - am{m=<b><black>🔽 <white>[2/19] <reset><#5cec6f>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
+    - am{m=<b><black>🔽 <white>[3/19] <reset><#f74452>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
+    - am{m=<b><black>🔽 <white>[4/19] <reset><#9c0000>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
+    - am{m=<b><black>🔽 <white>[5/19] <reset><#39e070>Far} ?varequals{var=caster.jukebox_cycle;val=4}
+    - am{m=<b><black>🔽 <white>[6/19] <reset><#940094>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
+    - am{m=<b><black>🔽 <white>[7/19] <reset><#eb52eb>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
+    - am{m=<b><black>🔽 <white>[8/19] <reset><#494949>Stal} ?varequals{var=caster.jukebox_cycle;val=7}
+    - am{m=<b><black>🔽 <white>[9/19] <reset><#FFFFFF>Strad} ?varequals{var=caster.jukebox_cycle;val=8}
+    - am{m=<b><black>🔽 <white>[10/19] <reset><#089e08>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
+    - am{m=<b><black>🔽 <white>[11/19] <reset><#494949><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
+    - am{m="<b><black>🔽 <white>[12/19] <reset><#ffba30>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
+    - am{m=<b><black>🔽 <white>[13/19] <reset><#3041d6>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
+    - am{m=<b><black>🔽 <white>[14/19] <reset><#2bf8f8>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
+    - am{m=<b><black>🔽 <white>[15/19] <reset><#918c8c>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
+    - am{m=<b><black>🔽 <white>[16/19] <reset><#0da10d>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
+    - am{m=<b><black>🔽 <white>[17/19] <reset><#ee5a5a>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
+    - am{m=<b><black>🔽 <white>[18/19] <reset><#27a5a5>5} ?varequals{var=caster.jukebox_cycle;val=17}
+    - am{m=<b><black>🔽 <white>[19/19] <reset><#8a1515>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
     - sound{s=block.note_block.snare;p=0.8}
     ]} @self ~onSwing
+
  # Skill to stop the song early and not play a new song.  
   - skill{s=[
+    - am{m=<dark_red>⏹ <red>Stop Playing</red> ⏹}
     - stopsound{s=music_disc.13;sc=RECORDS}
     - stopsound{s=music_disc.cat;sc=RECORDS}
     - stopsound{s=music_disc.blocks;sc=RECORDS}
@@ -172,7 +175,7 @@ Portable_Jukebox-Creative:
     - stopsound{s=music_disc.pigstep;sc=RECORDS}
     - unsetvar{var=caster.jukebox_nowplaying}
     - sound{s=block.candle.extinguish}
-    ]} @self ~onPressF ?crouching
+    ]} @self ~onPressF ?crouching ?varisset{var=caster.jukebox_nowplaying}
 
 # Tested on MC 1.21.4 - MM 5.8.1 - Crucible 2.2.0 dev
 Portable_Jukebox-Survival:
@@ -373,61 +376,61 @@ Portable_Jukebox-Survival:
       ]} 
     - delay 1
     - sound{s=music_disc.13;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=0} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has13>}
-    - setvar{var=caster.jukebox_nowplaying;value=<gold>13;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=0} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has13>}
-
+    - setvar{var=caster.jukebox_nowplaying;value=<#ffcb3d>13;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=0} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has13>}
+   
     - sound{s=music_disc.cat;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=1} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCat>}
-    - setvar{var=caster.jukebox_nowplaying;value=<green>Cat;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=1} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCat>}
-
+    - setvar{var=caster.jukebox_nowplaying;value=<#5cec6f>Cat;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=1} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCat>}
+   
     - sound{s=music_disc.blocks;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=2} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasBlocks>}
-    - setvar{var=caster.jukebox_nowplaying;value=<red>Blocks;type=STRING;duration=6900} @self ?varequals{var=caster.jukebox_cycle;val=2} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasBlocks>}
-
+    - setvar{var=caster.jukebox_nowplaying;value=<#f74452>Blocks;type=STRING;duration=6900} @self ?varequals{var=caster.jukebox_cycle;val=2} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasBlocks>}
+   
     - sound{s=music_disc.chirp;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=3} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasChirp>}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_red>Chirp;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=3} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasChirp>}
-
+    - setvar{var=caster.jukebox_nowplaying;value=<#9c0000>Chirp;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=3} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasChirp>}
+   
     - sound{s=music_disc.far;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=4} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasFar>}
-    - setvar{var=caster.jukebox_nowplaying;value=<green>Far;type=STRING;duration=3480} @self ?varequals{var=caster.jukebox_cycle;val=4} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasFar>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#39e070>Far;type=STRING;duration=3480} @self ?varequals{var=caster.jukebox_cycle;val=4} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasFar>}
 
     - sound{s=music_disc.mall;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=5} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMall>}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_purple>Mall;type=STRING;duration=3940} @self ?varequals{var=caster.jukebox_cycle;val=5} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMall>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#940094>Mall;type=STRING;duration=3940} @self ?varequals{var=caster.jukebox_cycle;val=5} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMall>}
 
     - sound{s=music_disc.mellohi;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=6} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMellohi>}
-    - setvar{var=caster.jukebox_nowplaying;value=<light_purple>Mellohi;type=STRING;duration=1380} @self ?varequals{var=caster.jukebox_cycle;val=6} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMellohi>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#eb52eb>Mellohi;type=STRING;duration=1380} @self ?varequals{var=caster.jukebox_cycle;val=6} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMellohi>}
 
     - sound{s=music_disc.stal;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=7} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStal>}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_gray>Stal;type=STRING;duration=3000} @self ?varequals{var=caster.jukebox_cycle;val=7} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStal>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#494949>Stal;type=STRING;duration=3000} @self ?varequals{var=caster.jukebox_cycle;val=7} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStal>}
 
     - sound{s=music_disc.strad;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=8} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStrad>}
-    - setvar{var=caster.jukebox_nowplaying;value=<white>Strad;type=STRING;duration=3760} @self ?varequals{var=caster.jukebox_cycle;val=8} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStrad>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#FFFFFF>Strad;type=STRING;duration=3760} @self ?varequals{var=caster.jukebox_cycle;val=8} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStrad>}
 
     - sound{s=music_disc.ward;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=9} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWard>}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_green>Ward;type=STRING;duration=5020} @self ?varequals{var=caster.jukebox_cycle;val=9} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWard>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#089e08>Ward;type=STRING;duration=5020} @self ?varequals{var=caster.jukebox_cycle;val=9} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWard>}
 
     - sound{s=music_disc.11;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=10} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has11>}
-    - setvar{var=caster.jukebox_nowplaying;value=<gray><i>11</i>;type=STRING;duration=1420} @self ?varequals{var=caster.jukebox_cycle;val=10} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has11>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#494949><i>11</i>;type=STRING;duration=1420} @self ?varequals{var=caster.jukebox_cycle;val=10} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has11>}
 
     - sound{s=music_disc.creator_music_box;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=11} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator_music_box>}
-    - setvar{var=caster.jukebox_nowplaying;value=<gold>Creator (Music Box);type=STRING;duration=1460} @self ?varequals{var=caster.jukebox_cycle;val=11} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator_music_box>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#ffba30>Creator (Music Box);type=STRING;duration=1460} @self ?varequals{var=caster.jukebox_cycle;val=11} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator_music_box>}
 
     - sound{s=music_disc.wait;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=12} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWait>}
-    - setvar{var=caster.jukebox_nowplaying;value=<blue>Wait;type=STRING;duration=4740} @self ?varequals{var=caster.jukebox_cycle;val=12} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWait>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#3041d6>Wait;type=STRING;duration=4740} @self ?varequals{var=caster.jukebox_cycle;val=12} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWait>}
 
     - sound{s=music_disc.creator;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=13} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator>}
-    - setvar{var=caster.jukebox_nowplaying;value=<aqua>Creator;type=STRING;duration=3520} @self ?varequals{var=caster.jukebox_cycle;val=13} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#2bf8f8>Creator;type=STRING;duration=3520} @self ?varequals{var=caster.jukebox_cycle;val=13} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator>}
 
     - sound{s=music_disc.precipice;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=14} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPrecipice>}
-    - setvar{var=caster.jukebox_nowplaying;value=<gray>Precipice;type=STRING;duration=5980} @self ?varequals{var=caster.jukebox_cycle;val=14} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPrecipice>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#918c8c>Precipice;type=STRING;duration=5980} @self ?varequals{var=caster.jukebox_cycle;val=14} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPrecipice>}
 
     - sound{s=music_disc.otherside;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=15} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasOtherside>}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_green>Otherside;type=STRING;duration=3900} @self ?varequals{var=caster.jukebox_cycle;val=15} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasOtherside>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#0da10d>Otherside;type=STRING;duration=3900} @self ?varequals{var=caster.jukebox_cycle;val=15} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasOtherside>}
 
     - sound{s=music_disc.relic;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=16} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasRelic>}
-    - setvar{var=caster.jukebox_nowplaying;value=<red>Relic;type=STRING;duration=4380} @self ?varequals{var=caster.jukebox_cycle;val=16} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasRelic>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#ee5a5a>Relic;type=STRING;duration=4380} @self ?varequals{var=caster.jukebox_cycle;val=16} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasRelic>}
 
     - sound{s=music_disc.5;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=17} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has5>}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_aqua>5;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=17} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has5>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#27a5a5>5;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=17} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has5>}
 
     - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=18} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPigstep>}
-    - setvar{var=caster.jukebox_nowplaying;value=<dark_red>Pigstep;type=STRING;duration=2960} @self ?varequals{var=caster.jukebox_cycle;val=18} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPigstep>}
+    - setvar{var=caster.jukebox_nowplaying;value=<#8a1515>Pigstep;type=STRING;duration=2960} @self ?varequals{var=caster.jukebox_cycle;val=18} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPigstep>}
 
     - delay 1
     - am{m="Now Playing<&co> <caster.var.jukebox_nowplaying|<red>Song Not Available>"}
@@ -437,53 +440,55 @@ Portable_Jukebox-Survival:
   
  # Skills just shows what song is about to be selected
   - skill{s=[
-    - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
-    - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
-    - am{m=[3/19] <red>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
-    - am{m=[4/19] <dark_red>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
-    - am{m=[5/19] <green>Far} ?varequals{var=caster.jukebox_cycle;val=4}
-    - am{m=[6/19] <dark_purple>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
-    - am{m=[7/19] <light_purple>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
-    - am{m=[8/19] <dark_gray>Stal} ?varequals{var=caster.jukebox_cycle;val=7} 
-    - am{m=[9/19] <white>Strad} ?varequals{var=caster.jukebox_cycle;val=8} 
-    - am{m=[10/19] <dark_green>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
-    - am{m=[11/19] <gray><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
-    - am{m="[12/19] <gold>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
-    - am{m=[13/19] <blue>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
-    - am{m=[14/19] <aqua>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
-    - am{m=[15/19] <gray>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
-    - am{m=[16/19] <dark_green>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
-    - am{m=[17/19] <red>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
-    - am{m=[18/19] <dark_aqua>5} ?varequals{var=caster.jukebox_cycle;val=17}
-    - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
+    - am{m=<b><black>🔼 <white>[1/19] <reset><#ffcb3d>13} ?varequals{var=caster.jukebox_cycle;val=0}
+    - am{m=<b><black>🔼 <white>[2/19] <reset><#5cec6f>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
+    - am{m=<b><black>🔼 <white>[3/19] <reset><#f74452>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
+    - am{m=<b><black>🔼 <white>[4/19] <reset><#9c0000>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
+    - am{m=<b><black>🔼 <white>[5/19] <reset><#39e070>Far} ?varequals{var=caster.jukebox_cycle;val=4}
+    - am{m=<b><black>🔼 <white>[6/19] <reset><#940094>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
+    - am{m=<b><black>🔼 <white>[7/19] <reset><#eb52eb>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
+    - am{m=<b><black>🔼 <white>[8/19] <reset><#494949>Stal} ?varequals{var=caster.jukebox_cycle;val=7}
+    - am{m=<b><black>🔼 <white>[9/19] <reset><#FFFFFF>Strad} ?varequals{var=caster.jukebox_cycle;val=8}
+    - am{m=<b><black>🔼 <white>[10/19] <reset><#089e08>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
+    - am{m=<b><black>🔼 <white>[11/19] <reset><#494949><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
+    - am{m="<b><black>🔼 <white>[12/19] <reset><#ffba30>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
+    - am{m=<b><black>🔼 <white>[13/19] <reset><#3041d6>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
+    - am{m=<b><black>🔼 <white>[14/19] <reset><#2bf8f8>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
+    - am{m=<b><black>🔼 <white>[15/19] <reset><#918c8c>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
+    - am{m=<b><black>🔼 <white>[16/19] <reset><#0da10d>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
+    - am{m=<b><black>🔼 <white>[17/19] <reset><#ee5a5a>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
+    - am{m=<b><black>🔼 <white>[18/19] <reset><#27a5a5>5} ?varequals{var=caster.jukebox_cycle;val=17}
+    - am{m=<b><black>🔼 <white>[19/19] <reset><#8a1515>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
     - sound{s=block.note_block.snare;p=1.3}
-    ]} @self ~onUse ?!crouching
+    ]} @self ~onUse
+
   - skill{s=[
-    - am{m=[1/19] <gold>13} ?varequals{var=caster.jukebox_cycle;val=0}
-    - am{m=[2/19] <green>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
-    - am{m=[3/19] <red>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
-    - am{m=[4/19] <dark_red>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
-    - am{m=[5/19] <green>Far} ?varequals{var=caster.jukebox_cycle;val=4}
-    - am{m=[6/19] <dark_purple>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
-    - am{m=[7/19] <light_purple>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
-    - am{m=[8/19] <dark_gray>Stal} ?varequals{var=caster.jukebox_cycle;val=7} 
-    - am{m=[9/19] <white>Strad} ?varequals{var=caster.jukebox_cycle;val=8} 
-    - am{m=[10/19] <dark_green>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
-    - am{m=[11/19] <gray><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
-    - am{m="[12/19] <gold>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
-    - am{m=[13/19] <blue>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
-    - am{m=[14/19] <aqua>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
-    - am{m=[15/19] <gray>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
-    - am{m=[16/19] <dark_green>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
-    - am{m=[17/19] <red>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
-    - am{m=[18/19] <dark_aqua>5} ?varequals{var=caster.jukebox_cycle;val=17}
-    - am{m=[19/19] <dark_red>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
+    - am{m=<b><black>🔽 <white>[1/19] <reset><#ffcb3d>13} ?varequals{var=caster.jukebox_cycle;val=0}
+    - am{m=<b><black>🔽 <white>[2/19] <reset><#5cec6f>Cat} ?varequals{var=caster.jukebox_cycle;val=1}
+    - am{m=<b><black>🔽 <white>[3/19] <reset><#f74452>Blocks} ?varequals{var=caster.jukebox_cycle;val=2}
+    - am{m=<b><black>🔽 <white>[4/19] <reset><#9c0000>Chirp} ?varequals{var=caster.jukebox_cycle;val=3}
+    - am{m=<b><black>🔽 <white>[5/19] <reset><#39e070>Far} ?varequals{var=caster.jukebox_cycle;val=4}
+    - am{m=<b><black>🔽 <white>[6/19] <reset><#940094>Mall} ?varequals{var=caster.jukebox_cycle;val=5}
+    - am{m=<b><black>🔽 <white>[7/19] <reset><#eb52eb>Mellohi} ?varequals{var=caster.jukebox_cycle;val=6}
+    - am{m=<b><black>🔽 <white>[8/19] <reset><#494949>Stal} ?varequals{var=caster.jukebox_cycle;val=7}
+    - am{m=<b><black>🔽 <white>[9/19] <reset><#FFFFFF>Strad} ?varequals{var=caster.jukebox_cycle;val=8}
+    - am{m=<b><black>🔽 <white>[10/19] <reset><#089e08>Ward} ?varequals{var=caster.jukebox_cycle;val=9}
+    - am{m=<b><black>🔽 <white>[11/19] <reset><#494949><i>11} ?varequals{var=caster.jukebox_cycle;val=10}
+    - am{m="<b><black>🔽 <white>[12/19] <reset><#ffba30>Creator (Music Box)"} ?varequals{var=caster.jukebox_cycle;val=11}
+    - am{m=<b><black>🔽 <white>[13/19] <reset><#3041d6>Wait} ?varequals{var=caster.jukebox_cycle;val=12}
+    - am{m=<b><black>🔽 <white>[14/19] <reset><#2bf8f8>Creator} ?varequals{var=caster.jukebox_cycle;val=13}
+    - am{m=<b><black>🔽 <white>[15/19] <reset><#918c8c>Precipice} ?varequals{var=caster.jukebox_cycle;val=14}
+    - am{m=<b><black>🔽 <white>[16/19] <reset><#0da10d>Otherside} ?varequals{var=caster.jukebox_cycle;val=15}
+    - am{m=<b><black>🔽 <white>[17/19] <reset><#ee5a5a>Relic} ?varequals{var=caster.jukebox_cycle;val=16}
+    - am{m=<b><black>🔽 <white>[18/19] <reset><#27a5a5>5} ?varequals{var=caster.jukebox_cycle;val=17}
+    - am{m=<b><black>🔽 <white>[19/19] <reset><#8a1515>Pigstep} ?varequals{var=caster.jukebox_cycle;val=18}
     - sound{s=block.note_block.snare;p=0.8}
-    ]} @self ~onSwing ?!crouching
+    ]} @self ~onSwing
  #
 
  # Skill to stop the song early and not play a new song.  
   - skill{s=[
+    - am{m=<dark_red>⏹ <red>Stop Playing</red> ⏹}
     - stopsound{s=music_disc.13;sc=RECORDS}
     - stopsound{s=music_disc.cat;sc=RECORDS}
     - stopsound{s=music_disc.blocks;sc=RECORDS}
@@ -505,7 +510,7 @@ Portable_Jukebox-Survival:
     - stopsound{s=music_disc.pigstep;sc=RECORDS}
     - unsetvar{var=caster.jukebox_nowplaying}
     - sound{s=block.candle.extinguish}
-    ]} @self ~onPressF ?crouching
+    ]} @self ~onPressF ?crouching ?varisset{var=caster.jukebox_nowplaying}
  #
 
 #
