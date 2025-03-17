@@ -79,7 +79,7 @@ Check out my MythicMobs stuff!
   <br>
 
   
-- **Portable Jukebox**  
+- [**Portable Jukebox**](Items/Portable_Jukebox.yml) - [(Video)](https://www.youtube.com/watch?v=pUYRpjGbHM8)
   <br>
   ![Portable Jukebox Preview - Creative](assets/PortableJukebox-Creative.png)
   ![Portable Jukebox Preview - Survival](assets/PortableJukebox-Survival.png)
