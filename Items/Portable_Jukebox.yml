@@ -42,61 +42,61 @@ Portable_Jukebox-Creative:
       - stopsound{s=music_disc.pigstep;sc=RECORDS}
       ]}
     - delay 1
-    - sound{s=music_disc.13;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=0}
+    - sound{s=music_disc.13;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=0}
     - setvar{var=caster.jukebox_nowplaying;value=<#ffcb3d>13;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=0}
 
-    - sound{s=music_disc.cat;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=1}
+    - sound{s=music_disc.cat;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=1}
     - setvar{var=caster.jukebox_nowplaying;value=<#5cec6f>Cat;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=1}
 
-    - sound{s=music_disc.blocks;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=2}
+    - sound{s=music_disc.blocks;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=2}
     - setvar{var=caster.jukebox_nowplaying;value=<#f74452>Blocks;type=STRING;duration=6900} @self ?varequals{var=caster.jukebox_cycle;val=2}
 
-    - sound{s=music_disc.chirp;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=3}
+    - sound{s=music_disc.chirp;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=3}
     - setvar{var=caster.jukebox_nowplaying;value=<#9c0000>Chirp;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=3}
 
-    - sound{s=music_disc.far;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=4}
+    - sound{s=music_disc.far;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=4}
     - setvar{var=caster.jukebox_nowplaying;value=<#39e070>Far;type=STRING;duration=3480} @self ?varequals{var=caster.jukebox_cycle;val=4}
 
-    - sound{s=music_disc.mall;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=5}
+    - sound{s=music_disc.mall;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=5}
     - setvar{var=caster.jukebox_nowplaying;value=<#940094>Mall;type=STRING;duration=3940} @self ?varequals{var=caster.jukebox_cycle;val=5}
 
-    - sound{s=music_disc.mellohi;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=6}
+    - sound{s=music_disc.mellohi;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=6}
     - setvar{var=caster.jukebox_nowplaying;value=<#eb52eb>Mellohi;type=STRING;duration=1380} @self ?varequals{var=caster.jukebox_cycle;val=6}
 
-    - sound{s=music_disc.stal;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=7}
+    - sound{s=music_disc.stal;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=7}
     - setvar{var=caster.jukebox_nowplaying;value=<#494949>Stal;type=STRING;duration=3000} @self ?varequals{var=caster.jukebox_cycle;val=7}
 
-    - sound{s=music_disc.strad;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=8}
+    - sound{s=music_disc.strad;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=8}
     - setvar{var=caster.jukebox_nowplaying;value=<#FFFFFF>Strad;type=STRING;duration=3760} @self ?varequals{var=caster.jukebox_cycle;val=8}
 
-    - sound{s=music_disc.ward;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=9}
+    - sound{s=music_disc.ward;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=9}
     - setvar{var=caster.jukebox_nowplaying;value=<#089e08>Ward;type=STRING;duration=5020} @self ?varequals{var=caster.jukebox_cycle;val=9}
 
-    - sound{s=music_disc.11;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=10}
+    - sound{s=music_disc.11;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=10}
     - setvar{var=caster.jukebox_nowplaying;value=<#494949><i>11</i>;type=STRING;duration=1420} @self ?varequals{var=caster.jukebox_cycle;val=10}
 
-    - sound{s=music_disc.creator_music_box;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=11}
+    - sound{s=music_disc.creator_music_box;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=11}
     - setvar{var=caster.jukebox_nowplaying;value=<#ffba30>Creator (Music Box);type=STRING;duration=1460} @self ?varequals{var=caster.jukebox_cycle;val=11}
 
-    - sound{s=music_disc.wait;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=12}
+    - sound{s=music_disc.wait;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=12}
     - setvar{var=caster.jukebox_nowplaying;value=<#3041d6>Wait;type=STRING;duration=4740} @self ?varequals{var=caster.jukebox_cycle;val=12}
 
-    - sound{s=music_disc.creator;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=13}
+    - sound{s=music_disc.creator;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=13}
     - setvar{var=caster.jukebox_nowplaying;value=<#2bf8f8>Creator;type=STRING;duration=3520} @self ?varequals{var=caster.jukebox_cycle;val=13}
 
-    - sound{s=music_disc.precipice;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=14}
+    - sound{s=music_disc.precipice;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=14}
     - setvar{var=caster.jukebox_nowplaying;value=<#918c8c>Precipice;type=STRING;duration=5980} @self ?varequals{var=caster.jukebox_cycle;val=14}
 
-    - sound{s=music_disc.otherside;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=15}
+    - sound{s=music_disc.otherside;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=15}
     - setvar{var=caster.jukebox_nowplaying;value=<#0da10d>Otherside;type=STRING;duration=3900} @self ?varequals{var=caster.jukebox_cycle;val=15}
 
-    - sound{s=music_disc.relic;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=16}
+    - sound{s=music_disc.relic;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=16}
     - setvar{var=caster.jukebox_nowplaying;value=<#ee5a5a>Relic;type=STRING;duration=4380} @self ?varequals{var=caster.jukebox_cycle;val=16}
 
-    - sound{s=music_disc.5;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=17}
+    - sound{s=music_disc.5;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=17}
     - setvar{var=caster.jukebox_nowplaying;value=<#27a5a5>5;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=17}
 
-    - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=18}
+    - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=18}
     - setvar{var=caster.jukebox_nowplaying;value=<#8a1515>Pigstep;type=STRING;duration=2960} @self ?varequals{var=caster.jukebox_cycle;val=18}
 
     - delay 1
@@ -375,61 +375,61 @@ Portable_Jukebox-Survival:
       - unsetvar{var=caster.jukebox_nowplaying}
       ]} 
     - delay 1
-    - sound{s=music_disc.13;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=0} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has13>}
+    - sound{s=music_disc.13;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=0} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has13>}
     - setvar{var=caster.jukebox_nowplaying;value=<#ffcb3d>13;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=0} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has13>}
    
-    - sound{s=music_disc.cat;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=1} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCat>}
+    - sound{s=music_disc.cat;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=1} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCat>}
     - setvar{var=caster.jukebox_nowplaying;value=<#5cec6f>Cat;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=1} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCat>}
    
-    - sound{s=music_disc.blocks;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=2} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasBlocks>}
+    - sound{s=music_disc.blocks;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=2} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasBlocks>}
     - setvar{var=caster.jukebox_nowplaying;value=<#f74452>Blocks;type=STRING;duration=6900} @self ?varequals{var=caster.jukebox_cycle;val=2} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasBlocks>}
    
-    - sound{s=music_disc.chirp;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=3} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasChirp>}
+    - sound{s=music_disc.chirp;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=3} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasChirp>}
     - setvar{var=caster.jukebox_nowplaying;value=<#9c0000>Chirp;type=STRING;duration=3700} @self ?varequals{var=caster.jukebox_cycle;val=3} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasChirp>}
    
-    - sound{s=music_disc.far;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=4} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasFar>}
+    - sound{s=music_disc.far;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=4} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasFar>}
     - setvar{var=caster.jukebox_nowplaying;value=<#39e070>Far;type=STRING;duration=3480} @self ?varequals{var=caster.jukebox_cycle;val=4} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasFar>}
 
-    - sound{s=music_disc.mall;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=5} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMall>}
+    - sound{s=music_disc.mall;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=5} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMall>}
     - setvar{var=caster.jukebox_nowplaying;value=<#940094>Mall;type=STRING;duration=3940} @self ?varequals{var=caster.jukebox_cycle;val=5} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMall>}
 
-    - sound{s=music_disc.mellohi;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=6} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMellohi>}
+    - sound{s=music_disc.mellohi;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=6} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMellohi>}
     - setvar{var=caster.jukebox_nowplaying;value=<#eb52eb>Mellohi;type=STRING;duration=1380} @self ?varequals{var=caster.jukebox_cycle;val=6} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasMellohi>}
 
-    - sound{s=music_disc.stal;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=7} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStal>}
+    - sound{s=music_disc.stal;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=7} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStal>}
     - setvar{var=caster.jukebox_nowplaying;value=<#494949>Stal;type=STRING;duration=3000} @self ?varequals{var=caster.jukebox_cycle;val=7} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStal>}
 
-    - sound{s=music_disc.strad;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=8} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStrad>}
+    - sound{s=music_disc.strad;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=8} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStrad>}
     - setvar{var=caster.jukebox_nowplaying;value=<#FFFFFF>Strad;type=STRING;duration=3760} @self ?varequals{var=caster.jukebox_cycle;val=8} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasStrad>}
 
-    - sound{s=music_disc.ward;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=9} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWard>}
+    - sound{s=music_disc.ward;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=9} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWard>}
     - setvar{var=caster.jukebox_nowplaying;value=<#089e08>Ward;type=STRING;duration=5020} @self ?varequals{var=caster.jukebox_cycle;val=9} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWard>}
 
-    - sound{s=music_disc.11;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=10} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has11>}
+    - sound{s=music_disc.11;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=10} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has11>}
     - setvar{var=caster.jukebox_nowplaying;value=<#494949><i>11</i>;type=STRING;duration=1420} @self ?varequals{var=caster.jukebox_cycle;val=10} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has11>}
 
-    - sound{s=music_disc.creator_music_box;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=11} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator_music_box>}
+    - sound{s=music_disc.creator_music_box;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=11} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator_music_box>}
     - setvar{var=caster.jukebox_nowplaying;value=<#ffba30>Creator (Music Box);type=STRING;duration=1460} @self ?varequals{var=caster.jukebox_cycle;val=11} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator_music_box>}
 
-    - sound{s=music_disc.wait;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=12} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWait>}
+    - sound{s=music_disc.wait;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=12} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWait>}
     - setvar{var=caster.jukebox_nowplaying;value=<#3041d6>Wait;type=STRING;duration=4740} @self ?varequals{var=caster.jukebox_cycle;val=12} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasWait>}
 
-    - sound{s=music_disc.creator;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=13} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator>}
+    - sound{s=music_disc.creator;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=13} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator>}
     - setvar{var=caster.jukebox_nowplaying;value=<#2bf8f8>Creator;type=STRING;duration=3520} @self ?varequals{var=caster.jukebox_cycle;val=13} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasCreator>}
 
-    - sound{s=music_disc.precipice;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=14} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPrecipice>}
+    - sound{s=music_disc.precipice;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=14} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPrecipice>}
     - setvar{var=caster.jukebox_nowplaying;value=<#918c8c>Precipice;type=STRING;duration=5980} @self ?varequals{var=caster.jukebox_cycle;val=14} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPrecipice>}
 
-    - sound{s=music_disc.otherside;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=15} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasOtherside>}
+    - sound{s=music_disc.otherside;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=15} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasOtherside>}
     - setvar{var=caster.jukebox_nowplaying;value=<#0da10d>Otherside;type=STRING;duration=3900} @self ?varequals{var=caster.jukebox_cycle;val=15} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasOtherside>}
 
-    - sound{s=music_disc.relic;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=16} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasRelic>}
+    - sound{s=music_disc.relic;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=16} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasRelic>}
     - setvar{var=caster.jukebox_nowplaying;value=<#ee5a5a>Relic;type=STRING;duration=4380} @self ?varequals{var=caster.jukebox_cycle;val=16} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasRelic>}
 
-    - sound{s=music_disc.5;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=17} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has5>}
+    - sound{s=music_disc.5;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=17} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has5>}
     - setvar{var=caster.jukebox_nowplaying;value=<#27a5a5>5;type=STRING;duration=3560} @self ?varequals{var=caster.jukebox_cycle;val=17} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.Has5>}
 
-    - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} ?varequals{var=caster.jukebox_cycle;val=18} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPigstep>}
+    - sound{s=music_disc.pigstep;sc=RECORDS;v=20;audience=@self} @selflocation{y=40} ?varequals{var=caster.jukebox_cycle;val=18} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPigstep>}
     - setvar{var=caster.jukebox_nowplaying;value=<#8a1515>Pigstep;type=STRING;duration=2960} @self ?varequals{var=caster.jukebox_cycle;val=18} ?!stringequals{val2=0;val1=<caster.item.hand.nbt.HasPigstep>}
 
     - delay 1
