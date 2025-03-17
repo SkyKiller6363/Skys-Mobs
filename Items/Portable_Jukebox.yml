@@ -1,10 +1,11 @@
 Portable_Jukebox-Creative:
   Id: jukebox
-  Display: '<aqua>Portable Jukebox <green>(Creative)'
+  Display: '<#494646>🎶 <#13abb1>Portable Jukebox &f(<#b350f5>Creative&f) <#494646>🎶'
   Lore:
-  - 'Left and Right Click to Cycle Songs'
-  - 'Press F to Play'
-  - 'Crouch + Press F to Stop'
+    - ''
+    - '<#d6c800>⬅ ➡ <#a5a5a5>Left/Right-Click<white><&co> <#d6c800>Cycle Tracks'
+    - '   <#41e92b>▶ <#a5a5a5>Press F<white><&co> <#41e92b>Play Music'
+    - '   <#cf2828>⏹ <#a5a5a5>Crouch + F<white><&co> <#cf2828>Stop Music'
   Options:
     Placeable: false
     PreventStacking: true
@@ -176,12 +177,13 @@ Portable_Jukebox-Creative:
 # Tested on MC 1.21.4 - MM 5.8.1 - Crucible 2.2.0 dev
 Portable_Jukebox-Survival:
   Id: jukebox
-  Display: '<aqua>Portable Jukebox'
-  Lore: 
-  - 'Left and Right-Click to Cycle Songs'
-  - 'Press F to Play'
-  - 'Crouch + Press F to Stop'
-  - 'Crouch + Right-Click to Insert Discs'
+  Display: '<#494646>🎶 <#13abb1>Portable Jukebox <#494646>🎶'
+  Lore:
+    - ''
+    - '<#d6c800>⬅ ➡ <#a5a5a5>Left/Right-Click<white><&co> <#d6c800>Cycle Tracks'
+    - '   <#41e92b>▶ <#a5a5a5>Press F<white><&co> <#41e92b>Play Music'
+    - '   <#cf2828>⏹ <#a5a5a5>Crouch + F<white><&co> <#cf2828>Stop Music'
+    - '<black>.  <#4e537c>💿 <#a5a5a5>Crouch + Right-Click<white><&co> <#4e537c>Insert Discs'
   NBT:
     Has13: int/0
     HasCat: int/0
