@@ -9,6 +9,8 @@ The Modular Kill Tracker is a versatile system designed to track how many times 
 
 - **Easy Integration**  
   Just add `Template: TrackKills` to any mob you want to track.
+  
+  Or add `Template: TrackKills_Threat` to any boss mob that uses Threat Tables, so multiple players can get points for the kill, instead of just the last player to hit it. 
 - **Player-Specific Tracking**  
   Keeps a kill count per player without additional configuration.
 - **PlaceholderAPI Compatibility**  
