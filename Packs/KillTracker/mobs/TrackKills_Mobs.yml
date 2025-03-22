@@ -4,17 +4,11 @@ TrackKills:
   - skill{s=TrackKills} @trigger ~onDeath 
   - setvar{var=caster.MobID;type=string;value="<caster.type>";save=true} @self ~onSpawn
 
-
-
-
-ExampleBoss:
-  Template: TrackKills
-  Type: witch
-  Display: '&5Magician'
-  Health: 30
-  Armor: 1
-  Options:
-    MovementSpeed: 0.3
+TrackKills_Threat:
+  Type: zombie
   Skills:
-  - skill{s=BM_lightning-spell} @self ~onTimer:200 ?inCombat 
-  - randomskill{skills=BM_swap-spell 5,BM_teleport-spell 4,BM_witch-reinforcements 6,BM_blast-spell 6,BM_lightning-spell 5} @self ~onTimer:200 ?inCombat
+  - skill{s=TrackKills} @ThreatTablePlayers ~onDeath 
+  - setvar{var=caster.MobID;type=string;value="<caster.type>";save=true} @self ~onSpawn
+
+
+
