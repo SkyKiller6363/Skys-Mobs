@@ -1,0 +1,11 @@
+ExampleBoss:
+  Template: TrackKills
+  Type: witch
+  Display: '&5Magician'
+  Health: 30
+  Armor: 1
+  Options:
+    MovementSpeed: 0.3
+  Skills:
+  - skill{s=BM_lightning-spell} @self ~onTimer:200 ?inCombat 
+  - randomskill{skills=BM_swap-spell 5,BM_teleport-spell 4,BM_witch-reinforcements 6,BM_blast-spell 6,BM_lightning-spell 5} @self ~onTimer:200 ?inCombat
