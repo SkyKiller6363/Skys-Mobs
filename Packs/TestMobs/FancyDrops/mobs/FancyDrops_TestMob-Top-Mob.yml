@@ -26,7 +26,7 @@ FancyDrop-TopTest:
   # - cmd{c="say <trigger.name> is top 2";top=2} 1 1
   # - cmd{c="say <trigger.name> is top 3";top=3} 1 1
 
-  # However! You can use a droptable to bypass this limitation. 
+  # However! You can use a droptable to bypass this limitation. (Getting reports this might not work anymore)
   - CMDDrop1{top=1} 1 1
   - CMDDrop2{top=2} 1 1
   - CMDDrop3{top=3} 1 1
