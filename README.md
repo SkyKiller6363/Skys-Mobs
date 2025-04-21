@@ -81,6 +81,7 @@ Check out my MythicMobs stuff!
 - **[BedrockBreaker](Items/RandomItems.yml)**  
   _Allows the user to break a single block of Bedrock!_
   <br>
+  ![BedrockBreaker - Tooltip](assets/BedrockBreaker-Tooltip.png)
   ![BedrockBreaker Preview](assets/BedrockBreaker.gif)
 
   
