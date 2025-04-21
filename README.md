@@ -85,7 +85,7 @@ Check out my MythicMobs stuff!
   ![InstaTNT-NoBD Gif](assets/InstaTNT-NoBD.gif)
   <br>
 
-##### **[BedrockBreaker](Items/RandomItems.yml)**  
+##### **[Bedrock Breaker](Items/RandomItems.yml)**  
   _Allows the user to break a single block of Bedrock!_
   <br>
   ![BedrockBreaker - Tooltip](assets/BedrockBreaker-Tooltip.png)
