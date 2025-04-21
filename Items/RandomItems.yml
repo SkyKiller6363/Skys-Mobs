@@ -224,3 +224,21 @@ Creeper_Candy:
     - actionmessage{m="<red>You are visible...";delay=200}
     ]} @self ~onConsume
 
+#Requires Crucible and Premium MM
+BedrockBreaker:
+  Id: black_dye
+  Group: 'Fun Items'
+  Display: '<gradient:#3C3C3C:#FFFFFF>█-------█ Bedrock </gradient><gradient:#FFFFFF:#3C3C3C>Breaker █-------█</gradient>'
+  Lore:
+  - '               A Tool Of Legends'
+  - ' '
+  - ' Harness the power of this one-time use'
+  - 'item to shatter the unbreakable, breaking'
+  - '   a single <color:#3C3C3C>Bedrock &fblock with precision.'
+  - '<gradient:#3C3C3C:#FFFFFF>█-------------█-█</gradient><gradient:#FFFFFF:#3C3C3C>-█-------------█</gradient>'
+  Skills:
+  - skill{sync=true;cd=1;s=[
+    - consumeslot{slot=HAND;a=1} @self
+    - breakblock{drops=false;useTool=false}
+    ]} @targetblock{md=5;blocktype=bedrock} ~onUse ?stringequals{val1=<target.raytrace>;val2="BEDROCK"} ?holding{i=BedrockBreaker;strict=true}
+
