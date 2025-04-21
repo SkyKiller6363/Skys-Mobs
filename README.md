@@ -36,61 +36,70 @@ Check out my MythicMobs stuff!
   ![Zombie Knight Preview](assets/ZombieKnight-Mace.gif) 
 
 ### Items
-- **[Random Items](Items/RandomItems.yml) (Rocket Pops, Creeper Candy, Warped Mushroom Snack, Explosive Steak, Ender Bow, and Random Potion)**
+#### **[Random Items](Items/RandomItems.yml)**
+  _([Rocket Pops](#rocket-pops), [Creeper Candy](#creeper-candy), [Warped Mushroom Snack](#warped-mushroom-snack), [Explosive Steak](#explosive-steak), [Ender Bow](#ender-bow), [Bedrock Breaker](#bedrock-breaker), and [Random Potion](#random-potion))_
   <br>
   
--  _[Rocket Pops](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/Items/RandomItems.yml). Gives you Speed and Jump boost, then turns you into a firework_
+##### **[Rocket Pops](Items/RandomItems.yml)**
+  _Gives you Speed and Jump boost, then turns you into a firework_
   ![Rocket Pops](assets/RocketPops.gif)
   <br>
   
--  _[Creeper Candy](Items/RandomItems.yml). Makes you completely invisible to all players near you for 10 seconds. Hides armor, too._
+##### **[Creeper Candy](Items/RandomItems.yml)** 
+  _Makes you completely invisible to all players near you for 10 seconds. Hides armor, too._
   ![Creeper Candy](assets/CreeperCandy.gif)
   <br>
   
--  _[Ender Bow](Items/RandomItems.yml). Shoots an Ender Pearl instead of an arrow. Still requires an arrow to shoot._
+##### **[Ender Bow](Items/RandomItems.yml)**
+  _Shoots an Ender Pearl instead of an arrow. Still requires an arrow to shoot._
+  <br>
+  ![Ender Bow Tooltip](assets/Enderbow.png)
+  ![Ender Bow Gif](assets/EnderBow.gif)
+  <br>
 
-    ![Ender Bow Tooltip](assets/Enderbow.png)
-    ![Ender Bow Gif](assets/EnderBow.gif)
-   <br>
-
--  _[Explosive Steak](Items/RandomItems.yml). Causes an Explosion when consumed._
+##### **[Explosive Steak](Items/RandomItems.yml)** 
+  _Causes an Explosion when consumed._
   ![Explosive Steak](assets/ExplosiveSteak.gif)
   <br>
   
--  _[Random Potion](Items/RandomItems.yml). Gives you 3 minutes of any potion!_
+##### **[Random Potion](Items/RandomItems.yml)** 
+  _Gives you 3 minutes of any potion!_
   ![Random Potion](assets/RandomPotion.gif)
   <br>
   
--  _[Warped Mushroom Snack](Items/RandomItems.yml). Teleports you up to 100 blocks away!_
+##### **[Warped Mushroom Snack](Items/RandomItems.yml)**
+  _Teleports you up to 100 blocks away!_
   ![Warped Mushroom](assets/WarpedMushroom.gif)
 
 
-- **[SkyBomb](Items/SkyBomb.yml)**  
+##### **[SkyBomb](Items/SkyBomb.yml)**  
   _It flings nearby entities into the air!_
   <br>
   ![SkyBomb Preview](assets/SkyBomb.gif)
 
-- **[InstaTNT](Items/InstaTNT)**  
-    _Block Damage_
+##### **[InstaTNT](Items/InstaTNT)**  
+  _Block Damage_
   ![InstaTNT-BD Gif](assets/InstaTNT-BD.gif)
   
   _No Block Damage_
   ![InstaTNT-NoBD Gif](assets/InstaTNT-NoBD.gif)
   <br>
 
-- **[BedrockBreaker](Items/RandomItems.yml)**  
+##### **[BedrockBreaker](Items/RandomItems.yml)**  
   _Allows the user to break a single block of Bedrock!_
   <br>
   ![BedrockBreaker - Tooltip](assets/BedrockBreaker-Tooltip.png)
   ![BedrockBreaker Preview](assets/BedrockBreaker.gif)
 
   
-- [**Portable Jukebox**](Items/Portable_Jukebox.yml) - [(Video)](https://www.youtube.com/watch?v=pUYRpjGbHM8)
+##### [**Portable Jukebox**](Items/Portable_Jukebox.yml) 
+  [Video Showcase](https://www.youtube.com/watch?v=pUYRpjGbHM8)
   <br>
   ![Portable Jukebox Preview - Creative](assets/PortableJukebox-Creative.png)
   ![Portable Jukebox Preview - Survival](assets/PortableJukebox-Survival.png)
-
-- [**TagStick**](Packs/TagStick)
+  <br>
+  
+##### [**TagStick**](Packs/TagStick)
   _Video Coming Soon..._
   <br>
   [TagStick Preview](https://www.youtube.com/SkyKiller63)
