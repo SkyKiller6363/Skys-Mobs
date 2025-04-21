@@ -78,6 +78,11 @@ Check out my MythicMobs stuff!
   ![InstaTNT-NoBD Gif](assets/InstaTNT-NoBD.gif)
   <br>
 
+- **[BedrockBreaker](Items/RandomItems.yml)**  
+  _Allows the user to break a single block of Bedrock!_
+  <br>
+  ![BedrockBreaker Preview](assets/BedrockBreaker.gif)
+
   
 - [**Portable Jukebox**](Items/Portable_Jukebox.yml) - [(Video)](https://www.youtube.com/watch?v=pUYRpjGbHM8)
   <br>
