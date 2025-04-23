@@ -1,0 +1,91 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Xray Item                                    ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.4                           │       ██
+#   ██   │ MythicMobs Premuim: 5.8+ (Hard Dependency)             │       ██
+#   ██   │ MythicCrucible: 2.2.0+ (Hard Dependency)               │       ██
+#   ██   │ LibsDisguises: 11.0.0+ (Hard Dependency)               │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A Few items that allow the user to temporarily      ██
+#   ██   see through blocks. Also makes ores temporarily glow.            ██
+#   ██   For problems, go to my discord. www.SkyKillerGames.com           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+#
+
+Xray_Admin:
+  Id: structure_void
+  Display: '<#FF3CAC>&lX-Ray Vision &8(&cAdmin&8)'
+  Lore:
+  - '&fUncover secrets hidden beyond sight.'
+  - '&7See through walls & illuminate hidden ores.'
+  - '&eUnlimited use for &cAdmins &eonly!'
+  Skills:
+  - skill{s=XraySummon} @origin ~onUse
+
+
+Xray_10:
+  Id: structure_void
+  Display: '<#00C8FF>&lX-Ray Vision &7(10 Blocks)'
+  Lore:
+  - '&7Allows you to see through walls for a moment.'
+  - '&7Ores will glow temporarily.'
+  - '&7Range: <#00C8FF>10 blocks forward'
+  - '&eCooldown: 10s'
+  Skills:
+  - skill{cd=10;s=[
+    - takeitem{i=Xray_10;a=1} @self
+    - skill{s=XraySummon_10}
+    ]} @origin ~onUse 
+
+
+Xray_20:
+  Id: structure_void
+  Display: '<#00C8FF>&lX-Ray Vision &7(20 Blocks)'
+  Lore:
+  - '&7Allows you to see through walls for a moment.'
+  - '&7Ores will glow temporarily.'
+  - '&7Range: <#00C8FF>20 blocks forward'
+  - '&eCooldown: 10s'
+  Skills:
+  - skill{cd=10;s=[
+    - skill{s=XraySummon_20}
+    - takeitem{i=Xray_20;a=1} @self
+    ]} @origin ~onUse ?!lookingat{b=chest}
+
+
+
+
+CaveFinder_20:
+  Id: structure_void
+  Display: '<#00C8FF>&lCave Finder &7(20 Blocks)'
+  Lore:
+  - '&7Allows you to see through walls for a moment.'
+  - '&7Range: <#00C8FF>20 blocks forward'
+  - '&eCooldown: 10s'
+  Skills:
+  - skill{cd=10;s=[
+    - skill{s=CaveFinderSummon_20}
+    - takeitem{i=CaveFinder_20;a=1} @self
+    ]} @origin ~onUse
+
+
+CaveFinder_40:
+  Id: structure_void
+  Display: '<#00C8FF>&lCave Finder &7(40 Blocks)'
+  Lore:
+  - '&7Allows you to see through walls for a moment.'
+  - '&7Range: <#00C8FF>40 blocks forward'
+  - '&eCooldown: 10s'
+  Skills:
+  - skill{cd=10;s=[
+    - skill{s=CaveFinderSummon_40}
+    - takeitem{i=CaveFinder_40;a=1} @self
+    ]} @origin ~onUse

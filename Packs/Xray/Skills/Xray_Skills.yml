@@ -1,0 +1,273 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Xray Item Skills                             ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.4                           │       ██
+#   ██   │ MythicMobs Premuim: 5.8+ (Hard Dependency)             │       ██
+#   ██   │ MythicCrucible: 2.2.0+ (Hard Dependency)               │       ██
+#   ██   │ LibsDisguises: 11.0.0+ (Hard Dependency)               │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A Few items that allow the user to temporarily      ██
+#   ██   see through blocks. Also makes ores temporarily glow.            ██
+#   ██   For problems, go to my discord. www.SkyKillerGames.com           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+#
+
+OreDetect:
+   Cooldown: 
+   Conditions:
+   Skills:
+   - skill{s=OreDetect2} @self
+   - delay 220
+   - skill{s=OreDie} @self
+OreDetect2:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DIAMOND_ORE} castinstead OreDetectDiamondOre 
+   - inblock{b=DEEPSLATE_DIAMOND_ORE} castinstead OreDetectDeepDiamondOre 
+   - inblock{b=COAL_ORE} castinstead OreDetectCoalOre
+   - inblock{b=DEEPSLATE_COAL_ORE} castinstead OreDetectDeepCoalOre
+   - inblock{b=IRON_ORE} castinstead OreDetectIronOre
+   - inblock{b=DEEPSLATE_IRON_ORE} castinstead OreDetectDeepIronOre
+   - inblock{b=GOLD_ORE} castinstead OreDetectGoldOre
+   - inblock{b=DEEPSLATE_GOLD_ORE} castinstead OreDetectDeepGoldOre
+   - inblock{b=REDSTONE_ORE} castinstead OreDetectRedstoneOre
+   - inblock{b=DEEPSLATE_REDSTONE_ORE} castinstead OreDetectDeepRedstoneOre
+   - inblock{b=LAPIS_ORE} castinstead OreDetectLapisOre
+   - inblock{b=DEEPSLATE_LAPIS_ORE} castinstead OreDetectDeepLapisOre
+   - inblock{b=EMERALD_ORE} castinstead OreDetectEmeraldOre
+   - inblock{b=DEEPSLATE_EMERALD_ORE} castinstead OreDetectDeepEmeraldOre
+   - inblock{b=COPPER_ORE} castinstead OreDetectCopperOre
+   - inblock{b=DEEPSLATE_COPPER_ORE} castinstead OreDetectDeepCopperOre
+   - inblock{b=NETHER_QUARTZ_ORE} castinstead OreDetectQuartzOre
+   - inblock{b=NETHER_GOLD_ORE} castinstead OreDetectNetherGoldOre
+   - inblock{b=ANCIENT_DEBRIS} castinstead OreDetectAncientDebris
+   Skills:
+   - skill{s=OreDie} @self
+
+OreDetectDiamondOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DIAMOND_ORE} true
+   Skills:
+   - disguise{d="block_display DIAMOND_ORE setGlowing true setGlowColor AQUA"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepDiamondOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_DIAMOND_ORE} true
+   Skills:
+   - disguise{d="block_display DEEPSLATE_DIAMOND_ORE setGlowing true setGlowColor DARK_AQUA"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectCoalOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=COAL_ORE} true
+   Skills:
+   - disguise{d="block_display COAL_ORE setGlowing true setGlowColor GRAY"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepCoalOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_COAL_ORE} true
+   Skills:
+   - disguise{d="block_display DEEPSLATE_COAL_ORE setGlowing true setGlowColor DARK_GRAY"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectIronOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=IRON_ORE} true
+   Skills:
+   - disguise{d="block_display IRON_ORE setGlowing true setGlowColor GRAY"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepIronOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_IRON_ORE} true
+   Skills:
+   - disguise{d="Block_Display deepslate_iron_ore setGlowing true setGlowColor DARK_GRAY"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectGoldOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=GOLD_ORE} true
+   Skills:
+   - disguise{d="block_display GOLD_ORE setGlowing true setGlowColor YELLOW"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepGoldOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_GOLD_ORE} true
+   Skills:
+   - disguise{d="block_display DEEPSLATE_GOLD_ORE setGlowing true setGlowColor GOLD"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectRedstoneOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=REDSTONE_ORE} true
+   Skills:
+   - disguise{d="block_display REDSTONE_ORE setGlowing true setGlowColor RED"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepRedstoneOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_REDSTONE_ORE} true
+   Skills:
+   - disguise{d="block_display DEEPSLATE_REDSTONE_ORE setGlowing true setGlowColor DARK_RED"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectLapisOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=LAPIS_ORE} true
+   Skills:
+   - disguise{d="block_display LAPIS_ORE setGlowing true setGlowColor BLUE"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepLapisOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_LAPIS_ORE} true
+   Skills:
+   - disguise{d="block_display DEEPSLATE_LAPIS_ORE setGlowing true setGlowColor DARK_BLUE"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectEmeraldOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=EMERALD_ORE} true
+   Skills:
+   - disguise{d="block_display EMERALD_ORE setGlowing true setGlowColor GREEN"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepEmeraldOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_EMERALD_ORE} true
+   Skills:
+   - disguise{d="block_display DEEPSLATE_EMERALD_ORE setGlowing true setGlowColor DARK_GREEN"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectCopperOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=COPPER_ORE} true
+   Skills:
+   - disguise{d="block_display COPPER_ORE setGlowing true setGlowColor GOLD"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectDeepCopperOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=DEEPSLATE_COPPER_ORE} true
+   Skills:
+   - disguise{d="block_display DEEPSLATE_COPPER_ORE setGlowing true setGlowColor GOLD"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectQuartzOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=NETHER_QUARTZ_ORE} true
+   Skills:
+   - disguise{d="block_display NETHER_QUARTZ_ORE setGlowing true setGlowColor WHITE"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectNetherGoldOre:
+   Cooldown: 
+   Conditions:
+   - inblock{b=NETHER_GOLD_ORE} true
+   Skills:
+   - disguise{d="block_display NETHER_GOLD_ORE setGlowing true setGlowColor GOLD"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+OreDetectAncientDebris:
+   Cooldown: 
+   Conditions:
+   - inblock{b=ANCIENT_DEBRIS} true
+   Skills:
+   - disguise{d="block_display ANCIENT_DEBRIS setGlowing true setGlowColor DARK_RED"} @self
+   - teleport @casterSpawnLocation{blockCentered=true}
+
+#
+OreDie:
+   Skills:
+   - remove @self 
+
+XraySummon: #admin
+   Cooldown: 0.5
+   Skills:
+   - delay 5
+   - summon{type=XrayDummy_Admin} @selflocation
+XraySummon_10:
+   Cooldown: 0.5
+   Skills:
+   - delay 5
+   - summon{type=XrayDummy_10} @selflocation
+XraySummon_20:
+   Cooldown: 0.5
+   Skills:
+   - delay 5
+   - summon{type=XrayDummy_20} @selflocation
+
+CaveFinderSummon_20:
+   Cooldown: 0.5
+   Skills:
+   - delay 5
+   - summon{type=CaveFinderDummy_20} @selflocation{y=-1}
+CaveFinderSummon_40:
+   Cooldown: 0.5
+   Skills:
+   - delay 5
+   - summon{type=CaveFinderDummy_40} @selflocation{y=-1}
+
+Xray: #set
+  Skills:
+  # Variables
+  - setvar{var=caster.length;val=0} @self ?!varisset{var=caster.length}
+  - setvar{var=caster.width;val=<skill.width>} @self ?!varisset{var=caster.width}
+  - varadd{var=caster.length;a=1}
+  # Effect
+  - sound{s=block.amethyst_block.break;p=1.3;v=0.5} @ForwardWall{f=0;y=3.0;width=2;height=2;limit=3}
+  - vskill{s=[ - effect:blockmask{m=glass;r=1;d=200} @ForwardWall{f=0;y=3.0;width=<caster.var.width|2>;height=<caster.var.width|3>} ]} @self
+  - vskill{s=[ - effect:particles{p=enchanted_hit;amount=1;speed=0;hS=0.05;vS=0.05;repeat=14;repeatInterval=1} @ForwardWall{f=0;y=3.0;width=<caster.var.width|3>;height=<caster.var.width|3>} ]} @self
+  # Checking for ores
+  - vskill{s=[ - summon{type=OreDetector;yaw=0;pitch=0;sio=false;sip=false;if=false} @ForwardWall{f=0;y=2.0;width=<caster.var.width|3>+1;height=<caster.var.width|3>+1} ]} @selflocation
+  # Teleport forward, repeat skill and remove once reached defined length
+  - teleport @forward{f=1;uel=true;yo=-1.7}
+  - delay 2
+  - skill{s=Xray} ?varinrange{var=caster.length;val=<<skill.length|10>}
+  - remove @self ?varequals{var=caster.length;val=<skill.length|10>}
+
+CaveFinder: #set
+  Skills:
+  # Variables
+  - setvar{var=caster.length;val=0} @self ?!varisset{var=caster.length}
+  - setvar{var=caster.width;val=<skill.width>} @self ?!varisset{var=caster.width}
+  - varadd{var=caster.length;a=1}
+  # Effect
+  - sound{s=block.amethyst_block.break;p=1.3;v=0.5} @ForwardWall{f=0;y=3.0;width=2;height=2;limit=3}
+  - vskill{s=[ - effect:blockmask{m=glass;r=1;d=200} @ForwardWall{f=0;y=3.0;width=<caster.var.width|3>;height=<caster.var.width|3>} ]} @self
+  - vskill{s=[ - effect:particles{p=enchanted_hit;amount=1;speed=0;hS=0.05;vS=0.05;repeat=14;repeatInterval=1} @ForwardWall{f=0;y=3.0;width=<caster.var.width|3>;height=<caster.var.width|3>} ]} @self
+  # Teleport forward, repeat skill and remove once reached defined length
+  - teleport @forward{f=1;uel=true;yo=-1.7}
+  - delay 2
+  - skill{s=CaveFinder} ?varinrange{var=caster.length;val=<<skill.length|10>}
+  - remove @self ?varequals{var=caster.length;val=<skill.length|10>}
+
+
