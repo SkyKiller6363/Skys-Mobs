@@ -17,6 +17,7 @@ Check out my MythicMobs stuff!
 - [**Packs**](Packs)
   - [Skeleton King - V2](Packs/SkeletonKingV2)
   - [Blazeon](Packs/Blazeon)
+  - [Xray Items - Temporarily see through walls and make ores glow](Packs/Xray) 
   - [Test Mobs](Packs/TestMobs)
 - [**Mob Leaderboard System**](Packs/KillTracker)
 
@@ -114,6 +115,12 @@ Check out my MythicMobs stuff!
   _Video Coming Soon..._
   <br>
   [Blazeon Preview](https://www.youtube.com/SkyKiller63)
+
+##### [**Xray Items**](Packs/Xray)
+  [Video Showcase](https://www.youtube.com/watch?v=tRGygeug-ak)
+  <br>
+  ![Xray Tooltip](assets/XrayTooltip.png)
+  ![Xray](assets/Xray.png)
 
 ---
 
