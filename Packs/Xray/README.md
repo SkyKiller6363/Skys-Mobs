@@ -3,6 +3,8 @@
 **Overview**  
 The Xray Items Pack provides a set of unique items that allow players to temporarily see through walls and easily locate ores or hidden caves. Perfect for special rewards, donor perks, admin tools, or just to enhance exploration.
 
+![Xray](https://github.com/SkyKiller6363/Skys-Mobs/blob/main/assets/Xray.png)
+
 ---
 
 ## Included Items
