@@ -26,6 +26,19 @@
 
 ---
 
+## Mythic Mobs Pack Installation Instructions
+
+1. **Download the Geomancer Pack**  
+   Click [here](https://downgit.github.io/#/home?url=https://github.com/SkyKiller6363/Skys-Mobs/new/main/Packs/Geomancer) to download all files. Then extract the `MythicMobs/Geomancer` folder from the pack download.
+
+2. **Upload to Server**  
+   Place the `Geomancer` folder into `plugins/MythicMobs/Packs` on your server.
+
+3. **MythicMobs Reload**  
+   Run `/mm reload` to register the pack.
+
+---
+
 ## Disguise Setup (LibsDisguises)
 
 You have two options:
@@ -43,19 +56,6 @@ You have two options:
 
 ---
 
-## Installation Instructions
-
-1. **Download the Geomancer Pack**  
-   Extract the `Geomancer` folder from the pack download.
-
-2. **Upload to Server**  
-   Place the `Geomancer` folder into `plugins/MythicMobs/Packs`.
-
-3. **MythicMobs Reload**  
-   Run `/mm reload` to register the pack.
-
----
-
 ## Voodoo Doll & Custom Resource Pack
 
 **If you're not using Mythic Crucible:**  
@@ -65,7 +65,7 @@ You have two options:
 1. Run `/mm reload`  
 2. Then run `/mm i generate`  
 3. Locate the generated pack at `MythicMobs/Generation/Resource_Pack.zip`  
-4. Import it into your resource pack manager or let clients download it automatically.
+4. Import it into your resource pack manager or manually add to your Minecraft Client.
 
 ---
 
