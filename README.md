@@ -17,6 +17,7 @@ Check out my MythicMobs stuff!
 - [**Packs**](Packs)
   - [Skeleton King - V2](Packs/SkeletonKingV2)
   - [Geomancer](Packs/Geomancer)
+  - [Cyclops](Packs/Cyclops)
   - [Blazeon](Packs/Blazeon)
   - [Xray Items - Temporarily see through walls and make ores glow](Packs/Xray) 
   - [Test Mobs](Packs/TestMobs)
@@ -116,6 +117,11 @@ Check out my MythicMobs stuff!
   _Video Coming soon..._
   <br>
   [Geomancer Video Preview](https://www.youtube.com/SkyKiller63)
+
+- [**Cyclops**](Packs/Cyclops)
+  _Video Coming soon..._
+  <br>
+  [Cyclops Video Preview](https://www.youtube.com/SkyKiller63)
 
 - [**Blazeon**](Packs/Blazeon)  
   _Video Coming Soon..._
