@@ -1,0 +1,437 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                          Geomancer Pack                            ██
+#   ██                        Created by SkyKiller63                      ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────────┐   ██
+#   ██   │ Server Version: PaperMC 1.21.4+                            │   ██
+#   ██   │ MythicMobs Free: 5.8+ (Required)                           │   ██
+#   ██   │ LibsDisguises: Latest (Required)                           │   ██
+#   ██   │ Mythic Crucible: 2.2+ (Optional pack generation & item skills) ██
+#   ██   └────────────────────────────────────────────────────────────┘   ██
+#   ██                                                                    ██
+#   ██   Description: A stylish, easy–medium solo boss inspired by        ██
+#   ██   the Geomancer from Minecraft Dungeons. Summon basalt pillars,    ██
+#   ██   lightning circles, soul-flame attacks, and minions for a         ██
+#   ██   thrilling encounter—complete with custom items & voodoo doll.    ██
+#   ██                                                                    ██
+#   ██   For help or issues, head to my Discord:                          ██
+#   ██   www.SkyKillerGames.com                                           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+
+GeomancerReinforcements:
+  Conditions:
+  - mobsInRadius{types=GeoReinforcement1,GeoReinforcement2,GeoArcher,Geo_Spectral_Knight;a=<7;radius=30}
+  - playerwithin{d=20}
+  Skills:
+  - summon{type=GeoReinforcement2;a=0to2;r=7;if=true;os=true}
+  - summon{type=GeoReinforcement1;a=1t03;r=6;if=true;os=true}
+  - summon{type=GeoArcher;a=1to2;r=5;if=true;os=true}
+  - summon{type=Geo_Spectral_Knight;a=0to1;r=5;if=true;os=true}
+  - summon{type=Geo_ZombieKnight_Mace;a=0to1;r=5;if=true;os=true} 0.5
+
+GeoSpawn:
+  Skills:
+  - setvariable{var=GeoSpawnLoc;type=STRING;value="<caster.l.x>,<caster.l.y>,<caster.l.z>";scope=CASTER} 
+
+
+#
+
+#
+GeomancerPillar:
+  Skills:
+  - setblock{m=polished_basalt} @origin{yoffset=0;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=polished_basalt} @origin{yoffset=1;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=polished_basalt} @origin{yoffset=2;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=polished_basalt} @origin{yoffset=3;conditions=[  - blocktype{type=air} true ]}
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+  - delay 300
+  - setblock{m=AIR} @origin{yoffset=0;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - setblock{m=AIR} @origin{yoffset=1;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - setblock{m=AIR} @origin{yoffset=2;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - setblock{m=AIR} @origin{yoffset=3;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+GeomancerPillar-Explode:
+  Skills:
+  - delay 1
+  - setblock{m=polished_basalt} @origin{yoffset=0;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=polished_basalt} @origin{yoffset=1;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=polished_basalt} @origin{yoffset=2;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=polished_basalt} @origin{yoffset=3;conditions=[  - blocktype{type=air} true ]}
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+  - delay 265
+  - setblock{m=AIR} @origin{yoffset=0;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - setblock{m=AIR} @origin{yoffset=1;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - setblock{m=AIR} @origin{yoffset=2;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - setblock{m=AIR} @origin{yoffset=3;conditions=[  - blocktype{type=polished_basalt} true ]}
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+  - sound{s=block.basalt.place;v=1;p=1;sc=VOICE} @origin
+  - delay 1
+  - setblock{m=netherrack} @origin{yoffset=0;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=netherrack} @origin{yoffset=1;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=netherrack} @origin{yoffset=2;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=netherrack} @origin{yoffset=3;conditions=[  - blocktype{type=air} true ]}
+  - sound{s=block.netherrack.place;v=1;p=1;sc=VOICE} @origin
+  - sound{s=block.netherrack.place;v=1;p=1;sc=VOICE} @origin
+  - delay 20
+  - setblock{m=AIR} @origin{yoffset=0;conditions=[  - blocktype{type=netherrack} true ]}
+  - setblock{m=AIR} @origin{yoffset=1;conditions=[  - blocktype{type=netherrack} true ]}
+  - setblock{m=AIR} @origin{yoffset=2;conditions=[  - blocktype{type=netherrack} true ]}
+  - setblock{m=AIR} @origin{yoffset=3;conditions=[  - blocktype{type=netherrack} true ]}
+  - sound{s=block.netherrack.place;v=1;p=1;sc=VOICE} @origin
+  - sound{s=block.netherrack.place;v=1;p=1;sc=VOICE} @origin
+  - delay 1
+  - setblock{m=nether_wart_block} @origin{yoffset=0;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=nether_wart_block} @origin{yoffset=1;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=nether_wart_block} @origin{yoffset=2;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=nether_wart_block} @origin{yoffset=3;conditions=[  - blocktype{type=air} true ]}
+  - delay 10
+  - setblock{m=AIR} @origin{yoffset=0;conditions=[  - blocktype{type=nether_wart_block} true ]}
+  - setblock{m=AIR} @origin{yoffset=1;conditions=[  - blocktype{type=nether_wart_block} true ]}
+  - setblock{m=AIR} @origin{yoffset=2;conditions=[  - blocktype{type=nether_wart_block} true ]}
+  - setblock{m=AIR} @origin{yoffset=3;conditions=[  - blocktype{type=nether_wart_block} true ]}
+  - delay 1
+  - setblock{m=nether_wart_block} @origin{yoffset=0;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=nether_wart_block} @origin{yoffset=1;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=TNT} @origin{yoffset=2;conditions=[  - blocktype{type=air} true ]}
+  - setblock{m=nether_wart_block} @origin{yoffset=3;conditions=[  - blocktype{type=air} true ]}
+  - delay 5
+  - setblock{m=AIR} @origin{yoffset=0;conditions=[  - blocktype{type=nether_wart_block} true ]}
+  - setblock{m=AIR} @origin{yoffset=1;conditions=[  - blocktype{type=nether_wart_block} true ]}
+  - setblock{m=AIR} @origin{yoffset=2;conditions=[  - blocktype{type=TNT} true ]}
+  - setblock{m=AIR} @origin{yoffset=3;conditions=[  - blocktype{type=nether_wart_block} true ]}
+  - damage{a=15;cause=entity_explosion} @EntitiesNearOrigin{r=4}
+  - effect:explosion @origin{yoffset=1}
+  - effect:explosion @origin{yoffset=2}
+  - effect:explosion @origin{yoffset=3}
+
+SummonGeoPillar1:
+  Skills:
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;s=-1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=-3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;so=-3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-1;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-1;so=-3;blockCentered=true}
+SummonGeoPillar-Explode1:
+  Skills:
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;s=-1;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;so=-3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-1;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-1;so=-3;blockCentered=true}
+SummonGeoPillar-Explode2:
+  Skills:
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;s=-1;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=-2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;so=-3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-1;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-1;so=-3;blockCentered=true}
+SummonGeoPillar2:
+  Skills:
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;s=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=-3;blockCentered=true}  
+SummonGeoPillar-Explode3:
+  Skills:
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=-3;blockCentered=true}  
+SummonGeoPillar3:
+  Skills:
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=3;s=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=3;so=-3;blockCentered=true}  
+SummonGeoPillar-Explode4:
+  Skills:
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=3;so=-3;blockCentered=true}  
+SummonGeoPillar4:
+  Skills:
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=3;s=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=3;so=-3;blockCentered=true}  
+SummonGeoPillar-Explode5:
+  Skills:
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=2;so=3;blockCentered=true}
+SummonGeoPillar5:
+  Skills:
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;so=4;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;s=-1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=-4;blockCentered=true}  
+SummonGeoPillar-Explode6:
+  Skills:
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=-2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=-1;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;so=2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;so=3;blockCentered=true}
+SummonGeoPillar6:
+  Skills:
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-2;so=3;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;s=-2;blockCentered=true}
+  - summon{t=GeomancerPillar;onSurface=true} @targetlocation{d=20;fo=-3;so=-3;blockCentered=true}  
+SummonGeoPillar-Explode7:
+  Skills:
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-3;so=1;blockCentered=true}
+  - summon{t=GeomancerPillar-Explode;onSurface=true} @targetlocation{d=20;fo=-2;so=3;blockCentered=true} 
+#
+
+#
+RandomGeoPillar:
+  Skills:
+  - randomskill{
+    skills=
+    SummonGeoPillar1,
+    SummonGeoPillar2,
+    SummonGeoPillar3,
+    SummonGeoPillar4,
+    SummonGeoPillar5,
+    SummonGeoPillar6,
+    SummonGeoPillar-Explode1,
+    SummonGeoPillar-Explode2,
+    SummonGeoPillar-Explode3,
+    SummonGeoPillar-Explode4,
+    SummonGeoPillar-Explode5,
+    SummonGeoPillar-Explode6,
+    SummonGeoPillar-Explode7
+    } @targetlocation
+RandomGeoPillar_Item:
+  OnCooldownSkill: RandomGeoPillar_ItemCD
+  Cooldown: 1
+  Skills:
+  - randomskill{
+    skills=
+    SummonGeoPillar1 1,
+    SummonGeoPillar2 2,
+    SummonGeoPillar3 2,
+    SummonGeoPillar4 2,
+    SummonGeoPillar5 3,
+    SummonGeoPillar6 3,
+    SummonGeoPillar-Explode1 1,
+    SummonGeoPillar-Explode2 1,
+    SummonGeoPillar-Explode3 2,
+    SummonGeoPillar-Explode4 2,
+    SummonGeoPillar-Explode5 2,
+    SummonGeoPillar-Explode6 3,
+    SummonGeoPillar-Explode7 3
+    } @targetlocation{maxdistance=10} 
+
+
+
+
+
+#
+
+#
+Geo_Spectral_Sprint:
+  Cooldown: 20
+  Skills:
+  - onAttack{d=250;i=2;name=spectral_sprint;m=2;refreshDuration=false;
+    onTick=[
+      - e:p{p=spit;a=1;hs=0.1} @selflocation{y=0.3}
+      - e:p{p=block;material=CRYING_OBSIDIAN;a=10;hs=0.3} @selflocation{y=0.4}
+      - potion{type=speed;l=5;d=5} @self
+    ];
+    onAttack=[
+      - skill:Geo_Spectral_Vanish @self
+      - auraremove{aura=spectral_sprint} @self 
+    ]}
+Geo_Spectral_Vanish:
+  Skills:
+    - runaigoalselector{goal=CLEAR} @self
+    - runaigoalselector{goal=fleeplayers} @self
+    - delay 30
+    - hide{d=80} @PIR{r=30}
+    - delay 90
+    - runaigoalselector{goal=CLEAR} @self
+    - runaigoalselector{goal=meleeattack} @self
+    - attribute{attr=MOVEMENT_SPEED;a=0.33;duration=400}
+
+#
+
+#Mob AI Behavior
+GeoDisengage:
+  # Conditions:
+  # - cuboid{loc1=-179,68,-1712;loc2=-89,82,-1792} elsecast GeoBackToSpawn
+  Skills:
+  - jump{velocity=0.2} @self
+  - delay 5
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=fleeplayers}
+  - potion{t=SPEED;d=60;level=2} @self
+  - delay 60
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=meleeattack}
+  - skill:RandomGeoPillar @targetlocation 0.5
+  - skill:GeomancerReinforcements @self 0.2
+
+
+GeoBackToSpawn:
+  Skills:
+  - jump{velocity=0.2} @self
+  - delay 5
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=goto <caster.var.GeoSpawnLoc>}
+  - potion{t=SPEED;d=130;level=3} @self
+  - delay 130
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=meleeattack}
+  - skill:RandomGeoPillar @targetlocation 0.5
+  - skill:GeomancerReinforcements @self 0.2
+#
+
+#Lightning Circles
+SummonLightningCircles:
+  Skills:
+  - summon{t=LightningCastMob;a=1;r=1} @RandomLocationsNearOrigin{a=15;r=12;s=7;minr=3}
+
+
+LightningSelf:
+  Conditions:
+  - playerwithin{d=5} cast LightningPIR
+  Skills:
+  - lightning @self  
+LightningPIR:
+  Skills:
+  - delay 5
+  - damage{a=16;pkb=true;ia=false} @ENO{r=4.5}
+#
+
+#Soul Flame Shot
+SoulFlameShotSpawn: 
+  Cooldown: 15
+  OnCooldownSkill: SoulFlameShotCD
+  Skills:
+  - summon{m=SoulFlameShotMob} @selflocation{ForwardOffset=-1.5}  
+SoulFlameShot:
+  Cooldown: 0
+  OnCooldownSkill: SoulFlameShotSingleCD
+  Skills:
+  - projectile{bulletType=MOB;mob=SoulFlameShot;i=1;v=7;hitnonplayers=true;tyo=1.3;
+    oe=[
+      - effect:particlesphere{particle=soul;r=0.5;a=50} @origin
+      - sound{s=entity.guardian.attack;sc=VOICE;p=1;v=2} @origin ];
+    ot=[
+      - effect:particle{particle=soul_fire_flame;a=3;hs=0.1;vs=0.1} @origin
+      - effect:particle{particle=soul;a=1;hs=0.1;vs=0.1} @origin
+      - sound{s=particle.soul_escape;sc=VOICE;p=2;v=1;p=0.8} @origin ];
+    oh=[ - damage{a=12;pkb=true;ia=false;element=MAGIC} ]
+    }
+
+
+SoulFlameShotCD:
+  Cooldown: 1
+  Skills:
+  - message{m="&bSoul Flame Shot &9on Cooldown&f<&co> <caster.skill.SoulFlameShotSpawn.cooldown> seconds &9remaining."} @Self
+  - sound{s=block.fire.extinguish;sc=VOICE} @Self 
+SoulFlameShotSingleCD:
+  Cooldown: 1
+  Skills:
+  - message{m="&bSoul Flame Shot &9on Cooldown&f<&co> <caster.skill.SoulFlameShot.cooldown> seconds &9remaining."} @Self
+  - sound{s=block.fire.extinguish;sc=VOICE} @Self 
+
+
+#
+
+
+#Voodoo Doll
+VoodooDoll:
+  Cooldown: 3
+  OnCooldownSkill: VoodooDollCD
+  TargetConditions:
+  - fieldofview{angle=30} true
+  Conditions:
+  - holding{m=VoodooDoll} true
+  Skills:
+  - missile{bulletType=ITEM;material=TOTEM_OF_UNDYING;v=20;i=1;hR=1;vR=1;in=0.75;
+      ot=[ - effect:particles{p=sculk_soul;a=1} @origin  ];
+      oh=[
+        - effect:particles{p=soul_fire_flame;a=50;hS=1;vS=1}
+        - effect:sound{s=block.sculk_shrieker.shriek;v=1;p=0;sc=VOICE}
+        - damage{a=2;i=true}
+        - sudoskill{s=VoodooAura;AuraDurationStat=6000;AuraDurationHarm=130;AuraDurationWeak=300}
+      ]}
+
+VoodooAura:
+  Skills:
+  - aura{auraName=Voodoo;d=220;
+      os=[
+        - message{m="<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Doll</gradient>&f&f<&co> &dFrom this hour forth, I curse thee. May misfortune be thy fate!"} @Self
+        - potion{type=WITHER;level=1;duration=<skill.AuraDurationHarm|100>;force=true} @Self
+        - potion{type=WEAKNESS;level=1;duration=<skill.AuraDurationWeak|100>;force=true} @Self
+        - potion{type=UNLUCK;level=1;duration=<skill.AuraDurationStat|1000>;force=true} @Self ];
+      ot=[
+        - effect:particles{particle=reddust;c=#8F55E5;a=1;hs=0.3;vs=0.4;s=0.05;y=0.5} @Self
+        - effect:particles{particle=reddust;c=#81FD02;a=1;hs=0.3;vs=0.4;s=0.05;y=0.5} @Self
+        - effect:particles{particle=reddust;c=#FF0000;a=1;hs=0.3;vs=0.4;s=0.05;y=0.5} @Self
+      ]} @self
+
+VoodooDollCD:
+  Cooldown: 1
+  Conditions:
+  - holding{m=VoodooDoll} true
+  Skills:
+  - message{m="<gradient:#FF61F9:#054BFF>Voodoo<&sq>s</gradient> <gradient:#8F55E5:#81FD02>Doll</gradient> <gradient:#610000:#FF0000>Attack</gradient> &don Cooldown&f<&co> <caster.skill.VoodooDoll.cooldown> seconds &dremaining."} @Self
+  - sound{s=block.fire.extinguish;sc=VOICE} @Self
+  
+
+
+#Item Skills
+SummonLightningCircles_Item:
+  Cooldown: 8
+  OnCooldownSkill: SummonLightningCircles_ItemCD
+  Skills:
+  - summon{t=LightningCastMob_Item;a=1;r=1} @RandomLocationsNearOrigin{a=7;r=12;s=7;minr=5}
+
+RandomGeoPillar_Item:
+  Cooldown: 5
+  OnCooldownSkill: RandomGeoPillar_ItemCD
+  Skills:
+  - randomskill{skills=RandomGeoPillar_Item 7,SummonLightningCircles_Item 2}
+
+SummonLightningCircles_ItemCD:
+  Cooldown: 1
+  Skills:
+  - message{m="&bLightning Cirles Summon &9is on Cooldown&f<&co> <caster.skill.SummonLightningCircles_Item.cooldown> seconds &9remaining."} @Self
+  - sound{s=block.fire.extinguish;sc=VOICE} @Self 
+RandomGeoPillar_ItemCD:
+  Cooldown: 1
+  Skills:
+  - message{m="&7Basalt Summoning &fis on Cooldown&f<&co> <caster.skill.RandomGeoPillar_Item.cooldown> seconds &fremaining."} @Self
+  - sound{s=block.fire.extinguish;sc=VOICE} @Self 

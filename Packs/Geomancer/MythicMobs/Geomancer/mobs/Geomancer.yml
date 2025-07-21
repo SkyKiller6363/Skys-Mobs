@@ -1,0 +1,316 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                          Geomancer Pack                            ██
+#   ██                        Created by SkyKiller63                      ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────────┐   ██
+#   ██   │ Server Version: PaperMC 1.21.4+                            │   ██
+#   ██   │ MythicMobs Free: 5.8+ (Required)                           │   ██
+#   ██   │ LibsDisguises: Latest (Required)                           │   ██
+#   ██   │ Mythic Crucible: 2.2+ (Optional pack generation & item skills) ██
+#   ██   └────────────────────────────────────────────────────────────┘   ██
+#   ██                                                                    ██
+#   ██   Description: A stylish, easy–medium solo boss inspired by        ██
+#   ██   the Geomancer from Minecraft Dungeons. Summon basalt pillars,    ██
+#   ██   lightning circles, soul-flame attacks, and minions for a         ██
+#   ██   thrilling encounter—complete with custom items & voodoo doll.    ██
+#   ██                                                                    ██
+#   ██   For help or issues, head to my Discord:                          ██
+#   ██   www.SkyKillerGames.com                                           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+
+# Libs Disguises configs/disguises.yml
+  # Geomancer: player <inherit> setSkin {"id":"a65fc223-3d56-48db-9079-6ce88c5cf5b6","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY0MDkwMDExMjQ1OSwKICAicHJvZmlsZUlkIiA6ICJmNWQwYjFhZTQxNmU0YTE5ODEyMTRmZGQzMWU3MzA1YiIsCiAgInByb2ZpbGVOYW1lIiA6ICJDYXRjaFRoZVdhdmUxMCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9iMjBkNjM0ZmU3MzVmM2IwOTNjNWIyNjBkYTNkMzk2ZGRlNjkyNzMwNzcwZDI0NzA3NGEwM2E4YjY2MzFiZWQxIgogICAgfQogIH0KfQ==","signature":"Clv4uY97gugd0Yvn43k9GYOw/2OWp0fXTuIj0pDozJD9+X8cIaLTM2DlntQvFEjoXg2HJvWrcgyjMkeyHV8ukQeRsEocMW44He+QsSjoRq/n0r05ZoiOpYAGqPgscpRteTkJoHShEw9hvCM21M1p0rmr8syUUyGmEIfEs+7XU0ouRdXiVwckKNLv5xP2stTaY+xmPm+kSmBi8FqePp1gopNLEyZrRQEYqAWIW1jc45aRulYeaeKLLAFT16qms0jPbyRPPmhH9KSoXt9DQTjld5SDf+Eyewc9s7CFuh875qGKPMG1TQ3X6TkW0dYKup4rfSOjxWy9jI1CsrCPkWBVFRE0BCVrMiUcQaoGXH1ramoEeyXY8PnBa5jp/k0vofFtvXvgCz/Oq5bzM/oDKves0U3Sdv+scbp9lP0kkjlDgN4+eGDioo14MOZr//7mAUF9CJRD4mYMWt1w0mk/XhRgjeslGanQ8GO5fsOQRSrjLUUzyw6QUiHon1z4ejOQxXnsqvpEdEbRNvN8Ts9UgYsULsBcIlCZ8F1T5no5qM2TxYa+f3S9MxTMfGmP4mr040+Sym5HanAAftaMxojfYKETDgmpxL58T+P3Ek3FwIBlLrzJ3OCdnRFMh7wE/SaB1sp5/s6IcLmFAw+UNj/u11aGAvvAoxGuha5chhDlfFhV3KY="}],"legacy":false}
+    # setDynamicName
+# Geomancer.png
+
+
+#Mob Templates
+
+Geomancer-Template:
+  Type: zombie
+  Display: '&dGeomancer &f| &a<caster.hp{round=0}>&f/&a<caster.mhp{round=0}>HP'
+  Disguise: Geomancer
+  BossBar:
+    Enabled: true
+    Title: '&dGeomancer &f| &a<caster.hp{round=0}>&f/&a<caster.mhp{round=0}>HP'
+    Range: 75
+    Color: PURPLE
+    Style: SOLID
+    CreateFog: false
+    DarkenSky: false
+    PlayMusic: false
+  Health: 500
+  Equipment:
+  Modules:
+    ThreatTable: true
+  AITargetSelectors:
+    - clear
+    - players
+  AIGoalSelectors:
+    - clear
+    - meleeattack
+  DamageModifiers:
+    - LAVA 1
+    - FIRE_TICK 1
+    - FIRE 1
+    - HOT_FLOOR 0
+    - CONTACT 0
+    - FALL 0.25 
+    - THORNS 0
+    - WITHER 0.5
+    - DRAGON_BREATH 1
+    - POISON 1
+    - LIGHTNING 0
+    - ENTITY_EXPLOSION 0
+    - BLOCK_EXPLOSION 0
+    - DROWNING 0
+    - PROJECTILE 1
+  Options:
+    Silent: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+    MovementSpeed: 0.2
+    FollowRange: 75
+    UseThreatTable: true
+  KillMessages:
+    - '<target.name> was obliterated by &dGeomancer'
+  DropOptions:
+    DropMethod: FANCY
+    ShowDeathHologram: true
+    PerPlayerDrops: true
+    ClientSideDrops: true
+    HologramMessage:
+    - '<#FF9B00>========================'
+    - '<light_purple>Geomancer</light_purple> <white>- <green><mob.hp><bold>HP</bold>'
+    - ''
+    - '<#FFA300>1st Place | <1.name> | <1.damage>'
+    - '<#D1FFFF>2nd Place | <2.name> | <2.damage>'
+    - '<#D1FFFF>3rd Place | <3.name> | <3.damage>'
+    - '<#E57A00>4th Place | <4.name> | <4.damage>'
+    - '<#E57A00>5th Place | <5.name> | <5.damage>'
+    - ''
+    - 'Your rank: #<player.rank> | <player.damage>'
+    - '<#FF9B00>========================'
+    HologramTimeout: 1000
+  Skills:
+    # - cancelevent{sync=true} @self ~onShoot
+    - skill:RandomGeoPillar @targetlocation{target=players;conditions=[  - distance{d=<6} castinstead GeoDisengage ]} ~onTimer:150 0.7
+    - skill:SummonLightningCircles @target ~onTimer:150 >50% 0.4 ?playerwithin{d=30}
+    - skill:SummonLightningCircles @target ~onTimer:150 <50% 0.8 ?playerwithin{d=30}
+    - skill:SoulFlameShot{repeat=5;repeatInterval=5} @targetlocation ~onTimer:170 0.7 ?playerwithin{d=30}
+    - skill:GeomancerReinforcements @self ~onSpawn
+    - setname{name="<caster.name>";delay=2} @Self ~onDamaged
+    - potion{t=GLOWING;d=1000000} @self ~onSpawn
+    - sound{s=entity.arrow.hit_player;sc=VOICE;v=1;p=1} @trigger ~onDamaged ?damagecause{cause=PROJECTILE}
+
+
+GeoUtility-Template:
+  Type: Armor_Stand
+  Options:
+    Invisible: true
+    Collidable: false
+GeoLiveUtility-Template:
+  Type: BabyZombie
+  Options:
+    Invisible: true
+    Collidable: false
+    Invincible: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    Silent: true
+    Despawn: false
+    MovementSpeed: 0
+  AITargetSelectors:
+  - clear
+
+GeomancerReinforcements-Template:
+  Type: ZOMBIE
+  Health: 20
+  Faction: Geomancer
+  AITargetSelectors:
+  - clear
+  - players
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - gotoowner 15    
+  Options:
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+
+##Default
+
+Geomancer:
+  Template: Geomancer-Template
+  Health: 750
+  Skills:
+  - skill:GeoSpawn @self ~onSpawn
+  - skill:GeoDisengage @self ~onDamaged 0.6
+  - skill:GeomancerReinforcements @self ~onTimer:200
+
+
+##Bacup
+#Non-Living Mobs
+LightningCastMob:
+  Template: GeoUtility-Template
+  KillMessages:
+  - '<target.name> was &c&oFatally &fkilled by <caster.var.Owner><&sq>s &bMagic Lightning Strike&f!'
+  Skills:
+  - remove{delay=85} @self ~onSpawn
+  - effect:particlering{particle=soul_fire_flame;a=1;r=4;points=80;hs=0;vs=0} @self ~onTimer:10
+  - skill:LightningSelf{delay=75} @self ~onSpawn
+  - setvariable{var=Owner;value="<target.name>";scope=CASTER;t=STRING;sync=true} @parent ~onSpawn
+
+GeomancerPillar-Explode:
+  Template: GeoLiveUtility-Template
+  Display: '&dGeomancer'
+  KillMessages:
+  - '<target.name> got too close to the exploding pillar'
+  - '<target.name> exploded!'
+  Skills:
+  - remove{delay=330} @self ~onSpawn
+  - skill:GeomancerPillar-Explode @self ~onSpawn
+
+GeomancerPillar:
+  Template: GeoUtility-Template
+  Display: '&dGeomancer'
+  Options:
+    Despawn: false
+  Skills:
+  - remove{delay=320} @self ~onSpawn
+  - skill:GeomancerPillar @self ~onSpawn
+
+
+SoulFlameShotMob:
+  Template: GeoUtility-Template
+  Equipment:
+  - SoulHead HEAD
+  KillMessages:
+  - '<target.name> had their soul completely &c&odevoured &fby <caster.var.Owner><&sq>s &bSoul Flame'
+  Skills:
+  - skill{s=SoulFlameShot;repeat=<random.7to10>;repeatInterval=7} @Forward{f=20;sideOffset=<random.float.-2.7to2.7>;cyaw=-3} ~onSpawn
+  - remove{delay=150} @self ~onSpawn
+  - setvariable{var=Owner;value="<target.name>";scope=CASTER;t=STRING} @owner ~onSpawn
+SoulFlameShot:
+  Template: GeoUtility-Template
+  Equipment:
+  - SoulHead HEAD
+  Skills:
+  
+#Fighting Mobs
+
+GeoReinforcement1: #all iron zombie
+  Template: GeomancerReinforcements-Template
+  Equipment:
+  - IRON_HELMET HEAD
+  - IRON_CHESTPLATE CHEST
+  - IRON_LEGGINGS LEGS
+  - IRON_BOOTS FEET
+  - KBIronSword HAND
+GeoReinforcement2: #all chain zombie
+  Template: GeomancerReinforcements-Template
+  Equipment:
+  - CHAINMAIL_HELMET HEAD
+  - CHAINMAIL_CHESTPLATE CHEST
+  - CHAINMAIL_LEGGINGS LEGS
+  - CHAINMAIL_BOOTS FEET
+  - KBStoneSword HAND
+GeoArcher:
+  Type: skeleton
+  Disguise: Zombie
+  Health: 15
+  Equipment:
+  - ZombieArcherHead HEAD
+  - BOW HAND
+  AITargetSelectors:
+  - clear
+  - players
+  AIGoalSelectors:
+  - clear
+  - bowattack{speed=0.8;amin=50;radius=15}
+  - gotoowner 15    
+  Options:
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+Geo_Spectral_Knight:
+  Type: wither_skeleton
+  Health: 20
+  Damage: 2
+  Options:
+    MovementSpeed: 0.25
+    Despawn: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    Scale: 0.75
+    FollowRange: 45
+  Equipment:
+    - iron_helmet HEAD
+    - iron_chestplate CHEST
+    - iron_leggings LEGS
+    - iron_boots FEET
+    - iron_sword HAND
+  Skills:
+  - skill:Geo_Spectral_Sprint @self ~onTimer:200 ?inCombat
+
+Geo_ZombieKnight_Mace: 
+  Display: '<gray>Zombie Knight'
+  Template: GeomancerReinforcements-Template
+  Options:
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+    AttackSpeed: 2
+    AlwaysShowName: true
+  Damage: 8
+  Health: 30
+  Equipment:
+    - ZombieKnight_Boots FEET
+    - mace{enchants=wind_burst:3,breach:4} HAND
+    - chainmail_chestplate CHEST
+    - chainmail_leggings LEGS
+    - chainmail_helmet HEAD
+  Drops:
+    - WIND_CHARGE 0-4
+    - gold_ingot 0-4
+    - exp 50
+  LevelModifiers:
+    Health: 1.5
+    Damage: 0.3
+    Armor: 0.2
+    MovementSpeed: 0
+  Skills:
+  - attribute{attr=GENERIC_JUMP_STRENGTH;a=0.8;duration=100000000} @self ~onSpawn
+  - attribute{attr=GENERIC_FALL_DAMAGE_MULTIPLIER;a=-1;duration=100000000} @self ~onSpawn
+  - skill{delay=1to12;s=[
+    - jump{v=0.9} @self
+    - e:p{p=cloud;hs=1;a=20}
+    ]} @self ~onTimer:35 ?inCombat ?!playerwithin{d=2} ?onGround
+
+##Item Mobs
+
+LightningCastMob_Item:
+  Template: GeoUtility-Template
+  KillMessages:
+  - '<target.name> was &c&oFatally &fkilled by <caster.var.Owner><&sq>s &bMagic Lightning Strike&f!'
+  Skills:
+  - remove{delay=85} @self ~onSpawn
+  - effect:particlering{particle=soul_fire_flame;a=1;r=4;points=80;hs=0;vs=0} @self ~onTimer:10
+  - skill:LightningSelf{delay=75} @self ~onSpawn
+  - setvariable{var=Owner;value="<target.name>";scope=CASTER;t=STRING;sync=true} @parent ~onSpawn
+
+
+
+
+
+
+

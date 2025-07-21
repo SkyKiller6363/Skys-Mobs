@@ -1,0 +1,187 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                          Geomancer Pack                            ██
+#   ██                        Created by SkyKiller63                      ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────────┐   ██
+#   ██   │ Server Version: PaperMC 1.21.4+                            │   ██
+#   ██   │ MythicMobs Free: 5.8+ (Required)                           │   ██
+#   ██   │ LibsDisguises: Latest (Required)                           │   ██
+#   ██   │ Mythic Crucible: 2.2+ (Optional pack generation & item skills) ██
+#   ██   └────────────────────────────────────────────────────────────┘   ██
+#   ██                                                                    ██
+#   ██   Description: A stylish, easy–medium solo boss inspired by        ██
+#   ██   the Geomancer from Minecraft Dungeons. Summon basalt pillars,    ██
+#   ██   lightning circles, soul-flame attacks, and minions for a         ██
+#   ██   thrilling encounter—complete with custom items & voodoo doll.    ██
+#   ██                                                                    ██
+#   ██   For help or issues, head to my Discord:                          ██
+#   ██   www.SkyKillerGames.com                                           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+
+
+GeomancerWand:
+  Id: purple_candle
+  Itemversion: 4
+  Display: '<light_purple>Geomancer<&sq>s Wand'
+  Group: 'Boss Items'
+  Hide:
+  - ATTRIBUTES
+  Lore:
+  - '&0.'
+  - '&8------------------------------'
+  - '&7The Geomancer has spent all its'
+  - '&7life mastering &bsummoning spells&7!'
+  - '&8------------------------------'
+  - '&7When in Main Hand:'
+  - '&9+30% Speed'
+  - '&0.'
+  - '&f&nLeft-Click&r:'
+  - '&a* &8Basalt <light_purple>Summon &f1 sec Cooldown'
+  - '&0.'
+  - '&f&nRight-Click&r:'
+  - '&a* &bLighning <light_purple>Summon &f8 sec Cooldown'
+  - '&8------------------------------'
+  Attributes:
+    MainHand:
+      MovementSpeed: 0.3
+      Luck: 10
+  Skills:
+  - skill{s=SummonLightningCircles_Item} @self ~onUse
+  - skill{s=RandomGeoPillar_Item} @self ~onSwing
+  - updatelore{} @self ~onHold
+
+KBIronSword:
+  Id: IRON_SWORD
+  ItemVersion: 1
+  Enchantments:
+  - KNOCKBACK:2
+KBStoneSword:
+  Id: STONE_SWORD
+  ItemVersion: 1
+  Enchantments:
+  - KNOCKBACK:2
+
+ZombieArcherHead:
+  Id: PLAYER_HEAD
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTAzNmJkMjIyNzljZmYxN2ZlYjE1NzQ5ZmQ4MGY1ZmZhYTYzODg0YTJmZDg1N2RmNWFkOTg2YjMzYzQxNmNjMSJ9fX0=
+
+
+
+ZombieKnight_Boots:
+  Id: netherite_boots
+  Options:
+    Trim: gold.flow
+  Enchantments:
+    - UNBREAKING:3
+    - FEATHER_FALLING:4
+
+
+SoulHead:
+  Id: player_head
+  Data: 3
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDIwY2I3M2YyMDdiMDdkMjU5Y2ExZWVmN2NhZGUzMDJjN2VhMTA0YjhhMGMyNDBiODk3YTU3Nzk3MTEyMmU1NiJ9fX0=
+
+GeomancerHead:
+  Id: player_head
+  Display: '&dGeomancer Head'
+  Group: 'Mob Heads'
+  Options:
+    Placeable: true
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjIwZDYzNGZlNzM1ZjNiMDkzYzViMjYwZGEzZDM5NmRkZTY5MjczMDc3MGQyNDcwNzRhMDNhOGI2NjMxYmVkMSJ9fX0=
+
+
+
+
+
+VoodooDoll:
+  Id: TOTEM_OF_UNDYING
+  Model: 2
+  Generation:
+    Model: item/voodoodoll
+    Textures:
+    - item/voodoodoll
+  Recipes:
+    SHAPED:
+      Type: SHAPED
+      Amount: 1
+      Ingredients:
+      - wither_skeleton_skull | nether_star | blaze_rod
+      - heart_of_the_sea | TOTEM_OF_UNDYING | rabbit_foot
+      - obsidian | VoodooShard | dragon_breath
+  Group: 'Geomancer'
+  Hide:
+    - ATTRIBUTES
+    - ENCHANTS
+  Display: '<#FF61F9>◆ <gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Doll</gradient> <#FF0000>◆' 
+  Lore:
+    - "&a• &7Health V"
+    - "&a• &7Armor I"
+    - "&a• &7Lightning I"
+    - "&a• &7Cursed I"
+    - '&8---------------------'
+    - "&5⚜ <gradient:#8F55E5:#81FD02>Geomancer Set</gradient> &7[&f1/4&7]"
+    - "&0."
+    - "&aThis Doll Holds"
+    - "&aUnimaginable Powers."
+    - '&8---------------------'
+    - "&7When in off hand:"
+    - "&a* &7+5 Hearts"
+    - "&a* &7+2 Armor Points"
+    - "&a* &7Smites your attackers"
+    - " "
+    - "&7When In Main Hand:"
+    - "&a* &7Curses your target"
+  Enchantments:
+    - LUCK:1
+  Attributes:
+    OffHand:
+      Health: +10 ADD
+      Armor: +2 ADD
+  Skills:
+    - lightning{d=2} @Trigger ~onDamaged 0.25
+    - skill:VoodooDoll @Target ~onSwing
+
+VoodooShard:
+  Group: 'Crafting items'
+  Id: amethyst_shard
+  Display: '<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Shard</gradient>'
+  Recipes:
+    SHAPELESS:
+      Type: SHAPELESS
+      Amount: 9
+      Ingredients:
+      - VoodooBlock
+  Lore: 
+  - "&7How mysterious.... I wonder if this"
+  - "&7could be used to &acraft &7something..."
+
+VoodooBlock:
+  Id: amethyst_block
+  Amount: 1
+  Display: '<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Gem</gradient>'
+  Recipes: 
+    SHAPED:
+      Type: SHAPED
+      Amount: 1
+      Ingredients:
+      - VoodooShard | VoodooShard | VoodooShard
+      - VoodooShard | VoodooShard | VoodooShard
+      - VoodooShard | VoodooShard | VoodooShard
+  Lore: 
+  - "&7A gem of ancient power, infused"
+  - "&7with the spirits of the unknown..."
+  - "&7It radiates a dark &5magic&7."
+  - "&7Perhaps it could be &abuilt &7into"
+  - "&7something even more potent..."
+
+
+
+
+
