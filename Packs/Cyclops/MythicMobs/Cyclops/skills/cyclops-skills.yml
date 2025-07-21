@@ -1,0 +1,110 @@
+#_______________________________________________________________________________
+#
+#-------------------------------+ INFORMATION +--------------------------------#
+#_______________________________________________________________________________
+
+# File: cyclops-skills
+
+# Created by: Winning_MaSheen
+# Maintaned and updated by: SkyKiller63
+# Version: 1.5
+# Server Version: Purpur - 1.21.1
+# Hard-Dependencies:
+# - MythicMobs Free 5.7.2+
+# - LibsDisguises
+
+cy_cyclops_beam:
+  Cooldown: 10
+  Skills:
+  - gcd{ticks=100} @self
+  - projectile{d=100;i=20;syo=1.6;oe=cy_cyclops_reset;
+    os=[
+      - sound{s=entity.ender_dragon.ambient;sc=VOICE;v=1.5;p=0.6} @self
+      - runaigoalselector{goal=clear} @self
+      - stun{d=100} @self 
+      - stun{d=100;f=true} @PIR{r=20}  
+      ];
+    ot=[
+      - sound{s=entity.blaze.hurt;p=0.4;v=2} @self 0.55
+      - speak{offset=0.6f;radius=30;maxlinelength=22;lineprefix="&5";message=" YOUR HEALTH MAKES ME STRONGER!";chatprefix=&cCyclops&f<&co>;duration=200;cd=10} @self
+      - consume{d=5;h=10;i=true} @PlayersInRadius{r=12}
+      - effect:particleline{particle=small_flame;amount=1} @PIR{r=20}
+      ]} @PlayersInRadius{r=12}
+cy_cyclops_reset:
+  Skills:
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=meleeattack}
+  - runaigoalselector{goal=float}
+  - runaigoalselector{goal=lookatplayers}
+
+
+cy_cyclops_spin:
+  Skills:
+  - effect:particlesphere{particle=flame;amount=250;radius=7} @self
+  - effect:flames @self
+  - effect:particletornado{p=flame;cp=largeexplode;mr=1;h=3;i=4;d=100;rs=1;sh=1;cs=0;ca=0;chs=0.1;cvs=0.1;cps=1;cyo=2} @self
+  - effect:spin{duration=30;velocity=30} @self
+  # Summon Mobs
+  - summon{type=cy_minion;amount=2;radius=15;sio=false;sip=false} @self ?mobsinradius{types=cy_minion;a=<3;r=50}
+  - summon{type=cy_minion_range;amount=2;radius=15;sio=false;sip=false} @self ?mobsinradius{types=cy_minion_range;a=<3;r=50}
+
+
+cy_cyclops_axe_attack:
+  Conditions:
+  - targetwithin{d=25}
+  Skills:
+  - projectile{bulletType=ITEM;material=IRON_AXE;v=20;i=1;hR=1;vR=1;mr=20;syo=1;tyo=0.5;hfs=1;g=0.16;
+    onStart=[
+      - equip{item=air:0}
+      - sound{s=item.trident.throw;p=0.6} @self
+      - effect:particles{particle=flame;amount=3;hS=1;vS=1;speed=0;y=1} @self
+    ];
+    onTick=[
+      - effect:particles{particle=crit;amount=1;hS=0;vS=0;speed=0} @origin
+      - delay 1
+      - effect:particles{particle=flame;amount=1;hS=0;vS=0;speed=0} @origin
+    ];
+    onHit=[  - damage{a=15} ];
+    onEnd=[
+      - sound{s=item.trident.hit_ground;p=0.6} @origin
+      - effect:particles{particle=block_crack;amount=3;hS=0.3;vS=0.2;speed=0.2;m=oak_planks} @origin
+      - effect:particles{particle=block_crack;amount=2;hS=0.4;vS=0.2;speed=0.1;m=iron_block} @origin
+      - delay 20
+      - equip{item=CyclopsAxe:0} @self
+      - sound{s=item.armor.equip_iron;p=1} @self
+    ]}
+
+
+#Boss Item Skills
+cy_cyclops_player_axe_attack:
+  Cooldown: 3
+  Skills:
+  - projectile{v=20;i=1;hR=1;vR=1;mr=25;sso=0.4;syo=1.5;tyo=0.5;g=0.16;hnp=true;bulletType=ITEM;material=IRON_AXE;
+    onStart=[
+      - setmaterialcooldown{material=iron_axe;duration=60} @self
+      - sound{s=item.trident.throw;p=0.6} @self
+      - effect:particles{particle=flame;amount=3;hS=1;vS=1;speed=0;y=1} @self
+      ];
+    onTick=[
+      - effect:particles{particle=crit;amount=1;hS=0;vS=0;speed=0} @origin
+      - delay 1
+      - effect:particles{particle=flame;amount=1;hS=0;vS=0;speed=0} @origin
+      ];
+    onHit=[
+      - damage{a=15}  
+      ];
+    onEnd=[
+      - sound{s=item.trident.hit_ground;p=0.6} @origin
+      - effect:particles{particle=block_crack;amount=3;hS=0.3;vS=0.2;speed=0.2;m=oak_planks} @origin
+      - effect:particles{particle=block_crack;amount=2;hS=0.4;vS=0.2;speed=0.1;m=iron_block} @origin
+      - delay 20
+      - sound{s=item.armor.equip_iron;p=1} @self
+      - delay 1
+      - parseweapon
+      ]}
+
+
+
+
+
+
