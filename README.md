@@ -16,6 +16,7 @@ Check out my MythicMobs stuff!
   - [TagStick - A Tag Game Similar to Cheese Touch](Packs/TagStick)
 - [**Packs**](Packs)
   - [Skeleton King - V2](Packs/SkeletonKingV2)
+  - [Geomancer](Packs/Geomancer)
   - [Blazeon](Packs/Blazeon)
   - [Xray Items - Temporarily see through walls and make ores glow](Packs/Xray) 
   - [Test Mobs](Packs/TestMobs)
@@ -110,6 +111,11 @@ Check out my MythicMobs stuff!
   _Updated Video Coming Soon..._
   <br>
   [Skeleton King V2 Preview](https://www.youtube.com/watch?v=3OtIIp_-WP0)
+
+- [**Geomancer**](Packs/Geomancer)
+  _Video Coming soon..._
+  <br>
+  [Geomancer Video Preview](https://www.youtube.com/SkyKiller63)
 
 - [**Blazeon**](Packs/Blazeon)  
   _Video Coming Soon..._
