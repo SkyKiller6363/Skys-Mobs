@@ -67,7 +67,7 @@ SkeletonKingV2:
  
  # Advanced Attacks
   - randomskill{skills=SK_Missile_Attack 10,SK_Bide 2} @self ~onTimer:120 >66% ?offgcd ?playerwithin{d=20} # Moves trigger faster the lower the health by using Health Modifiers (>66%)
-  - randomskill{skills=SK_Missile_Attack 10,SK_Bide 3} @self ~onTimer:100 =33to66% ?offgcd ?playerwithin{d=20} # Always lower number first ex. 1to10
+  - randomskill{skills=SK_Missile_Attack 10,SK_Bide 3} @self ~onTimer:100 =33%-66% ?offgcd ?playerwithin{d=20} # Always lower number first ex. 1to10
   - randomskill{skills=SK_Missile_Attack 10,SK_Bide 3,SK_SmashAttack 3} @self ~onTimer:80 <33% ?offgcd ?playerwithin{d=20}
 
 
