@@ -1,3 +1,4 @@
+# Get 2 or more people to start beating on this mob, then sombody kill it, like a normal boss.
 #Mob file
 STUTI_RewardExample:
   Type: zombie
@@ -5,10 +6,10 @@ STUTI_RewardExample:
   Health: 100
   Damage: 0
   Modules:
-    ThreatTable: true
+    ThreatTable: true #Crucial to have enabled
   Options:
-    MovementSpeed: 0
-    UseThreatTable: true
+    UseThreatTable: true #Also Crucial to have enabled
+    MovementSpeed: 0 #The rest of the options are optional
     Despawn: false
     PreventSunburn: true
     PreventOtherDrops: true
