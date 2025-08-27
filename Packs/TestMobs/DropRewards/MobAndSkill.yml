@@ -1,0 +1,46 @@
+#Mob file
+STUTI_RewardExample:
+  Type: zombie
+  Display: 'ThreatTable Boss Example'
+  Health: 100
+  Damage: 0
+  Modules:
+    ThreatTable: true
+  Options:
+    MovementSpeed: 0
+    UseThreatTable: true
+    Despawn: false
+    PreventSunburn: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    KnockbackResistance: 1
+  Skills:
+  - skill:DeathRewards @self ~onDeath
+
+
+#Skill File
+DeathRewards:
+  Skills:
+  - skill{s=DeathRewards_1} @ThreatTablePlayers{sort=HIGHEST_THREAT;limit=1} #targets the player that has the highest threat
+  - skill{s=DeathRewards_2} @ThreatTablePlayers{sort=HIGHEST_THREAT;limit=1;stuti=1} #targets the player that has the second highest threat
+  - skill{s=DeathRewards_3} @ThreatTablePlayers{sort=HIGHEST_THREAT;limit=1;stuti=2} #targets the player that has the third highest threat
+  - skill{s=DeathRewards_NoPlace} @ThreatTablePlayers{sort=HIGHEST_THREAT;stuti=3} #targets everyone else
+
+  
+DeathRewards_1:
+  Skills:
+  - message{m="You are <#48ff00>First!"}
+  - giveitem{i=DIAMOND 10}
+  - giveitem{i=NETHERITE_INGOT 1} 0.5
+DeathRewards_2:
+  Skills:
+  - message{m="You are <#00aeff>Second!"}
+  - giveitem{i=DIAMOND 5}
+DeathRewards_3:
+  Skills:
+  - message{m="You are <#ffa600>Third!"}
+  - giveitem{i= DIAMOND 1}
+DeathRewards_NoPlace:
+  Skills:
+  - message{m="You aren't on the podium! <#ff0000><&co>("}
+  - giveitem{i=COAL 1}
