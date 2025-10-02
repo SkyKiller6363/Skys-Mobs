@@ -1,0 +1,105 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Thief Pack                                   ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.7+                          │       ██
+#   ██   │ MythicMobs Premuim: 5.10.0 (Hard Dependency)           │       ██
+#   ██   │ LibsDisguises 11.0.9 (Soft Dependency)                 │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A simple thief mob that steals your held item       ██
+#   ██   and then runs away. Kill it to get the item back!                ██
+#   ██   For problems, go to my discord. discord.SkyKillerGames.com       ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+#
+
+SplashSwiftness:
+  Id: splash_potion
+  Display: Splash Potion of Swiftness
+  Options:
+    Color: 40,186,202
+  PotionEffects:
+  - SPEED 3600 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Thief Pack                                   ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.7+                          │       ██
+#   ██   │ MythicMobs Premuim: 5.10.0 (Hard Dependency)           │       ██
+#   ██   │ LibsDisguises 11.0.9 (Soft Dependency)                 │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A simple thief mob that steals your held item       ██
+#   ██   and then runs away. Kill it to get the item back!                ██
+#   ██   For problems, go to my discord. discord.SkyKillerGames.com       ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+#
+
+
+
+
+
+
+THIEF:
+  Type: zombie
+  Display: '<#397511>Thief'
+  Disguise: player <inherit> setSkin Thief.png setDynamicName
+  Health: 20
+  Damage: 4
+  Options:
+    MovementSpeed: 0.28
+    PreventSunburn: true
+    PreventItemPickup: true
+    PreventRandomEquipment: true
+    AlwaysShowName: true
+    PreventOtherDrops: true
+  Drops:
+  - xp 20
+  - GOLD_NUGGET 1-9
+  - GOLD_INGOT 1 0.2
+  - SplashSwiftness 1 0.05
+  Skills:
+  - skill{s=Thief-Steal} @self ~onAttack
+  - skill{s=Thief-Drop} @self ~onDeath ?varisset{var=caster.StolenItem}
+
+ #Debug
+  # - message{m=formatted <caster.var.StolenItem.name.formatted>} @trigger ~onInteract 
+  # - message{m=Itemstack <caster.var.StolenItem>} @trigger ~onInteract 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
