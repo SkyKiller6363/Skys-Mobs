@@ -31,7 +31,7 @@ This pack is intentionally lightweight — perfect as a plug-and-play addition t
 
 ### MythicMobs Setup
 
-1. **Download the Pack**
+1. **[Download the Pack](https://downgit.github.io/#/home?url=https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/Thief)**
    Extract the `Thief` folder provided in the download.
 
 2. **Upload to Server**
