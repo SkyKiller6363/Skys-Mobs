@@ -2,7 +2,7 @@
 
 **Requirements**
 
-* ✅ **MythicMobs** free 5.10+
+* ✅ **MythicMobs** free 5.10.1+
 * ✅ **LibsDisguises** free (latest version)
 
 ---
