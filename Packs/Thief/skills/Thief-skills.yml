@@ -7,7 +7,7 @@
 #   ██                                                                    ██
 #   ██   ┌────────────────────────────────────────────────────────┐       ██
 #   ██   │ Server Version: Paper 1.21.7+                          │       ██
-#   ██   │ MythicMobs Premuim: 5.10.0 (Hard Dependency)           │       ██
+#   ██   │ MythicMobs Premuim: 5.10.1 (Hard Dependency)           │       ██
 #   ██   │ LibsDisguises 11.0.9 (Soft Dependency)                 │       ██
 #   ██   └────────────────────────────────────────────────────────┘       ██
 #   ██                                                                    ██
@@ -70,6 +70,7 @@ ThiefDrop-Fail:
     "<#397511>Thief<#a1ac9a><&co> My secret<&sq>s safe. The <#f3f736><caster.var.StolenItem.name></#f3f736> is lost to you."
     } @trigger
   - sound{s=entity.villager.yes;p=0.69;audience=nearby}
+
 
 
 
