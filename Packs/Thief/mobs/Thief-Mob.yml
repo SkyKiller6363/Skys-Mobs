@@ -7,7 +7,7 @@
 #   ██                                                                    ██
 #   ██   ┌────────────────────────────────────────────────────────┐       ██
 #   ██   │ Server Version: Paper 1.21.7+                          │       ██
-#   ██   │ MythicMobs Premuim: 5.10.0 (Hard Dependency)           │       ██
+#   ██   │ MythicMobs Premuim: 5.10.1 (Hard Dependency)           │       ██
 #   ██   │ LibsDisguises 11.0.9 (Soft Dependency)                 │       ██
 #   ██   └────────────────────────────────────────────────────────┘       ██
 #   ██                                                                    ██
@@ -49,6 +49,7 @@ THIEF:
  #Debug
   # - message{m=formatted <caster.var.StolenItem.name.formatted>} @trigger ~onInteract 
   # - message{m=Itemstack <caster.var.StolenItem>} @trigger ~onInteract 
+
 
 
 
