@@ -29,7 +29,7 @@ Thief-Steal:
   - setvar{var=caster.StolenItem;type=ITEM;val=<caster.var.StolenItem.withAmount.1>}
 
   # Steal and Equip the 1 item
-  - equip{i=<caster.var.StolenItem.type> HAND}
+  - equip{i=itemvariable{variable=caster.StolenItem} HAND}
   - takeitem{var=caster.StolenItem} @trigger
   - sound{s=item.armor.equip_iron;p=1.25;audience=nearby}
   - e:p{p=cloud;a=60;hs=1;vs=1} @selflocation{y=1.5}
@@ -70,6 +70,7 @@ ThiefDrop-Fail:
     "<#397511>Thief<#a1ac9a><&co> My secret<&sq>s safe. The <#f3f736><caster.var.StolenItem.name></#f3f736> is lost to you."
     } @trigger
   - sound{s=entity.villager.yes;p=0.69;audience=nearby}
+
 
 
 
