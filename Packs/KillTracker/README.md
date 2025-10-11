@@ -50,7 +50,7 @@ The Modular Kill Tracker is a versatile system designed to track how many times 
 2. **Upload to Your Server**  
    Navigate to your server's `plugins/MythicMobs/Packs` directory.
 3. **Place the Downloaded Folder**  
-   Drag and drop or upload the unzipped `Kill_Tracker` folder into the `Packs` directory.
+   Drag and drop or upload the **unzipped** `KillTracker` folder into the `Packs` directory.
 4. **Reload Mythic Mobs**  
    Use the `/mm reload` command to reload MythicMobs so the pack is recognized.
 
