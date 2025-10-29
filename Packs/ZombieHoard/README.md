@@ -31,17 +31,20 @@ This pack is designed to blend seamlessly into survival gameplay, making thunder
 
 ### MythicMobs Setup
 
-1. **Download the Pack**
+1. **[Download the Pack](https://downgit.github.io/#/home?url=https://github.com/SkyKiller6363/Skys-Mobs/tree/main/Packs/ZombieHoard)**
+
    Extract the `ZombieHoard` folder provided in the download.
 
-2. **Upload to Server**
+3. **Upload to Server**
+
    Place the `ZombieHoard` folder into:
 
    ```
    plugins/MythicMobs/Packs
    ```
 
-3. **Reload MythicMobs**
+5. **Reload MythicMobs**
+
    Run in-game:
 
    ```
