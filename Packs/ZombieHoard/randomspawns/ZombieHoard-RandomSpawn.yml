@@ -1,0 +1,32 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Zombie Hoard                                 ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.4                           │       ██
+#   ██   │ MythicMobs Free: 5.8+ (Hard Dependency)                │       ██
+#   ██   │ LibsDisguises Free: Latest (Hard Dependency)           │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A Hoard of zombies that spawn when you get          ██
+#   ██   too close to the leader.                                         ██
+#   ██   For problems, go to my discord. www.SkyKillerGames.com           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+ZombieHoard-Spawn:
+  Action: REPLACE
+  Types:
+  - ZH_ZombieHoard-Lead
+  Worlds: world
+  Chance: 0.05
+  Priority: 5
+  Conditions:
+  - entitytype{types=SKELETON,ZOMBIE,ZOMBIE_VILLAGER,SPIDER,CREEPER}
+  - mobsInRadius{r=128;a=<1;types=ZH_ZombieHoard-Lead}
+  - thundering
+  - outside
+  - biome{b=mushroom_fields} false

@@ -1,0 +1,93 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Zombie Hoard                                 ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.4                           │       ██
+#   ██   │ MythicMobs Free: 5.8+ (Hard Dependency)                │       ██
+#   ██   │ LibsDisguises Free: Latest (Hard Dependency)           │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A Hoard of zombies that spawn when you get          ██
+#   ██   too close to the leader.                                         ██
+#   ██   For problems, go to my discord. www.SkyKillerGames.com           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+
+ZH_SpawnZombieHoard-Initial: #ZombieHoard-Zombie1,ZombieHoard-Zombie2,ZombieArcher,ZombieFireArcher,VoodooMage,S4_BuffZombie
+  Conditions:
+  - varisset{var=caster.started} false
+  Skills:
+  - summon{type=ZH_ZombieHoard-Zombie1;amount=<random.1to3>;r=3;if=true}
+  - summon{type=ZH_ZombieHoard-Zombie2;amount=<random.1to3>;r=3;if=true}
+  - summon{type=ZH_ZombieArcher;amount=<random.0to2>;r=3;if=true}
+  - summon{type=ZH_ZombieFireArcher;amount=<random.0to2>;r=3;if=true}
+  - summon{type=ZH_VoodooMage;amount=<random.0to1>;r=3;if=true}
+  - summon{type=ZH_ZombieKnight_Mace;amount=<random.0to1>;r=3;if=true}
+
+  - setvar{var=caster.started;val=1;save=true} 
+
+  - sound{s=block.end_portal.spawn;v=1;p=1.3}
+  - effect:lightning{} 
+
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=meleeattack}
+  - runaigoalselector{goal=randomstroll}
+
+
+ZH_SpawnZombieHoard:
+  Conditions:
+  - varisset{var=caster.secondspawn} false
+  - varisset{var=caster.started}
+  - mobsInRadius{types=ZH_ZombieHoard-Zombie1,ZH_ZombieHoard-Zombie2,ZH_ZombieArcher,ZH_ZombieFireArcher,ZH_VoodooMage,ZH_ZombieKnight_Mace;a=<5;radius=18}
+  Skills:
+  - summon{type=ZH_ZombieHoard-Zombie1;amount=<random.1to2>;r=3;if=true}
+  - summon{type=ZH_ZombieHoard-Zombie2;amount=<random.1to2>;r=3;if=true}
+  - summon{type=ZH_ZombieArcher;amount=<random.0to1>;r=3;if=true}
+  - summon{type=ZH_ZombieFireArcher;amount=<random.0to1>;r=3;if=true}
+  - summon{type=ZH_VoodooMage;amount=<random.0to1>;r=3;if=true}
+  - summon{type=ZH_ZombieKnight_Mace;amount=<random.0to1>;r=3;if=true}
+
+  - setvar{var=caster.secondspawn;val=1}
+  - effect:lightning{}
+
+ZH_VoodooMageProjectile1:
+  Cooldown: 3
+  TargetConditions:
+  - distance{d=<5} castinstead ZH_MageDisengage
+  Skills:
+  - projectile{i=1;v=20;tyo=0.5;
+    oE=[
+      - effect:particlesphere{particle=soul;r=0.5;a=50} 
+      - sound{s=entity.guardian.attack;sc=VOICE;p=1;v=2} 
+      - delay 10
+      - effect:particlesphere{particle=reddust;c=#220e57;r=2;s=1;a=300}
+      - damage{a=12;pkb=true} @PlayersNearOrigin{r=3}
+      - sound{s=entity.firework_rocket.large_blast;sc=VOICE;v=1.5}
+      - delay 20
+      - effect:particlesphere{particle=dust_color_transition;c=#220e57;r=3;a=500} 
+      - effect:particlesphere{particle=dust_color_transition;c=#9e1558;r=3;a=500} 
+      - damage{a=10;pkb=true} @PlayersNearOrigin{r=4}
+      - sound{s=entity.dragon_fireball.explode;sc=VOICE;p=1;v=2} 
+      ];
+    oH=[
+      - damage{a=15;pkb=true;ia=false}
+      ];
+    oT=[
+      - effect:particle{particle=dragon_breath;a=3;hs=0.1;vs=0.1}
+      - effect:particle{particle=soul;a=1;hs=0.1;vs=0.1}
+      - sound{s=particle.soul_escape;sc=VOICE;p=2;v=1;p=0.8}
+      ]} 
+
+ZH_MageDisengage:
+  Skills:
+  - speak{cp=<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Mage</gradient>&f<&co>;mll=40;m=" Too close! Backing up!";0=1.2f;lp='&f'} @self 0.5
+  - jump{velocity=0.5} @self
+  - delay 3
+  - lunge{velocity=1.7} @Forward{f=-5;y=0.0;sideOffset=0.0}
+  - delay 20
+  - skill:ZH_VoodooMageProjectile1 @target{target=players}

@@ -1,0 +1,208 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Zombie Hoard                                 ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.4                           │       ██
+#   ██   │ MythicMobs Free: 5.8+ (Hard Dependency)                │       ██
+#   ██   │ LibsDisguises Free: Latest (Hard Dependency)           │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A Hoard of zombies that spawn when you get          ██
+#   ██   too close to the leader.                                         ██
+#   ██   For problems, go to my discord. www.SkyKillerGames.com           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+ZH_ZombieHoard-Template:
+  Type: ZOMBIE
+  Health: 20
+  Faction: ZombieHoard
+  AITargetSelectors:
+  - clear
+  - players
+  AIGoalSelectors:
+  - clear
+  - float 
+  - gotoowner 15   
+  - meleeattack  
+  Options:
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+
+ZH_ZombieHoard-Lead:
+  Template: ZH_ZombieHoard-Template
+  Options:
+    MovementSpeed: 0.18
+  Equipment:
+  - ZH_ZombieHoardBanner HEAD
+  - IRON_SWORD HAND
+  AIGoalSelectors:
+  - clear
+  - randomstroll 
+  Options:
+    Despawn: false
+  Drops:
+    - ZH_ZombieHoardBanner 1 0.2
+  Skills:
+  - skill{s=ZH_SpawnZombieHoard-Initial} @self ~onTimer:10 ?playerwithin{d=8}
+  - skill{s=ZH_SpawnZombieHoard-Initial} @self ~onDamaged ?~isplayer{}
+  
+  - skill{s=ZH_SpawnZombieHoard} @self ~onTimer:300 0.5 ?playerwithin{d=20} 
+
+  - remove{delay=18000} @self ~onSpawn  
+  # - message{m="<caster.name> spawned at <green><caster.l.x></green>, <green><caster.l.y></green>, <green><caster.l.z>"} @server ~onSpawn
+
+ZH_ZombieHoard-Zombie1: #all iron zombie
+  Template: ZH_ZombieHoard-Template
+  Options:
+    MovementSpeed: 0.16
+  Equipment:
+  - IRON_HELMET HEAD
+  - IRON_CHESTPLATE CHEST
+  - IRON_LEGGINGS LEGS
+  - IRON_BOOTS FEET
+  - ZH_IronSword HAND
+  Drops:
+    - iron_ingot 2-4
+
+ZH_ZombieHoard-Zombie2: #all chain zombie
+  Template: ZH_ZombieHoard-Template
+  Options:
+    MovementSpeed: 0.28
+  Equipment:
+  - CHAINMAIL_HELMET HEAD
+  - CHAINMAIL_CHESTPLATE CHEST
+  - CHAINMAIL_LEGGINGS LEGS
+  - CHAINMAIL_BOOTS FEET
+  - ZH_StoneSword HAND
+  Drops:
+    - gold_ingot 2-4
+
+ZH_ZombieArcher:
+  Type: skeleton
+  Disguise: Zombie
+  Health: 15
+  Equipment:
+  - ZH_ZombieArcherHead HEAD
+  - BOW HAND
+  Options:
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+  Drops:
+    - arrow 5-10
+  Skills:
+  - equip{delay=50;i=BOW{enchants=FLAME:2} HAND } @self ~onSpawn 0.25
+ZH_ZombieFireArcher:
+  Type: skeleton
+  Disguise: Zombie
+  Health: 15
+  Equipment:
+  - ZH_ZombieArcherHead HEAD
+  - BOW HAND 
+  Options:
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+  Skills:
+  - ignite @target ~onBowHit
+
+ZH_VoodooMage:
+  Type: stray
+  Display: '<gradient:#8f55e5:#81fd02>Voodoo</gradient> <gradient:#610000:#ff0000>Mage</gradient>'
+  Disguise: ZombieMage setItemInMainHand AIR
+  Health: 35
+  Equipment:
+    - BOW HAND
+  AITargetSelectors:
+    - clear
+    - players
+  AIGoalSelectors:
+    - clear
+    - float
+    - gotoowner 15
+    - rangedAttack{speed=0.9;attackspeedmin=90;attackspeedmax=130;attackradius=10} 
+  Options:
+    Silent: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+    FollowRange: 40
+  KillMessages:
+    - '<target.name> >white>was killed by <caster.display> <reset>in <caster.l.w>'
+    - '<white>Good luck next time <target.name><white>. With regards... - <caster.display> <reset>'
+  Drops:
+  Skills:
+  - CancelEvent{sync=true} @self ~onShoot
+  - skill:ZH_VoodooMageProjectile1 @targetlocation ~onShoot
+  - speak{r=15;cp=<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Mage</gradient>&r&f<&co>;mll=40;m=" I will destroy you!!";0=1.2f;lp='&f'} @self ~onShoot 0.05
+  - speak{r=15;cp=<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Mage</gradient>&r&f<&co>;mll=38;m=" You think you're so tough? Just wait until I'm through with you!";0=1.2f;lp='&f'} @self ~onShoot 0.05 
+  - speak{r=15;cp=<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Mage</gradient>&r&f<&co>;mll=40;m=" You will NEVER DEFEAT ME!";0=1.2f;lp='&f'} @self ~onDamaged <50% 0.02
+  - message{m="<gradient:#8F55E5:#81FD02>Voodoo</gradient> <gradient:#610000:#FF0000>Mage</gradient>&r&f<&co> I will return..."} @PIR{r=20} ~onDeath 
+  - sound{s=entity.illusioner.hurt;p=0.7;v=2;sc=VOICE} @PIR{r=15} ~onDamaged >50%
+  - sound{s=entity.illusioner.hurt;p=0.2;v=2;sc=VOICE} @PIR{r=15} ~onDamaged <50%
+
+ZH_ZombieKnight_Mace: 
+  Type: zombie
+  Display: '<gray>Zombie Knight'
+  Options:
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+    AttackSpeed: 2
+    AlwaysShowName: true
+    PreventSunburn: true
+    PreventOtherDrops: true
+    PreventItemPickup: true
+  Damage: 8
+  Health: 40
+  Equipment:
+    - ZH_ZombieKnight_Boots FEET
+    - mace{enchants=wind_burst:3,breach:4} HAND
+    - chainmail_chestplate CHEST
+    - chainmail_leggings LEGS
+    - chainmail_helmet HEAD
+  Drops:
+    - WIND_CHARGE 0-4
+    - gold_ingot 0-4
+    - exp 50
+  Skills:
+  - attribute{attr=GENERIC_JUMP_STRENGTH;a=0.8;duration=100000000} @self ~onSpawn
+  - attribute{attr=GENERIC_FALL_DAMAGE_MULTIPLIER;a=-1;duration=100000000} @self ~onSpawn
+  - skill{delay=1to12;s=[
+    - jump{v=0.9} @self
+    - e:p{p=cloud;hs=1;a=20}
+    ]} @self ~onTimer:35 ?inCombat ?!playerwithin{d=2} ?onGround
+  
+
+
+
+30xZH_ZombieHoard-Zombie1: #all iron zombie
+  Template: ZH_ZombieHoard-Template
+  Equipment:
+  - IRON_HELMET HEAD
+  - IRON_CHESTPLATE CHEST
+  - IRON_LEGGINGS LEGS
+  - IRON_BOOTS FEET
+  - ZH_IronSword HAND
+  Skills:
+  - summon{type=ZH_ZombieHoard-Zombie1;repeat=29;repeatInterval=1} @selflocation{y=0.5} ~onSpawn 
+
+30xZH_ZombieHoard-Zombie2:
+  Template: ZH_ZombieHoard-Template
+  Equipment:
+  - CHAINMAIL_HELMET HEAD
+  - CHAINMAIL_CHESTPLATE CHEST
+  - CHAINMAIL_LEGGINGS LEGS
+  - CHAINMAIL_BOOTS FEET
+  - ZH_StoneSword HAND
+  Skills:
+  - summon{type=ZH_ZombieHoard-Zombie2;repeat=29;repeatInterval=1} @selflocation{y=0.5} ~onSpawn 

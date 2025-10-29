@@ -1,0 +1,65 @@
+# ___________________________________________________________________________
+# 
+#   ████████████████████████████████████████████████████████████████████████
+#   ██                                                                    ██
+#   ██                       Zombie Hoard                                 ██
+#   ██                      Created by SkyKiller63                        ██
+#   ██                                                                    ██
+#   ██   ┌────────────────────────────────────────────────────────┐       ██
+#   ██   │ Server Version: Paper 1.21.4                           │       ██
+#   ██   │ MythicMobs Free: 5.8+ (Hard Dependency)                │       ██
+#   ██   │ LibsDisguises Free: Latest (Hard Dependency)           │       ██
+#   ██   └────────────────────────────────────────────────────────┘       ██
+#   ██                                                                    ██
+#   ██   Description: A Hoard of zombies that spawn when you get          ██
+#   ██   too close to the leader.                                         ██
+#   ██   For problems, go to my discord. www.SkyKillerGames.com           ██
+#   ██                                                                    ██
+#   ████████████████████████████████████████████████████████████████████████
+# ___________________________________________________________________________
+
+
+ZH_IronSword:
+  Id: IRON_SWORD
+  Enchantments:
+  - KNOCKBACK:2
+ZH_StoneSword:
+  Id: STONE_SWORD
+  Enchantments:
+  - KNOCKBACK:2
+
+ZH_ZombieArcherHead:
+  Id: PLAYER_HEAD
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTAzNmJkMjIyNzljZmYxN2ZlYjE1NzQ5ZmQ4MGY1ZmZhYTYzODg0YTJmZDg1N2RmNWFkOTg2YjMzYzQxNmNjMSJ9fX0=
+
+ZH_ZombieKnight_Boots:
+  Id: netherite_boots
+  Trim:
+    Material: gold
+    Pattern: flow
+  Enchantments:
+    - UNBREAKING:3
+    - FEATHER_FALLING:4
+
+ZH_ZombieHoardBanner:
+  Id: RED_BANNER
+  Display: '&7Zombie Hoard Banner'
+  BannerLayers:
+    - LIGHT_GRAY GRADIENT_UP
+    - LIGHT_GRAY GRADIENT
+    - PURPLE CROSS
+    - BLACK SKULL
+  Options:
+    Placeable: true
+
+
+
+
+
+
+
+
+
+
+
