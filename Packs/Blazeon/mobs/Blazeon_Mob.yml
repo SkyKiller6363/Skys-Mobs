@@ -199,7 +199,7 @@ Murkspawn:
   
 Screamer:
   Type: GHAST
-  Health: 25
+  Health: 10
   LevelModifiers:
     Health: 2
     Damage: 0.5
@@ -296,6 +296,7 @@ Small_Meteor_Projectile:
     PreventOtherDrops: true
     Silent: true
   
+
 
 
 
