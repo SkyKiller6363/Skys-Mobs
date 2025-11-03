@@ -135,9 +135,9 @@ Check out my MythicMobs stuff!
 - [**Zombie Hoard**](Packs/ZombieHoard)  
   _Storm-driven zombie invasion pack featuring 7 new mobs. During thunderstorms a Banner-Wielding Zombie spawns; once approached or damaged, it summons the hoard and can call reinforcements if left alive._  
   <br>  
-  [Zombie Hoard Preview coming soon...](https://www.youtube.com/SkyKiller63)
+  [Zombie Hoard Video Showcase](https://www.youtube.com/watch?v=6lDQfEZQAUk)
 
-##### [**Xray Items**](Packs/Xray)  
+- [**Xray Items**](Packs/Xray)  
   [Video Showcase](https://www.youtube.com/watch?v=tRGygeug-ak)  
   <br>  
   ![Xray Tooltip](assets/XrayTooltip.png)  
