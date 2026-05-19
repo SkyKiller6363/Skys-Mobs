@@ -7,47 +7,33 @@ playerfly: #Main Fly Command
     Completions:
       player:
       - players
+      onoroff:
+      - Enable
+      - Disable
   Conditions:
   - haspermission{p=skycommands.fly} true "<#d45353>You do not have permission to execute that command" #permissiondenied
-  - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast playerflyother
-  - hasaura{aura=flycommand} castinstead playerfly-remove
   Skills:
- # Give Fly to Self
-  - aura{duration=99999999;i=20;auraname=flycommand;cancelondeath=false;cancelonquit=false;
-    components=[
-      - fly
-      ]} @self 
-  - message{m=<#df1ab4>Fly Enabled} @self
-
-playerfly-remove: # Remove Fly from Self
-  Skills:
-  - removeaura{aura=flycommand} @self 
-  - message{m=<#df1ab4>Fly Disabled} @self
-
-playerflyother: # Give Fly to Other Player
+  - skill{s=playerfly2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true}
+playerfly2:
   Conditions:
-  - haspermission{p=skycommands.flyother} true "<#d45353>You do not have permission to execute that command"
-  Skills:
-  - skill{s=playerflyother2} @playerbyname{name=<skill.var.player>;targetself=true}
-playerflyother2:
+  - (stringequals{val1=<skill.var.player>;val2=UNDEFINED} true || haspermission{p=skycommands.flyother} ) true "<#d45353>You do not have permission to execute that command"
   TargetConditions:
-  - hasaura{aura=flycommand} castinstead playerflyother-remove
+  - hasaura{aura=flycommand} castinstead playerfly-remove
   Skills:
   - sudoskill{s=[
     - aura{duration=99999999;i=20;auraname=flycommand;cancelondeath=false;cancelonquit=false;
       components=[
         - fly
         ]} @self 
-    ]} @playerbyname{name=<skill.var.player>;targetself=true}
-  - message{m=<#df1ab4>Fly Enabled for <#3bfa22><skill.var.player>} @self
-  - message{m=<#df1ab4>Fly Enabled} @playerbyname{name=<skill.var.player>;targetself=true}
+    ]} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true}
+  - message{m=<#df1ab4>Fly Enabled for <#3bfa22><skill.var.player|<caster.name>>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
+  - message{m=<#df1ab4>Fly Enabled} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
-playerflyother-remove:
+playerfly-remove:
   Skills:
-  - removeaura{aura=flycommand} @playerbyname{name=<skill.var.player>;targetself=true}
-  - message{m=<#df1ab4>Fly Disabled for <#3bfa22><skill.var.player>} @self
-  - message{m=<#df1ab4>Fly Disabled} @playerbyname{name=<skill.var.player>;targetself=true}
-
+  - removeaura{aura=flycommand} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+  - message{m=<#df1ab4>Fly Disabled for <#3bfa22><skill.var.player|<caster.name>>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
+  - message{m=<#df1ab4>Fly Disabled} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 
 #Beezooka - Throw an exploding bee at your opponent
