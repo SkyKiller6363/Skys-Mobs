@@ -1,0 +1,380 @@
+#all of this is still very much so experimental. I'm mostly just learning how the command system works within mythic and how best to build everything. 
+
+#Fly Command
+playerfly: #Main Fly Command
+  Command:
+    Id: fly
+    Completions:
+      player:
+      - players
+  Conditions:
+  - haspermission{p=skycommands.fly} true "<#d45353>You do not have permission to execute that command" #permissiondenied
+  - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast playerflyother
+  - hasaura{aura=flycommand} castinstead playerfly-remove
+  Skills:
+ # Give Fly to Self
+  - aura{duration=99999999;i=20;auraname=flycommand;cancelondeath=false;cancelonquit=false;
+    components=[
+      - fly
+      ]} @self 
+  - message{m=<#df1ab4>Fly Enabled} @self
+
+playerfly-remove: # Remove Fly from Self
+  Skills:
+  - removeaura{aura=flycommand} @self 
+  - message{m=<#df1ab4>Fly Disabled} @self
+
+playerflyother: # Give Fly to Other Player
+  Conditions:
+  - haspermission{p=skycommands.flyother}true "<#d45353>You do not have permission to execute that command"
+  Skills:
+  - skill{s=playerflyother2} @playerbyname{name=<skill.var.player>;targetself=true}
+playerflyother2:
+  TargetConditions:
+  - hasaura{aura=flycommand} castinstead playerflyother-remove
+  Skills:
+  - sudoskill{s=[
+    - aura{duration=99999999;i=20;auraname=flycommand;cancelondeath=false;cancelonquit=false;
+      components=[
+        - fly
+        ]} @self 
+    ]} @playerbyname{name=<skill.var.player>;targetself=true}
+  - message{m=<#df1ab4>Fly Enabled for <#3bfa22><skill.var.player>} @self
+  - message{m=<#df1ab4>Fly Enabled} @playerbyname{name=<skill.var.player>;targetself=true}
+
+playerflyother-remove:
+  Skills:
+  - removeaura{aura=flycommand} @playerbyname{name=<skill.var.player>;targetself=true}
+  - message{m=<#df1ab4>Fly Disabled for <#3bfa22><skill.var.player>} @self
+  - message{m=<#df1ab4>Fly Disabled} @playerbyname{name=<skill.var.player>;targetself=true}
+
+
+
+#Beezooka - Throw an exploding bee at your opponent
+
+#Break - Break the block you're looking at 
+
+#Broadcast - broadcast a message to the whole server
+broadcast:
+  Command:
+    Id: broadcast
+    Completions:
+      message:
+      - "type your broadcast"
+      word2:
+      - ""
+      word3:
+      - ""
+      word4:
+      - ""
+      word5:
+      - ""
+      word6:
+      - ""
+      word7:
+      - ""
+      word8:
+      - ""
+      word9:
+      - ""
+      word10:
+      - ""
+      word11:
+      - ""
+      word12:
+      - ""
+      word13:
+      - ""
+      word14:
+      - ""
+      word15:
+      - ""
+      word16:
+      - ""
+      word17:
+      - ""
+      word18:
+      - ""
+      word19:
+      - ""
+      word20:
+      - ""
+      word21:
+      - ""
+      word22:
+      - ""
+      word23:
+      - ""
+      word24:
+      - ""
+      word25:
+      - ""
+      word26:
+      - ""
+      word27:
+      - ""
+      word28:
+      - ""
+      word29:
+      - ""
+      word30:
+      - ""
+  Conditions:
+  - haspermission{p=skycommands.broadcast}true "<#d45353>You do not have permission to execute that command"
+  Skills:
+  - message{m=<#bd0000>Broadcast<reset><&co> <#f82a2a><skill.var.message> <skill.var.word2|> <skill.var.word3|> <skill.var.word4|> <skill.var.word5|> <skill.var.word6|> <skill.var.word7|> <skill.var.word8|> <skill.var.word9|> <skill.var.word10|> <skill.var.word11|> <skill.var.word12|> <skill.var.word13|> <skill.var.word14|> <skill.var.word15|> <skill.var.word16|> <skill.var.word17|> <skill.var.word18|> <skill.var.word19|> <skill.var.word20|> <skill.var.word21|> <skill.var.word22|> <skill.var.word23|> <skill.var.word24|> <skill.var.word25|> <skill.var.word26|> <skill.var.word27|> <skill.var.word28|> <skill.var.word29|> <skill.var.word30|> } @server{targetself=true;targetcreative=true;targetspectator=true}
+
+#broadcastworld - Broadcast a message to a world. /broadcastworld <world> <msg>
+# broadcastworld:
+#   Command:
+#     Id: broadcastworld
+#     Completions:
+#       world:
+#       - worlds
+#       message:
+#       - "type a long message"
+#   Conditions:
+#   - haspermission{p=skycommands.broadcastworld}true "<#d45353>You do not have permission to execute that command"
+#   Skills:
+#   - message{m=<#bd0000>Broadcast<&co> <#f82a2a><skill.var.message>} @world{targetself=true;targetcreative=true;targetspectator=true}
+
+#/burn <players> <seconds> - Sets a player on fire
+
+#/depth - States current depth, relative to sea level
+
+#/enchant <enchantment> <level> - Enchants your held item with the given enchantment. Maybe some override functionality?
+
+#/exp [reset|show|set|give] [player] [Amount] - 
+
+#/ext [player] - Extinguish the player
+
+#/feed [player] - Feed the player
+
+#/fireball <fireball|small|large|arrow|skull|snowball|expbottle|dragon|splashpotion|lingeringpotion|trident> <speed>
+
+#/getpos [player] - prints coordinates to chat
+
+#/god [player] [on|off] - Makes the player immune to all damage
+god:
+  Command:
+    Id: god
+    Aliases: 
+    - godmode
+    - togglegod
+    Completions:
+      player:
+        - players
+      onoroff:
+        - Enabled
+        - Disabled
+  Conditions:
+  - haspermission{p=skycommands.godmode}true "<#d45353>You do not have permission to execute that command"
+  - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast godplayer
+  - hasaura{aura=godmode} castInstead godremove
+  Skills:
+  - aura{duration=99999999;i=20;auraname=godmode;cancelondeath=false;cancelonquit=false;
+    components=[
+      - onDamaged{cancelevent=true}
+      ]} @self 
+  - message{m=<#df1ab4>God Mode <#3bfa22>Enabled} @self
+
+godremove:
+  Command:
+    Id: ungod
+    Aliases:
+    - remgod
+    - removegod
+  Conditions:
+  - haspermission{p=skycommands.godmode}
+  Skills:
+  - removeaura{aura=godmode} @self
+  - message{m=<#df1ab4>God Mode <#fa2222>Disabled} @self
+
+godplayer:
+  Conditions:
+  - haspermission{p=skycommands.godmodeother}true "<#d45353>You do not have permission to execute that command"
+  Skills:
+  - skill{s=godplayer2} @playerbyname{name=<skill.var.player>;targetself=true}
+
+godplayer2:
+  Conditions:
+  - stringequals{val1=Disabled;val2=<skill.var.onoroff>} castInstead godplayerremove
+  - stringequals{val1=Enabled;val2=<skill.var.onoroff>}
+  # TargetConditions:
+  # - hasaura{aura=godmode} castInstead godplayerremove
+  Skills:
+  - sudoskill{s=[
+    - aura{duration=99999999;i=20;auraname=godmode;cancelondeath=false;cancelonquit=false;
+      components=[
+        - onDamaged{cancelevent=true}
+        ]} @self 
+    ]} @playerbyname{name=<skill.var.player>;targetself=true}
+  - message{m=<#df1ab4>God Mode <#3bfa22>Enabled</#3bfa22> for <#3bfa22><skill.var.player>} @self
+  - message{m=<#df1ab4>God Mode <#3bfa22>Enabled} @playerbyname{name=<skill.var.player>;targetself=true}
+
+godplayerremove:
+  # Conditions:
+  # - stringequals{val1=Disabled;val2=<skill.var.onoroff>}
+  Skills:
+  - removeaura{aura=godmode} @playerbyname{name=<skill.var.player>;targetself=true}
+  - message{m=<#df1ab4>God Mode <#fa2222>Disabled</#fa2222> for <#3bfa22><skill.var.player>} @self
+  - message{m=<#df1ab4>God Mode <#fa2222>Disabled} @playerbyname{name=<skill.var.player>;targetself=true}
+
+#/heal [player] - heals the player
+
+#/ice [player] - cools down the player
+
+#/kittycannon - shoots an exploding kitten
+
+#/lightning [player] [power] - 
+lightning:
+  Command:
+    Id: lightning
+    Completions:
+      player:
+      - players
+      power:
+      - 1
+      - 5
+      - 10
+  Conditions:
+  - haspermission{permission=skycommands.lightning}true "<#d45353>You do not have permission to execute that command"
+  - stringequals{val1=UNDEFINED;val2=<skill.var.player>} orElseCast lightningplayer
+  Skills:
+  - lightning @targetlocation
+lightningplayer:
+  Skills:
+  - lightning{d=<skill.var.power|1>} @playerbyname{name=<skill.var.player>;targetself=true}
+
+
+#/list - Lists all the players online
+
+#/more -  fills the itemstack in the hand to max
+more:
+  Command:
+    Id: more
+  Conditions:
+  - haspermission{p=skycommands.more}true "<#d45353>You do not have permission to execute that command"
+  Skills:
+  - setvar{var=skill.moreitem;val=<target.item.itemstack.HAND>;type=ITEM} @self
+  - setvar{var=skill.moreitem;val=<skill.var.moreitem.withAmount.64>;type=ITEM} @self
+  # - consumehelditem{a=64} @self
+  - equip{i=itemvariable{variable=skill.moreitem} HAND} @self
+  - message{m="<sprite:"minecraft:items":item/<skill.var.moreitem.type>><#3bfa22><skill.var.moreitem.type.toString.lowercase.capitalize.replace{from="_";to=" "}> <#df1ab4>stack updated to <#3bfa22>64"} @self
+
+#/near [playername] [radius] - lists the players near the player
+
+#/nuke [player] - Drops a bunch of TNT 
+
+#/ping - PONG
+
+#/repair [hand|all]
+repair:
+  Command:
+    Id: repair
+  Conditions:
+  - haspermission{p=skycommands.repair}true "<#d45353>You do not have permission to execute that command"
+  Skills:
+  - setvar{var=skill.repairitem;val=<target.item.itemstack.HAND>;type=ITEM} @self
+  - setvar{var=skill.repairitem;val=<skill.var.repairitem.withDurability{durability=0}>;type=ITEM} @self
+  # - consumeHeldItem{a=64} @self
+  - equip{i=itemvariable{variable=skill.repairitem} HAND} @self
+  - message{m=<#3bfa22><skill.var.repairitem.type.toString.lowercase.capitalize.replace{from="_";to=" "}> <#df1ab4>repaired} @self
+
+#/speed [WALK|FLY] <speed> [player]
+setspeed:
+  Command:
+    Id: speed
+    Aliases: 
+    - setspeed
+    - flyspeed
+    - walkspeed
+    Completions:
+      walkorfly:
+      - walk
+      - fly
+      speed:
+      - 2
+      - 5
+      - 10
+      player:
+      - players
+  Conditions:
+  - haspermission{p=skycommands.setspeed}true "<#d45353>You do not have permission to execute that command"
+  - stringequals{val1=<skill.var.walkorfly>;val2=UNDEFINED} false
+  - stringequals{val1=<skill.var.speed>;val2=UNDEFINED} false
+  - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast setspeedother
+  Skills:
+  - vskill{skill=[ - setspeed{type=<skill.var.walkorfly>;amount=<skill.var.speed>} @self ]}
+  - message{m="<#df1ab4><skill.var.walkorfly.capitalize> speed set to <#3bfa22><skill.var.speed>"} @self
+setspeedother:
+  Conditions:
+  - haspermission{p=skycommands.setspeedother}true "<#d45353>You do not have permission to execute that command"
+  Skills:
+  - vskill{skill=[ - setspeed{type=<skill.var.walkorfly>;amount=<skill.var.speed>} @playerbyname{name=<skill.var.player>;targetself=true} ]}
+  - message{m="<#df1ab4><skill.var.walkorfly.capitalize> speed set to <#3bfa22><skill.var.speed></#3bfa22> for <#3bfa22><skill.var.player>"} @self
+  - message{m="<#df1ab4><skill.var.walkorfly.capitalize> speed set to <#3bfa22><skill.var.speed>"} @playerbyname{name=<skill.var.player>;targetself=true}
+
+
+#/thunder [true|false] - toggles thunder weather
+
+#/time [set|add] [day|night|dawn|dusk] [world]
+
+#/vanish [player] [on|off]
+vanish: #doesn't work for some reason. hide aura being weird. 
+  Command:
+    Id: vanish
+    Completions:
+      onoroff:
+      - on
+      - off
+      player:
+      - players
+  Conditions:
+  - haspermission{p=skycommands.vanish}true "<#d45353>You do not have permission to execute that command" 
+  - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast vanishother
+  - hasaura{aura=#hiding} castinstead vanishremove
+  Skills:
+  - skill{s=vanish2} @server
+vanish2:
+  TargetConditions:
+  - haspermission{p=skycommands.vanish} false
+  Skills:
+  - hide{duration=99999999;i=20;cancelondeath=false;cancelonquit=false;bartimer=true}
+  - message{m=<#df1ab4>Vanish Enabled} @self
+  - message{m=<gold><caster.name> has left the server} @server{targetself=true}
+
+vanishremove:
+  Skills:
+  - showentity @server
+  - auraremove{name=vanishcommand} @self
+  - message{m=<#df1ab4>Vanish Disabled} @self
+  - message{m=<gold><caster.name> has joined the server} @server{targetself=true}
+
+vanishother:
+  Conditions:
+  - haspermission{p=skycommands.vanishother}true "<#d45353>You do not have permission to execute that command"
+  Skills:
+  - skill{s=vanishother2} @playerByName{name=<skill.var.player}
+vanishother2:
+  Targetconditions:
+  - hasaura{aura=#hiding} castinstead vanishotherremove
+  Skills:
+  - sudoskill{s=[
+    - hide{duration=99999999;i=20;cancelondeath=false;cancelonquit=false} @self 
+    ]} @playerbyname{name=<skill.var.player>}
+  - message{m=<#df1ab4>Vanish Enabled for <#3bfa22><skill.var.player>} @self
+  - message{m=<#df1ab4>Vanish Enabled} @playerbyname{name=<skill.var.player>;targetself=true}
+  - message{m=<gold><skill.var.player> has left the server} @server{targetself=true}
+
+vanishotherremove:
+  Skills:
+  - sudo{skill=[ showentity @server ]} @playerbyname{name=<skill.var.player>;targetself=true}
+  - removeaura{aura=vanishcommand} @playerbyname{name=<skill.var.player>;targetself=true}
+  - message{m=<#df1ab4>Vanish Disabled} @self
+  - message{m=<gold><caster.name> has joined the server} @server{targetself=true}
+
+#Permission Skill
+# permissiondenied:
+#   Skills:
+#   - message{m=<#d45353>You do not have permission to execute that command} @self
