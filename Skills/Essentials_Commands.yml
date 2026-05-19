@@ -26,7 +26,7 @@ playerfly-remove: # Remove Fly from Self
 
 playerflyother: # Give Fly to Other Player
   Conditions:
-  - haspermission{p=skycommands.flyother}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.flyother} true "<#d45353>You do not have permission to execute that command"
   Skills:
   - skill{s=playerflyother2} @playerbyname{name=<skill.var.player>;targetself=true}
 playerflyother2:
@@ -120,7 +120,7 @@ broadcast:
       word30:
       - ""
   Conditions:
-  - haspermission{p=skycommands.broadcast}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.broadcast} true "<#d45353>You do not have permission to execute that command"
   Skills:
   - message{m=<#bd0000>Broadcast<reset><&co> <#f82a2a><skill.var.message> <skill.var.word2|> <skill.var.word3|> <skill.var.word4|> <skill.var.word5|> <skill.var.word6|> <skill.var.word7|> <skill.var.word8|> <skill.var.word9|> <skill.var.word10|> <skill.var.word11|> <skill.var.word12|> <skill.var.word13|> <skill.var.word14|> <skill.var.word15|> <skill.var.word16|> <skill.var.word17|> <skill.var.word18|> <skill.var.word19|> <skill.var.word20|> <skill.var.word21|> <skill.var.word22|> <skill.var.word23|> <skill.var.word24|> <skill.var.word25|> <skill.var.word26|> <skill.var.word27|> <skill.var.word28|> <skill.var.word29|> <skill.var.word30|> } @server{targetself=true;targetcreative=true;targetspectator=true}
 
@@ -134,7 +134,7 @@ broadcast:
 #       message:
 #       - "type a long message"
 #   Conditions:
-#   - haspermission{p=skycommands.broadcastworld}true "<#d45353>You do not have permission to execute that command"
+#   - haspermission{p=skycommands.broadcastworld} true "<#d45353>You do not have permission to execute that command"
 #   Skills:
 #   - message{m=<#bd0000>Broadcast<&co> <#f82a2a><skill.var.message>} @world{targetself=true;targetcreative=true;targetspectator=true}
 
@@ -168,7 +168,7 @@ god:
         - Enabled
         - Disabled
   Conditions:
-  - haspermission{p=skycommands.godmode}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.godmode} true "<#d45353>You do not have permission to execute that command"
   - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast godplayer
   - hasaura{aura=godmode} castInstead godremove
   Skills:
@@ -192,7 +192,7 @@ godremove:
 
 godplayer:
   Conditions:
-  - haspermission{p=skycommands.godmodeother}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.godmodeother} true "<#d45353>You do not have permission to execute that command"
   Skills:
   - skill{s=godplayer2} @playerbyname{name=<skill.var.player>;targetself=true}
 
@@ -238,7 +238,7 @@ lightning:
       - 5
       - 10
   Conditions:
-  - haspermission{permission=skycommands.lightning}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{permission=skycommands.lightning} true "<#d45353>You do not have permission to execute that command"
   - stringequals{val1=UNDEFINED;val2=<skill.var.player>} orElseCast lightningplayer
   Skills:
   - lightning @targetlocation
@@ -254,7 +254,7 @@ more:
   Command:
     Id: more
   Conditions:
-  - haspermission{p=skycommands.more}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.more} true "<#d45353>You do not have permission to execute that command"
   Skills:
   - setvar{var=skill.moreitem;val=<target.item.itemstack.HAND>;type=ITEM} @self
   - setvar{var=skill.moreitem;val=<skill.var.moreitem.withAmount.64>;type=ITEM} @self
@@ -273,7 +273,7 @@ repair:
   Command:
     Id: repair
   Conditions:
-  - haspermission{p=skycommands.repair}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.repair} true "<#d45353>You do not have permission to execute that command"
   Skills:
   - setvar{var=skill.repairitem;val=<target.item.itemstack.HAND>;type=ITEM} @self
   - setvar{var=skill.repairitem;val=<skill.var.repairitem.withDurability{durability=0}>;type=ITEM} @self
@@ -300,7 +300,7 @@ setspeed:
       player:
       - players
   Conditions:
-  - haspermission{p=skycommands.setspeed}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.setspeed} true "<#d45353>You do not have permission to execute that command"
   - stringequals{val1=<skill.var.walkorfly>;val2=UNDEFINED} false
   - stringequals{val1=<skill.var.speed>;val2=UNDEFINED} false
   - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast setspeedother
@@ -309,7 +309,7 @@ setspeed:
   - message{m="<#df1ab4><skill.var.walkorfly.capitalize> speed set to <#3bfa22><skill.var.speed>"} @self
 setspeedother:
   Conditions:
-  - haspermission{p=skycommands.setspeedother}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.setspeedother} true "<#d45353>You do not have permission to execute that command"
   Skills:
   - vskill{skill=[ - setspeed{type=<skill.var.walkorfly>;amount=<skill.var.speed>} @playerbyname{name=<skill.var.player>;targetself=true} ]}
   - message{m="<#df1ab4><skill.var.walkorfly.capitalize> speed set to <#3bfa22><skill.var.speed></#3bfa22> for <#3bfa22><skill.var.player>"} @self
@@ -331,7 +331,7 @@ vanish: #doesn't work for some reason. hide aura being weird.
       player:
       - players
   Conditions:
-  - haspermission{p=skycommands.vanish}true "<#d45353>You do not have permission to execute that command" 
+  - haspermission{p=skycommands.vanish} true "<#d45353>You do not have permission to execute that command" 
   - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast vanishother
   - hasaura{aura=#hiding} castinstead vanishremove
   Skills:
@@ -353,7 +353,7 @@ vanishremove:
 
 vanishother:
   Conditions:
-  - haspermission{p=skycommands.vanishother}true "<#d45353>You do not have permission to execute that command"
+  - haspermission{p=skycommands.vanishother} true "<#d45353>You do not have permission to execute that command"
   Skills:
   - skill{s=vanishother2} @playerByName{name=<skill.var.player}
 vanishother2:
