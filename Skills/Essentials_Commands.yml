@@ -24,7 +24,7 @@ playerfly:
   Conditions:
   - haspermission{p=skycommands.fly} orElseCast skypermissiondenied 
   Skills:
-  - skill{s=playerfly2} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true}
+  - skill{s=playerfly2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true}
 playerfly2:
   Conditions:
   - (stringequals{val1=<skill.var.player>;val2=UNDEFINED} true || haspermission{p=skycommands.flyother} ) orElseCast skypermissiondenied
@@ -37,15 +37,15 @@ playerfly2:
       components=[
         - fly
         ]} @self 
-    ]} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true}
-  - message{m=<#54fc54>Fly <#2a7c3c>Enabled</#2a7c3c> for <#2a7c3c><skill.var.player{default=<caster.name>}>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
-  - message{m=<#54fc54>Fly <#2a7c3c>Enabled} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+    ]} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true}
+  - message{m=<#54fc54>Fly <#54fcfc>Enabled</#54fcfc> for <#54fcfc><skill.var.player|<caster.name>>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
+  - message{m=<#54fc54>Fly <#54fcfc>Enabled} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 playerfly-remove:
   Skills:
-  - removeaura{aura=flycommand} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
-  - message{m=<#54fc54>Fly <#fa2222>Disabled</#fa2222> for <#2a7c3c><skill.var.player{default=<caster.name>}>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
-  - message{m=<#54fc54>Fly <#fa2222>Disabled} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+  - removeaura{aura=flycommand} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+  - message{m=<#54fc54>Fly <#fa2222>Disabled</#fa2222> for <#54fcfc><skill.var.player|<caster.name>>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
+  - message{m=<#54fc54>Fly <#fa2222>Disabled} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 #- - - - - End Fly - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -178,14 +178,14 @@ burn:
   Conditions:
   - haspermission{p=skycommands.burn} orElseCast skypermissiondenied
   Skills:
-  - skill{s=burn2} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+  - skill{s=burn2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 burn2:
   Skills:
-  - ignite{duration=20*<skill.var.duration{default=5}>} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
-  - message{m="<#54fc54>You will <#f53900>Burn</#f53900> for <#2a7c3c><skill.var.duration{default=5}></#2a7c3c> seconds."} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true} ?!stringequals{val1=UNDEFINED;val2=<skill.var.player>}
+  - ignite{duration=20*<skill.var.duration{|5}>} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+  - message{m="<#54fc54>You will <#f53900>Burn</#f53900> for <#54fcfc><skill.var.duration{|5}></#54fcfc> seconds."} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true} ?!stringequals{val1=UNDEFINED;val2=<skill.var.player>}
   
-  - message{m="<#54fc54>Igniting <#2a7c3c><skill.var.player></#2a7c3c> for <#2a7c3c><skill.var.duration{default=5}></#2a7c3c> seconds."} @self ?!stringequals{val1=UNDEFINED;val2=<skill.var.player>}
-  - message{m="<#54fc54>You will <#f53900>Burn</#f53900> for <#2a7c3c><skill.var.duration{default=5}></#2a7c3c> seconds."} @self ?stringequals{val1=UNDEFINED;val2=<skill.var.player>}
+  - message{m="<#54fc54>Igniting <#54fcfc><skill.var.player></#54fcfc> for <#54fcfc><skill.var.duration{|5}></#54fcfc> seconds."} @self ?!stringequals{val1=UNDEFINED;val2=<skill.var.player>}
+  - message{m="<#54fc54>You will <#f53900>Burn</#f53900> for <#54fcfc><skill.var.duration{|5}></#54fcfc> seconds."} @self ?stringequals{val1=UNDEFINED;val2=<skill.var.player>}
 
 #- - - - - End Burn - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -205,8 +205,8 @@ depth:
   - setvar{var=belowsea;val="63-<caster.l.y>"} @self
   - setvar{var=currentlevel;val=<caster.l.y>} @self
 
-  - message{m="<&nl><#54fc54>Above Sea Level by<white><&co> <#2a7c3c><skill.var.abovesea> <&nl><#54fc54>Current Y Level<white><&co> <#2a7c3c><skill.var.currentlevel>"} @self ?comparevalue{val1=<caster.l.y>;val2=63;type=INTEGER;operator=>} 
-  - message{m="<&nl><#54fc54>Below Sea Level by<white><&co> <#2a7c3c><skill.var.belowsea> <&nl><#54fc54>Current Y Level<white><&co> <#2a7c3c><skill.var.currentlevel>"} @self ?comparevalue{val1=<caster.l.y>;val2=63;type=INTEGER;operator=<} 
+  - message{m="<&nl><#54fc54>Above Sea Level by<white><&co> <#54fcfc><skill.var.abovesea> <&nl><#54fc54>Current Y Level<white><&co> <#54fcfc><skill.var.currentlevel>"} @self ?comparevalue{val1=<caster.l.y>;val2=63;type=INTEGER;operator=>} 
+  - message{m="<&nl><#54fc54>Below Sea Level by<white><&co> <#54fcfc><skill.var.belowsea> <&nl><#54fc54>Current Y Level<white><&co> <#54fcfc><skill.var.currentlevel>"} @self ?comparevalue{val1=<caster.l.y>;val2=63;type=INTEGER;operator=<} 
   - message{m="<#54fc54>You are at Sea Level!"} @self ?comparevalue{val1=<caster.l.y>;val2=63;type=INTEGER;operator===} 
 
 #- - - - - End Depth - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -307,7 +307,7 @@ enchant:
   Conditions:
   - permission{p=skycommands.enchant} orElseCast skypermissiondenied
   Skills:
-  - command{c="minecraft:enchant <caster.name> <skill.var.enchantment> <skill.var.level>";op=true;ascaster=true} @self
+  - command{cmd="minecraft:enchant <caster.name> <skill.var.enchantment> <skill.var.level>";op=true;ascaster=true} @self
 
 #- - - - - End  Enchant - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -334,10 +334,10 @@ ext:
   Conditions:
   - haspermission{p=skycommands.ext} orElseCast skypermissiondenied
   Skills:
-  - skill{s=ext2} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+  - skill{s=ext2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 ext2:
   Skills:
-  - extinguish @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+  - extinguish @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 #- - - - - End Extinguish - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -381,7 +381,7 @@ god:
   Conditions:
   - haspermission{p=skycommands.godmode} orElseCast skypermissiondenied
   Skills:
-  - skill{s=god2} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+  - skill{s=god2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 god2:
   Conditions:
@@ -395,9 +395,9 @@ god2:
       components=[
         - onDamaged{cancelevent=true}
         ]} @self 
-    ]} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
-  - message{m=<#54fc54>God Mode <#2a7c3c>Enabled</#2a7c3c> for <#2a7c3c><skill.var.player{default=<caster.name>}>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
-  - message{m=<#54fc54>God Mode <#2a7c3c>Enabled} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+    ]} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+  - message{m=<#54fc54>God Mode <#54fcfc>Enabled</#54fcfc> for <#54fcfc><skill.var.player|<caster.name>>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
+  - message{m=<#54fc54>God Mode <#54fcfc>Enabled} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 godremove:
   Command:
@@ -411,9 +411,9 @@ godremove:
   Conditions:
   - haspermission{p=skycommands.godmode}
   Skills:
-  - removeaura{aura=godmode} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
-  - message{m=<#54fc54>God Mode <#fa2222>Disabled</#fa2222> for <#2a7c3c><skill.var.player{default=<caster.name>}>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
-  - message{m=<#54fc54>God Mode <#fa2222>Disabled} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+  - removeaura{aura=godmode} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+  - message{m=<#54fc54>God Mode <#fa2222>Disabled</#fa2222> for <#54fcfc><skill.var.player|<caster.name>>} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
+  - message{m=<#54fc54>God Mode <#fa2222>Disabled} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 #- - - - - End God - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -440,13 +440,13 @@ ice:
   Conditions:
   - haspermission{p=skycommands.freeze} orElseCast skypermissiondenied
   Skills:
-  - skill{s=ice2} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+  - skill{s=ice2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 ice2:
   Skills:
   - sudoskill{skill=[
-    - potion{type=slowness;l=0;duration=<skill.var.duration{default=5}>*20} @self
-    - aura{duration=20*<skill.var.duration{default=5}>;i=1;onTick=[  - freeze{ticks=280} - damage{a=1;cd=2;damagecause=FREEZE} ]} @self
-    ]} @playerbyname{name=<skill.var.player{default=<caster.name>}>;targetself=true;targetcreative=true}
+    - potion{type=slowness;l=0;duration=<skill.var.duration{|5}>*20} @self
+    - aura{duration=20*<skill.var.duration{|5}>;i=1;onTick=[  - freeze{ticks=280} - damage{a=1;cd=2;damagecause=FREEZE} ]} @self
+    ]} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
 
 #- - - - - End Ice - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -494,6 +494,8 @@ lightningplayer:
 more:
   Command:
     Id: more
+    Aliases:
+    - smore
   Conditions:
   - haspermission{p=skycommands.more} orElseCast skypermissiondenied
   Skills:
@@ -501,7 +503,7 @@ more:
   - setvar{var=skill.moreitem;val=<skill.var.moreitem.withAmount.64>;type=ITEM} @self
   # - consumehelditem{a=64} @self
   - equip{i=itemvariable{variable=skill.moreitem} HAND} @self
-  - message{m="<#2a7c3c><skill.var.moreitem.type.toString.lowercase.capitalize.replace{from="_";to=" "}> <#54fc54>stack updated to <#2a7c3c>64"} @self
+  - message{m="<#54fcfc><skill.var.moreitem.type.toString.lowercase.capitalize.replace{from="_";to=" "}> <#54fc54>stack updated to <#54fcfc>64"} @self
 
 #- - - - - End More - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -530,14 +532,42 @@ more:
 repair:
   Command:
     Id: repair
+    Aliases:
+    - srepair
+    Completions:
+      equipment:
+      - hand
+      - armor
   Conditions:
   - haspermission{p=skycommands.repair} orElseCast skypermissiondenied
+  - stringequals{val1=<skill.var.equipment>;val2=armor} castInstead repairarmor
+  - ( stringequals{val1=<skill.var.equipment>;val2=hand} || stringequals{val1=<skill.var.equipment>;val2=UNDEFINED} )
   Skills:
   - setvar{var=skill.repairitem;val=<target.item.itemstack.HAND>;type=ITEM} @self
   - setvar{var=skill.repairitem;val=<skill.var.repairitem.withDurability{durability=0}>;type=ITEM} @self
   # - consumeHeldItem{a=64} @self
   - equip{i=itemvariable{variable=skill.repairitem} HAND} @self
-  - message{m=<#2a7c3c><skill.var.repairitem.type.toString.lowercase.capitalize.replace{from="_";to=" "}> <#54fc54>repaired} @self
+  - message{m=<#54fcfc><skill.var.repairitem.type.toString.lowercase.capitalize.replace{from="_";to=" "}> <#54fc54>repaired} @self
+repairarmor:
+  Skills:
+  - setvar{var=skill.repairhead;val=<target.item.itemstack.HEAD>;type=ITEM} @self
+  - setvar{var=skill.repairhead;val=<skill.var.repairhead.withDurability{durability=0}>;type=ITEM} @self
+
+  - setvar{var=skill.repairchest;val=<target.item.itemstack.CHEST>;type=ITEM} @self
+  - setvar{var=skill.repairchest;val=<skill.var.repairchest.withDurability{durability=0}>;type=ITEM} @self
+
+  - setvar{var=skill.repairlegs;val=<target.item.itemstack.LEGS>;type=ITEM} @self
+  - setvar{var=skill.repairlegs;val=<skill.var.repairlegs.withDurability{durability=0}>;type=ITEM} @self
+
+  - setvar{var=skill.repairfeet;val=<target.item.itemstack.FEET>;type=ITEM} @self
+  - setvar{var=skill.repairfeet;val=<skill.var.repairfeet.withDurability{durability=0}>;type=ITEM} @self
+
+  - equip{i=itemvariable{variable=skill.repairhead} HEAD} @self
+  - equip{i=itemvariable{variable=skill.repairchest} CHEST} @self
+  - equip{i=itemvariable{variable=skill.repairlegs} LEGS} @self
+  - equip{i=itemvariable{variable=skill.repairfeet} FEET} @self
+
+  - message{m=<#54fc54>Armor Repaired} @self
 
 #- - - - - End Repair - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -569,22 +599,212 @@ setspeed:
   - stringequals{val1=<skill.var.player>;val2=UNDEFINED} orElseCast setspeedother
   Skills:
   - vskill{skill=[ - setspeed{type=<skill.var.walkorfly>;amount=<skill.var.speed>} @self ]}
-  - message{m="<#54fc54><skill.var.walkorfly.capitalize> speed set to <#2a7c3c><skill.var.speed>"} @self
+  - message{m="<#54fc54><skill.var.walkorfly.capitalize> speed set to <#54fcfc><skill.var.speed>"} @self
 setspeedother:
   Conditions:
   - haspermission{p=skycommands.setspeedother} orElseCast skypermissiondenied
   Skills:
   - vskill{skill=[ - setspeed{type=<skill.var.walkorfly>;amount=<skill.var.speed>} @playerbyname{name=<skill.var.player>;targetself=true} ]}
-  - message{m="<#54fc54><skill.var.walkorfly.capitalize> speed set to <#2a7c3c><skill.var.speed></#2a7c3c> for <#2a7c3c><skill.var.player>"} @self
-  - message{m="<#54fc54><skill.var.walkorfly.capitalize> speed set to <#2a7c3c><skill.var.speed>"} @playerbyname{name=<skill.var.player>;targetself=true}
+  - message{m="<#54fc54><skill.var.walkorfly.capitalize> speed set to <#54fcfc><skill.var.speed></#54fcfc> for <#54fcfc><skill.var.player>"} @self
+  - message{m="<#54fc54><skill.var.walkorfly.capitalize> speed set to <#54fcfc><skill.var.speed>"} @playerbyname{name=<skill.var.player>;targetself=true}
 
 #- - - - - End Speed - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+#- - - - - Start Scale - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#/scale <amount> [players]- set's the scale
+# scale:
+#   Command:
+#     Id: scale
+#     Completions:
+#       amount:
+#         - 1
+#         - 2.5
+#         - 5
+#         - 10
+#       player:
+#         - players
+#   Conditions:
+#   - haspermission{p=skycommands.setscale} orElseCast skypermissiondenied
+#   Skills:
+#   - skill{s=scale2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+
+# scale2:
+#   Skills:
+#   - sudoskill{s=[
+#     - aura{name=scalecommand;duration=999999999;cancelondeath=false;cancelonquit=false;bartimer=true;
+#       components=[
+#         - stat{stat=SCALE;type=SETTER;value=<skill.var.amount|1>}
+#       ]} @self
+#     ]} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+setscale:
+  Command:
+    Id: scale
+    Aliases: 
+    - setscale
+    - ssetscale
+    - size
+    - ssize
+    - sscale
+    Completions:
+      amount:
+      - 0.5
+      - 1
+      - 5
+      - 10
+      player:
+      - players
+  Conditions:
+  - haspermission{p=skycommands.setscale} orElseCast skypermissiondenied
+  - stringequals{val1=<skill.var.amount>;val2=UNDEFINED} false
+  - stringequals{val1=<skill.var.amount>;val2=1} castinstead setscaleremove
+  Skills:
+  - skill{s=setscale2} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+
+setscale2:
+  Conditions:
+  - (stringequals{val1=<skill.var.player>;val2=UNDEFINED} true || haspermission{p=skycommands.setscaleother} ) orElseCast skypermissiondenied
+  Skills:
+  - sudoskill{s=[
+    - removeaura{aura=scalecommand} @self
+    - aura{duration=99999999;i=20;auraname=scalecommand;cancelondeath=false;cancelonquit=false;
+      components=[
+        - stat{stat=SCALE;type=SETTER;value=<skill.var.amount|1>}
+        ]} @self
+    ]} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+  - message{m="<#54fc54>Scale set to <#54fcfc><skill.var.amount|1></#54fcfc> for <#54fcfc><skill.var.player|<caster.name>>"} @self ?!stringequals{val1=<skill.var.player>;val2=UNDEFINED}
+  - message{m="<#54fc54>Your scale has been set to <#54fcfc><skill.var.amount|1>"} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true}
+
+setscaleremove:
+  Command:
+    Id: resetscale
+    Completions:
+      player:
+      - players
+  Skills:
+  - sudoskill{skill=[ removeaura{aura=scalecommand} @self ]} @playerbyname{name=<skill.var.player|<caster.name>>;targetself=true;targetcreative=true} 
+
+
+#- - - - - End Scale - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 #- - - - - Start Thunder - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 #/thunder [true|false] - toggles thunder weather
 
 #- - - - - End Thunder - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+#- - - - - Start Spawn - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#/spawn - takes you to worldspawn
+#/setspawn - sets a new worldspawn to your current coordinates
+
+spawn:
+  Command:
+    Id: spawn
+    Aliases:
+    - sspawn
+  Conditions:
+  - haspermission{p=skycommands.spawn} orElseCast skypermissiondenied
+  Skills:
+  - teleport{pp=false;py=false} @varlocation{var=world.spawnlocation}
+  - delay 2
+  - ender @selflocation
+  - sound{s=entity.player.teleport} @self
+
+setspawn:
+  Command:
+    Id: setspawn
+    Aliases:
+    - ssetspawn
+  Conditions:
+  - haspermission{p=skycommands.setspawn} orElseCast skypermissiondenied
+  Skills:
+  - setVariableLocation{var=world.spawnlocation;val=@selflocation{blockcentered=true};save=true} @self
+
+  # - command{cmd="minecraft:setworldspawn <caster.l.x{round=0}> <caster.l.y{round=0}> <caster.l.z{round=0}> <caster.l.pitch{round=0}> <caster.l.yaw{round=0}>";asop=true;ascaster=true} @self
+
+  - message{m=<u><#54fcfc><caster.l.w></u> <#54fc54>spawn set to X<&co> <#54fcfc><caster.l.x{round=0}> <#54fc54>Y<&co> <#54fcfc><caster.l.y{round=0}> <#54fc54>Z<&co> <#54fcfc><caster.l.z{round=0}> <#54fc54>Pitch<&co> <#54fcfc><caster.l.pitch{round=0}> <#54fc54>Yaw<&co> <#54fcfc><caster.l.yaw{round=0}>} @self
+
+#- - - - - End Spawn - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+#- - - - - Start home - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# /sethome - set's 1 personal home for the caster
+# /home - goes home to the 1 personal home
+
+homeset:
+  Command:
+    Id: homeset
+    Aliases:
+      - ssethome
+      - sethome
+      - shomeset
+    Completions:
+      homename: #in the future I can maybe do <caster.var.homelist> and be a list of homes
+        - <name>
+  Conditions:
+  - haspermission{p=skycommands.homeset} orElseCast skypermissiondenied
+  Skills:
+  - vskill{s=[ - setvariablelocation{var=caster.home_<skill.var.homename|home>;val=@selflocation{blockcentered=true};save=true} ]} @self
+  - setvar{var=caster.homeset;val=<skill.var.homename|home>;save=true;type=SET} @self ?!varisset{var=caster.homeset}
+  - addvar{var=caster.homeset;val=<skill.var.homename|home>} @self ?varisset{var=caster.homeset}
+
+  - message{m=creating home <skill.var.homename|home>} @self
+
+home:
+  Command:
+    Id: home
+    Aliases:
+      - shome
+    Completions:
+      homename:
+        - <name>
+  Conditions:
+  - haspermission{p=skycommands.home} orElseCast skypermissiondenied
+  - stringequals{val1=<caster.var.homeset.contains{with=<skill.var.homename|home>}>;val2=true}
+  Skills:
+  - vskill{s=[ - teleport{pp=false;py=false} @variableLocation{var=caster.home_<skill.var.homename|home>} ]} @self
+  - message{m=teleporting to <skill.var.homename|home>} @self
+  - delay 4
+  - ender @selflocation
+  - sound{s=entity.player.teleport} @self
+
+
+homelist:
+  Command:
+    Id: homelist
+    Aliases:
+    - listhome
+    - shomelist
+    - slisthome
+  Conditions:
+  - haspermission{p=skycommands.homelist} orElseCast skypermissiondenied
+  Skills:
+  - message{m=<caster.var.homeset>} @self 
+
+homeremove:
+  Command:
+    Id: homeremove
+    Aliases:
+    - remhome
+    - sremovehome
+    - sremhome
+    - removehome
+    - shomeremove
+    Completions:
+      homename:
+        - <name>
+  Conditions:
+  - haspermission{p=skycommands.homeremove}
+  Skills:
+  - vskill{s=[ - unsetvar{var=caster.home_<skill.var.homename|home>} ]} @self
+  - subtractvariable{var=caster.homeset;val=<skill.var.homename|home>} @self
+
+  - message{m=<skill.var.homename|home> home removed} @self
+
+
+
+#- - - - - End home - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 #- - - - - Start Time - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -638,7 +858,7 @@ vanishother2:
   - sudoskill{s=[
     - hide{duration=99999999;i=20;cancelondeath=false;cancelonquit=false} @self 
     ]} @playerbyname{name=<skill.var.player>}
-  - message{m=<#54fc54>Vanish Enabled for <#2a7c3c><skill.var.player>} @self
+  - message{m=<#54fc54>Vanish Enabled for <#54fcfc><skill.var.player>} @self
   - message{m=<#54fc54>Vanish Enabled} @playerbyname{name=<skill.var.player>;targetself=true}
   - message{m=<gold><skill.var.player> has left the server} @server{targetself=true}
 
