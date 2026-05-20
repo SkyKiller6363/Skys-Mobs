@@ -7,7 +7,7 @@ Check out my MythicMobs stuff!
 - [**Mobs**](Mobs)  
   - [Ghost Wither - A Bedrock Similar Wither](Mobs/GhostWither_Mob.yml)  
   - [Zombie Knight - Mace Wielding Zombie](Mobs/ZombieKnight_Mace.yml)  
-- **Skills**  
+- [**Skills**](Skills) 
 - [**Items**](Items)  
   - [Random Items - Compilation of Random Items!](Items/RandomItems.yml)  
   - [SkyBomb](Items/SkyBomb.yml)  
