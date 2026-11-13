@@ -1,0 +1,97 @@
+#### Exploding Pie
+ExplodingPie:
+  Conditions:
+  - hasaura{aura=ExplodingPie} false
+  Skills:
+  - aura{name=ExplodingPie;d=5000;i=20;bt=true;bartimertext="Exploding Pie";cancelondeath=false;cancelonquit=false;onStart=ExplodingPie-Start;onTick=ExplodingPie-Tick;onEnd=ExplodingPie-End} @self
+
+ExplodingPie-Start:
+  Skills:
+  - setvar{var=caster.ExplodingPie;val=1;save=true} 
+  - setvar{var=caster.ExplodingPieTimer;val=0;save=true} 
+  - potion{type=ABSORPTION;l=2;d=1000}
+
+ExplodingPie-Tick:
+  Skills:
+  - varadd{var=caster.ExplodingPieTimer;a=1}
+  - message{m="<#0066ff><caster.name><white> is experiencing some stomace pains..."} @server{targetself=true} ?varequals{var=caster.ExplodingPieTimer;val=20}
+  - sound{s=entity.slime.squish} ?varequals{var=caster.ExplodingPieTimer;val=20}
+  - sound{s=block.lava.pop} ?varequals{var=caster.ExplodingPieTimer;val=20}
+  - sound{s=entity.tnt.primed;sc=MASTER;v=3;repeat=2;repeatI=3} ?varequals{var=caster.ExplodingPieTimer;val=50}
+  - sound{s=entity.tnt.primed;sc=MASTER;v=3;repeat=2;repeatI=3} ?varequals{var=caster.ExplodingPieTimer;val=220}
+  - message{m="<#0066ff><caster.name><white> is experiencing a weird rumbling sensation from their tummy..."} @server{targetself=true} ?varequals{var=caster.ExplodingPieTimer;val=220}
+  - message{m="<#a0a0a0><i>I should probably get somewhere safe.... I feel like I'm about to <bold>EXPLODE"} @self ?varequals{var=caster.ExplodingPieTimer;val=230}
+  - sound{s=entity.tnt.primed;sc=MASTER;v=3;repeat=2;repeatI=3} ?varequals{var=caster.ExplodingPieTimer;val=240}
+  - skill{s=[
+    - title{t=<green>10...;fi=0;d=20;fo=0}
+    - delay 100
+    - title{t=<green>5...;fi=0;d=20;fo=0}
+    - sound{s=entity.arrow.hit_player;p=0.5;v=1}
+    - delay 20
+    - title{t=<green>4...;fi=0;d=20;fo=0}
+    - sound{s=entity.arrow.hit_player;p=0.5;v=1}
+    - delay 20
+    - title{t=<green>3...;fi=0;d=20;fo=0}
+    - sound{s=entity.arrow.hit_player;p=0.5;v=1}
+    - delay 20
+    - title{t=<green>2...;fi=0;d=20;fo=0}
+    - sound{s=entity.arrow.hit_player;p=0.5;v=1}
+    - delay 20
+    - title{t=<green>1...;fi=0;d=20;fo=0}
+    - sound{s=entity.arrow.hit_player;p=0.5;v=1}
+    ]} ?varequals{var=caster.ExplodingPieTimer;val=239}
+
+ExplodingPie-End:
+  Skills:
+  - unsetvar{var=caster.ExplodingPieTimer}
+  - unsetvar{var=caster.ExplodingPie}
+  - sound{s=entity.arrow.hit_player} 
+  - explosion{y=5;bd=true}
+  - message{m="<white>The Exploding Pie has reached the lower intestines of <#0066ff><caster.name><white>...."} @server{targetself=true}
+
+#### Rocket Pops
+RocketPops:
+  Skills:
+  - jump{v=1}
+  - potion{type=JUMP;l=5;d=200} 
+  - potion{type=SPEED;l=3;d=200} 
+  - sound{s=entity.firework_rocket.launch;sc=MASTER;v=1} 
+  - delay 200
+  - message{m="<blue>You feel like you're about to take off..."} 
+  - delay 170
+  - sound{s=entity.tnt.primed}
+  - delay 30
+  - jump{v=2}
+  - particle{p=fireworks_spark;a=4;vs=1;hs=0;repeat=12;repeatI=1}
+  - delay 10
+  - randomskill{
+    skills=
+    [ firework{type=BALL;d=0;f=true;tr=false;color=#FF0000;fcolors=#0000FF} ],
+    [ firework{type=BALL_LARGE;d=0;f=false;tr=true;color=#FF0000;fcolors=#0000FF} ],
+    [ firework{type=BURST;d=0;f=true;tr=true;color=#FF0000;fcolors=#0000FF} ],
+    [ firework{type=CREEPER;d=0;f=false;tr=false;color=#FF0000;fcolors=#0000FF} ],
+    [ firework{type=STAR;d=0;f=true;tr=false;color=#FF0000;fcolors=#0000FF} ]
+    } @selflocation
+  - explosion{y=1;bd=false;fire=false} 
+  - potion{type=SLOW_FALLING;l=0;d=80;delay=30}
+
+#### Creeper Candy
+CreepperCandy_Hide:
+  Cooldown: 20
+  Skills:
+  - undisguise 
+  - hide{d=200;auraname=CreeperHide;i=10;
+    onTick=[ - actionmessage{m="<green>You are hidden..."} @self ];
+    onEnd=[ - actionmessage{m=""} @self ]
+    } @server 
+  - onAttack{onhit=[ - removeaura{aura=CreeperHide} ]}
+
+CreeperCandy_Ignite:
+  Cooldown: 20
+  Skills:
+  - disguise{d=creeper setIgnited} 
+  - sound{s=entity.creeper.primed} 
+  - delay 30 
+  - explode{y=2;bd=false;fire=false} @self 
+  - removeaura{aura=CreeperCandy} @self
+  
