@@ -88,37 +88,24 @@ Random_Potion_Drinkable:
     [ potion{type=WITHER;l=0;d=3600} ]
     } @self ~onConsume
 
-#Exploding Pie Requires Mythic Crucible. Might not complete the skill if the player logs out. 
+# Exploding Pie Requires Mythic Crucible. 
+# See Skys-Mobs/Skills/RandomItems-Skills.yml for the required skills. 
 ExplodingPie:
   Id: pumpkin_pie
   Group: 'Skys Items'
   Display: '<red>Totally a Berry Pie'
   Lore:
   - '<&dq><white>Oh you mean THIS pie.<&dq>'
+  Options:
+    StackSize: 16
+  Food:
+    CanAlwaysEat: true
+    Nutrition: 10
+    Saturation: 10
   Skills:
-  - aura{name=ExplodingPie;d=5000;i=20;cod=false;coq=false;
-    onStart=[
-      - setvar{var=caster.ExplodingPie;val=1;save=true} 
-      - setvar{var=caster.ExplodingPieTimer;val=0;save=true} 
-      - potion{type=ABSORPTION;l=2;d=1000}
-      ];
-    onTick=[
-      - varadd{var=caster.ExplodingPieTimer;a=1}
-      - message{m="<#0066ff><caster.name><white> is experiencing some stomace pains..."} @server{targetself=true} ?varequals{var=caster.ExplodingPieTimer;val=20}
-      - sound{s=entity.tnt.primed;sc=MASTER;v=3;repeat=2;repeatI=3} ?varequals{var=caster.ExplodingPieTimer;val=50}
-      - sound{s=entity.tnt.primed;sc=MASTER;v=3;repeat=2;repeatI=3} ?varequals{var=caster.ExplodingPieTimer;val=220}
-      - message{m="<#0066ff><caster.name><white> is experiencing a weird rumbling sensation from their tummy..."} @server{targetself=true} ?varequals{var=caster.ExplodingPieTimer;val=220}
-      - message{m="<#a0a0a0><i>I should probably get somewhere safe.... I feel like I'm about to <bold>EXPLODE"} @self ?varequals{var=caster.ExplodingPieTimer;val=230}
-      - sound{s=entity.tnt.primed;sc=MASTER;v=3;repeat=2;repeatI=3} ?varequals{var=caster.ExplodingPieTimer;val=240}
-      - sound{s=entity.arrow.hit_player;p=0.5;v=1;repeat=19;repeatI=5} ?varequals{var=caster.ExplodingPieTimer;val=245}
-      ];
-    onEnd=[
-      - unsetvar{var=caster.ExplodingPieTimer}
-      - unsetvar{var=caster.ExplodingPie}
-      - sound{s=entity.arrow.hit_player} 
-      - explosion{y=5;bd=true}
-      - message{m="<white>The Exploding Pie has reached the lower intestines of <#0066ff><caster.name><white>...."} @server{targetself=true}
-      ]} @self ~onConsume ?!hasaura{aura=ExplodingPie}
+  - skill:ExplodingPie @self ~onConsume
+
+  
 #Explosive Steak requires Mythic Crucible
 ExplosiveSteak:
   Id: cooked_beef
@@ -129,6 +116,7 @@ ExplosiveSteak:
 
 
 # Requires Crucible, MM 5.8+ and MC 1.21.4+
+# See Skys-Mobs/Skills/RandomItems-Skills.yml for the required skills. 
 RocketPop:
   Id: firework_star
   Display: '<gradient:#FF0000:#FFFFFF:#0000FF>Rocket Pop'
@@ -144,32 +132,11 @@ RocketPop:
     Nutrition: 6
     Saturation: 6
     CanAlwaysEat: true
+  Options:
+    StackSize: 16
+    # FireResistant: true
   Skills:
-  - skill{s=[
-    - jump{v=1}
-    - potion{type=JUMP;l=5;d=200} 
-    - potion{type=SPEED;l=3;d=200} 
-    - sound{s=entity.firework_rocket.launch;sc=MASTER;v=1} 
-    - delay 200
-    - message{m="<blue>You feel like you're about to take off..."} 
-    - delay 170
-    - sound{s=entity.tnt.primed}
-    - delay 30
-    - jump{v=2}
-    - particle{p=fireworks_spark;a=4;vs=1;hs=0;repeat=12;repeatI=1}
-    - delay 10
-    - randomskill{
-      skills=
-      [ firework{type=BALL;d=1;f=true;tr=false;color=#FF0000;fcolors=#0000FF} ],
-      [ firework{type=BALL_LARGE;d=1;f=false;tr=true;color=#FF0000;fcolors=#0000FF} ],
-      [ firework{type=BURST;d=1;f=true;tr=true;color=#FF0000;fcolors=#0000FF} ],
-      [ firework{type=CREEPER;d=1;f=false;tr=false;color=#FF0000;fcolors=#0000FF} ],
-      [ firework{type=STAR;d=1;f=true;tr=false;color=#FF0000;fcolors=#0000FF} ]
-      } @selflocation
-    - explosion{y=1;bd=false;fire=false} 
-    - potion{type=SLOW_FALLING;l=0;d=80;delay=30}
-    ]} @self ~onConsume
-
+  - skill{s=RocketPops} @self ~onConsume
 
 # Requires Crucible, MM 5.8+ and MC 1.21.4+
 WarpedMushroom:
@@ -199,8 +166,9 @@ WarpedMushroom:
     - message{m="<aqua>You feel your reality shifting..."}
     ]} @self ~onConsume
 
-# Requires Crucible, MM 5.8+ and MC 1.21.4+
-Creeper_Candy:
+# Requires Crucible, MM 5.8+, LibsDisguises and MC 1.21.4+
+# See Skys-Mobs/Skills/RandomItems-Skills.yml for the required skills. 
+Creeper_Candy: 
   Material: SUGAR
   Display: '<gradient:#00FF00:#008000>Creeper Candy'
   Lore:
@@ -209,6 +177,9 @@ Creeper_Candy:
   - enchants
   Enchantments:
   - Unbreaking:1
+  UseCooldown:
+    CooldownGroup: randomitems
+    CooldownSeconds: 15
   Consumable:
     ConsumeSeconds: 1
     HasParticles: true
@@ -218,18 +189,14 @@ Creeper_Candy:
     Saturation: 2
     CanAlwaysEat: true
   Skills:
-  - skill{cd=15;s=[
-    - setmaterialcooldown{material=sugar;d=300}
-    - hide{d=200} @PIR{r=100}
-    - explosion{y=2;bd=false;fire=false}
-    - e:p{p=cloud;a=100;hs=1;vs=0.5}
-    - e:p{p=large_smoke;a=20;hs=1;vs=0.5}
-    - message{m="Ssssst... Did you hear that?"}
-    - actionmessage{m="<green>You are hidden...";repeat=19;repeatI=10}
-    - sound{s=block.note_block.snare;v=1;p=1.4;audience=@self;repeat=9;repeatI=20}
-    - sound{s=block.note_block.snare;v=1;p=0.8;audience=@self;delay=200}
-    - actionmessage{m="<red>You are visible...";delay=200}
-    ]} @self ~onConsume
+    - aura{name=CreeperCandy;duration=1200;interval=10;bartimer=true;bartimertext='<gradient:#00FF00:#008000>Creeper Candy';bartimercolor=GREEN;bartimerstyle=SOLID;
+      onStart=[ - disguise{d=creeper} ];
+      onTick=[ - sound{s=entity.creeper.hurt;p=1.8;audience=nearby} 0.65 ?moving ];
+      onEnd=CreepperCandy_Hide;
+      components=[
+        - onAttack{onattack=CreeperCandy_Ignite} @self
+        - onDamaged{deflectconditions=isPlayer;ondamaged=CreeperCandy_Ignite} @self 
+        ]} @self ~onConsume ?!hasaura{aura=CreeperCandy}
 
 #Requires Crucible and Premium MM
 BedrockBreaker:
